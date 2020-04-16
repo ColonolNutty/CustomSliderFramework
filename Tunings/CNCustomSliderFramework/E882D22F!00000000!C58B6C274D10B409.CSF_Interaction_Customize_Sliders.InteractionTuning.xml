@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<I c="CSFCustomizeSlidersInteraction" i="interaction" m="cncustomsliderframework.interactions.customize_sliders" n="CSF_Interaction_Customize_Sliders" s="14234589963287049225">
+  <V t="disabled" n="_saveable" />
+  <T n="category">0</T>
+  <T n="display_name">0xEDE52BB4</T>  <!--Customize Sliders-->
+  <U n="progress_bar_enabled">
+    <T n="bar_enabled">False</T>
+  </U>
+  <E n="target_type">OBJECT</E>
+</I>
