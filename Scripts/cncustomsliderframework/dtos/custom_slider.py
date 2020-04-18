@@ -7,7 +7,7 @@ https://creativecommons.org/licenses/by-nd/4.0/legalcode
 Copyright (c) COLONOLNUTTY
 """
 from pprint import pformat
-from typing import Tuple
+from typing import Tuple, List
 
 from cncustomsliderframework.dtos.available_for import CSFAvailableFor
 from cncustomsliderframework.slider_category import CSFSliderCategory
@@ -107,12 +107,21 @@ class CSFCustomSlider:
         return (self.has_positive_modifier_id() or self.has_negative_modifier_id()) and (self.raw_display_name is not None or self.display_name is not None) and self.minimum_value < self.maximum_value and self.available_for.is_valid()
 
     def has_positive_modifier_id(self) -> bool:
-        """ determine if this slider has a positive modifier id. """
+        """ Determine if this slider has a positive modifier id. """
         return self.positive_modifier_id != 0
 
     def has_negative_modifier_id(self) -> bool:
-        """ determine if this slider has a negative modifier id. """
+        """ Determine if this slider has a negative modifier id. """
         return self.negative_modifier_id != 0
+
+    def get_modifier_ids(self) -> Tuple[int]:
+        """ Retrieve a collection of modifier decimal identifiers. """
+        modifier_ids: List[int] = list()
+        if self.has_positive_modifier_id():
+            modifier_ids.append(self.positive_modifier_id)
+        if self.has_negative_modifier_id():
+            modifier_ids.append(self.negative_modifier_id)
+        return tuple(modifier_ids)
 
     def __repr__(self) -> str:
         return '<display_name: {}, raw_display_name: {}, author:{}, icon_id {}, minimum_value:{}, maximum_value:{}, positive_modifier_id:{}, negative_modifier_id:{}, available_for: {}>'\

@@ -51,6 +51,7 @@ class CSFCustomizeSlidersDialog(CommonService, HasLog):
         self.log.debug('Opening customize sliders dialog for \'{}\'.'.format(CommonSimNameUtils.get_full_name(sim_info)))
 
         def _on_close() -> None:
+            self.log.debug('Customize Slider dialog closed.')
             if on_close is not None:
                 on_close()
 
@@ -62,14 +63,19 @@ class CSFCustomizeSlidersDialog(CommonService, HasLog):
         )
 
         def _reopen_dialog() -> None:
+            self.log.debug('Reopening customize sliders dialog.')
             self.open(sim_info, on_close=on_close)
 
         def _on_reset_all_sliders() -> None:
+            self.log.debug('Confirming all sliders reset.')
+
             def _on_confirm(_) -> None:
+                self.log.debug('Resetting all sliders.')
                 self.slider_application_service.reset_all_sliders(sim_info)
                 _reopen_dialog()
 
             def _on_cancel(_) -> None:
+                self.log.debug('Cancelled resetting of all sliders.')
                 _reopen_dialog()
 
             CommonOkCancelDialog(
@@ -80,10 +86,14 @@ class CSFCustomizeSlidersDialog(CommonService, HasLog):
 
         def _on_slider_changed(slider_name: str, amount: float, outcome: CommonChoiceOutcome):
             if slider_name is None or amount is None or CommonChoiceOutcome.is_error_or_cancel(outcome):
+                self.log.debug('No slider chosen, dialog closed, or no amount specified.')
                 _reopen_dialog()
                 return
+            self.log.debug('Slider changed, attempting to apply.')
             self.slider_application_service.apply_slider_by_name(sim_info, slider_name, amount)
             _reopen_dialog()
+
+        self.log.debug('Opening Customize Slider dialog.')
 
         option_dialog.add_option(
             CommonDialogActionOption(
@@ -98,6 +108,7 @@ class CSFCustomizeSlidersDialog(CommonService, HasLog):
         )
 
         sliders: Tuple[CSFCustomSlider] = CSFCustomSliderRegistry().get_loaded_sliders(sim_info)
+        self.log.debug('Adding slider count {}'.format(len(sliders)))
         sorted_sliders = sorted(sliders, key=lambda s: s.raw_display_name)
         for custom_slider in sorted_sliders:
             if custom_slider.description is not None:
@@ -108,7 +119,7 @@ class CSFCustomizeSlidersDialog(CommonService, HasLog):
             option_dialog.add_option(
                 CommonDialogInputFloatOption(
                     custom_slider.raw_display_name,
-                    self.slider_application_service.get_current_slider_value(sim_info, custom_slider),
+                    self.slider_application_service.get_current_facial_modifier_value(sim_info, custom_slider),
                     CommonDialogOptionContext(
                         custom_slider.display_name,
                         option_description,
@@ -123,5 +134,7 @@ class CSFCustomizeSlidersDialog(CommonService, HasLog):
                     dialog_description_tokens=(custom_slider.display_name, str(0.0), str(custom_slider.minimum_value), str(custom_slider.maximum_value))
                 )
             )
+
+        self.log.debug('Showing slider options.')
 
         option_dialog.show(sim_info=sim_info)
