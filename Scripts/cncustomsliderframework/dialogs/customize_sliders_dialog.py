@@ -119,7 +119,7 @@ class CSFCustomizeSlidersDialog(CommonService, HasLog):
             option_dialog.add_option(
                 CommonDialogInputFloatOption(
                     custom_slider.raw_display_name,
-                    self.slider_application_service.get_current_facial_modifier_value(sim_info, custom_slider),
+                    self.slider_application_service.get_current_slider_value(sim_info, custom_slider),
                     CommonDialogOptionContext(
                         custom_slider.display_name,
                         option_description,
