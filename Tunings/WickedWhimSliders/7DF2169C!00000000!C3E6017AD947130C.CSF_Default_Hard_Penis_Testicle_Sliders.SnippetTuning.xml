@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Default_Hard_Penis_Testicle_Sliders" s="14115971709182350092">
+  <L n="custom_slider_info_list">
+    <U>
+      <T n="slider_display_name">0x6BC3E3DF<!--Hard Penis Testicle Asymmetry Left Down/Right Down (CSF Default)--></T>
+      <T n="slider_raw_display_name">Hard_Penis_Testicle_Asymmetry_Left_Down_Right_Down_CSF_Default</T>
+      <T n="slider_description">0x82011A86<!-- Change testicle asymmetry --></T>
+      <T n="slider_author">ColonolNutty</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">18421315526639373205</T>
+      <T n="slider_negative_modifier_id">12584046225734030235</T>
+	  <L n="slider_categories">
+	    <E>GENITALS</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xC6A08CCD<!--Hard Penis Testicle Size Small/Big (CSF Default)--></T>
+      <T n="slider_raw_display_name">Hard_Penis_Testicle_Size_Small_Big_CSF_Default</T>
+      <T n="slider_description">0x9CCBCBBE<!-- Change testicle size --></T>
+      <T n="slider_author">ColonolNutty</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">17369810486794218629</T>
+      <T n="slider_negative_modifier_id">10159623222728249956</T>
+	  <L n="slider_categories">
+	    <E>GENITALS</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xDE989743<!--Hard Penis Testicle Size 2 Small/Big (CSF Default)--></T>
+      <T n="slider_raw_display_name">Hard_Penis_Testicle_Size_Small_Big_2_CSF_Default</T>
+      <T n="slider_description">0x9CCBCBBE<!-- Change testicle size --></T>
+      <T n="slider_author">ColonolNutty</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">13190513629490450319</T>
+      <T n="slider_negative_modifier_id">11417075475382327247</T>
+	  <L n="slider_categories">
+	    <E>GENITALS</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+  </L>
+</I>

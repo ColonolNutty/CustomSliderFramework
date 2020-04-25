@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Default_Sliders" s="13119357382950656630">
+  <L n="custom_slider_info_list">
+    <U>
+      <T n="slider_display_name">0xC10DF0E4<!--Thigh Size Small/Big (CSF Default)--></T>
+      <T n="slider_raw_display_name">Thigh_Size_Small_Big_CSF_Default</T>
+      <T n="slider_description">0x6B871754<!-- Change thigh size --></T>
+      <T n="slider_author">ColonolNutty</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">11511866501461715328</T>
+      <T n="slider_negative_modifier_id">16870873883567586152</T>
+	  <L n="slider_categories">
+	    <E>BODY</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xBFFF87C9<!--Thigh Separation (CSF Default)--></T>
+      <T n="slider_raw_display_name">Thigh_Separation_CSF_Default</T>
+      <T n="slider_description">0x9038AA5F<!-- Change thigh separation --></T>
+      <T n="slider_author">ColonolNutty</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">13319002811811289390</T>
+	  <L n="slider_categories">
+	    <E>BODY</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xF8FBB7ED<!--Neck Size Small/Big (CSF Default)--></T>
+      <T n="slider_raw_display_name">Neck_Size_Small_Big_CSF_Default</T>
+      <T n="slider_description">0x23EA30A2<!-- Change neck size --></T>
+      <T n="slider_author">ColonolNutty</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">13540934658970708314</T>
+      <T n="slider_negative_modifier_id">16656706900061866254</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xE3C48EAF<!--Height Short/Tall (CSF Default)--></T>
+      <T n="slider_raw_display_name">Height_Short_Tall_CSF_Default</T>
+      <T n="slider_description">0x65313E2A<!-- Change Height --></T>
+      <T n="slider_author">ColonolNutty</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">13801231225349348340</T>
+      <T n="slider_negative_modifier_id">17657724757213773022</T>
+	  <L n="slider_categories">
+	    <E>BODY</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x9A0AF2A5<!--Hand Size Small/Big (CSF Default)--></T>
+      <T n="slider_raw_display_name">Hand_Size_Small_Big_CSF_Default</T>
+      <T n="slider_description">0x3B9055A3<!-- Change hand size --></T>
+      <T n="slider_author">ColonolNutty</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">17832649487024862641</T>
+	  <L n="slider_categories">
+	    <E>BODY</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	    <E>CAT</E>
+	    <E>SMALL_DOG</E>
+	    <E>LARGE_DOG</E>
+	  </L>
+    </U>
+  </L>
+</I>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Default_Hard_Penis_Penis_Sliders" s="13776031792711968376">
+  <L n="custom_slider_info_list">
+    <U>
+      <T n="slider_display_name">0x6C3C8BDC<!--Hard Penis Size Small/Big (CSF Default)--></T>
+      <T n="slider_raw_display_name">Hard_Penis_Size_Small_Big_CSF_Default</T>
+      <T n="slider_description">0xE566F79C<!-- Change penis size --></T>
+      <T n="slider_author">ColonolNutty</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">13024784738330615220</T>
+      <T n="slider_negative_modifier_id">10278823140039332605</T>
+	  <L n="slider_categories">
+	    <E>GENITALS</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x18570C2A<!--Hard Penis Size 2 Small/Big (CSF Default)--></T>
+      <T n="slider_raw_display_name">Hard_Penis_Size_Small_Big_2_CSF_Default</T>
+      <T n="slider_description">0xE566F79C<!-- Change penis size --></T>
+      <T n="slider_author">ColonolNutty</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">10296124817125204702</T>
+      <T n="slider_negative_modifier_id">10447132195956672446</T>
+	  <L n="slider_categories">
+	    <E>GENITALS</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x343034BF<!--Hard Penis Vertical Rotation Down/Up (CSF Default)--></T>
+      <T n="slider_raw_display_name">Hard_Penis_Vertical_Rotation_Down_Up_CSF_Default</T>
+      <T n="slider_description">0x3CDCDA00<!-- Change penis vertical rotation --></T>
+      <T n="slider_author">ColonolNutty</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">10536643890677355518</T>
+      <T n="slider_negative_modifier_id">13842895914197688174</T>
+	  <L n="slider_categories">
+	    <E>GENITALS</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xECF5BAEA<!--Hard Penis Width Narrow/Wide (CSF Default)--></T>
+      <T n="slider_raw_display_name">Hard_Penis_Width_Narrow_Wide_CSF_Default</T>
+      <T n="slider_description">0x69704782<!-- Change penis width --></T>
+      <T n="slider_author">ColonolNutty</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">14473211345587494413</T>
+      <T n="slider_negative_modifier_id">15444369880301412043</T>
+	  <L n="slider_categories">
+	    <E>GENITALS</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+  </L>
+</I>
