@@ -11,7 +11,7 @@ from typing import Iterator, Tuple, List, Union
 from cncustomsliderframework.dtos.available_for import CSFAvailableFor
 from cncustomsliderframework.dtos.custom_slider import CSFCustomSlider
 from cncustomsliderframework.modinfo import ModInfo
-from cncustomsliderframework.slider_category import CSFSliderCategory
+from cncustomsliderframework.dtos.slider_category import CSFSliderCategory
 from cncustomsliderframework.tunings.custom_slider_collection import CSFCustomSliderInfo, CSFCustomSliderInfoCollection
 from sims.sim_info import SimInfo
 from sims.sim_info_types import Age, Gender

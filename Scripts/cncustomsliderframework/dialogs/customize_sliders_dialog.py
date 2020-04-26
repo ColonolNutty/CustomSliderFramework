@@ -13,7 +13,7 @@ from cncustomsliderframework.custom_slider_registry import CSFCustomSliderRegist
 from cncustomsliderframework.dtos.custom_slider import CSFCustomSlider
 from cncustomsliderframework.enums.string_ids import CSFStringId
 from cncustomsliderframework.modinfo import ModInfo
-from cncustomsliderframework.slider_category import CSFSliderCategory
+from cncustomsliderframework.dtos.slider_category import CSFSliderCategory
 from sims.sim_info import SimInfo
 from sims4communitylib.dialogs.common_choice_outcome import CommonChoiceOutcome
 from sims4communitylib.dialogs.ok_cancel_dialog import CommonOkCancelDialog

@@ -10,7 +10,7 @@ from pprint import pformat
 from typing import Tuple, List
 
 from cncustomsliderframework.dtos.available_for import CSFAvailableFor
-from cncustomsliderframework.slider_category import CSFSliderCategory
+from cncustomsliderframework.dtos.slider_category import CSFSliderCategory
 from protocolbuffers.Localization_pb2 import LocalizedString
 from sims.sim_info import SimInfo
 
