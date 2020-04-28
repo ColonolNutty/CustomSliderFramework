@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Vanilla_Cheek_Sliders" s="12883388315835517411">
+  <L n="custom_slider_info_list">
+    <U>
+      <T n="slider_display_name">0x6CA22D8F<!--Cheek Position Backward/Forward--></T>
+      <T n="slider_raw_display_name">Cheek_Position_Backward_Forward_CSF_Vanilla</T>
+      <T n="slider_description">0x999ACF4C</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">2430963477715201215</T>
+      <T n="slider_negative_modifier_id">15297930618406246259</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xDDEC702E<!--Cheek Position Down/Up--></T>
+      <T n="slider_raw_display_name">Cheek_Position_Down_Up_CSF_Vanilla</T>
+      <T n="slider_description">0x999ACF4C</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">1647071105695811359</T>
+      <T n="slider_negative_modifier_id">9372674533140532068</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x4F5C31D3<!--Cheek Shape Gaunt/Full--></T>
+      <T n="slider_raw_display_name">Cheek_Shape_Gaunt_Full_CSF_Vanilla</T>
+      <T n="slider_description">0xEF36D4EE</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">10435305242513908519</T>
+      <T n="slider_negative_modifier_id">3631079815084634427</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x4D529BB4<!--Cheek Jowl Position Down/Up--></T>
+      <T n="slider_raw_display_name">Cheek_Jowl_Position_Down_Up_CSF_Vanilla</T>
+      <T n="slider_description">0x999ACF4C</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">8346319527942286863</T>
+      <T n="slider_negative_modifier_id">8918124067849403572</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x8B2C2F64<!--Cheek Shape Angled/Round--></T>
+      <T n="slider_raw_display_name">Cheek_Shape_Angled_Round_CSF_Vanilla</T>
+      <T n="slider_description">0xEF36D4EE</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">604929535228004456</T>
+      <T n="slider_negative_modifier_id">7510272964649489367</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x8AAB3001<!--Cheek Shape Sunken/Prominent--></T>
+      <T n="slider_raw_display_name">Cheek_Shape_Sunken_Prominent_CSF_Vanilla</T>
+      <T n="slider_description">0xEF36D4EE</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">15297754480551974982</T>
+      <T n="slider_negative_modifier_id">9442223239384830016</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x8E8CF25B<!--Cheek Shape Flat--></T>
+      <T n="slider_raw_display_name">Cheek_Shape_Flat_CSF_Vanilla</T>
+      <T n="slider_description">0xEF36D4EE</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">0.0</T>
+      <T n="slider_negative_modifier_id">10457303171655173781</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+  </L>
+</I>

@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Vanilla_Head_Sliders" s="6711042349293854815">
+  <L n="custom_slider_info_list">
+    <!--Head Shape Jaw Soft Mod 1-->
+    <U>
+      <T n="slider_display_name">0xC209D1A2<!--Head Shape Jaw Soft Mod--></T>
+      <T n="slider_raw_display_name">Head_Shape_Jaw_Soft_Mod_Female_CSF_Vanilla</T>
+      <T n="slider_description">0x5960686C<!-- Apply jaw soft mod --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">7374058798347764716</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xC209D1A2<!--Head Shape Jaw Soft Mod--></T>
+      <T n="slider_raw_display_name">Head_Shape_Jaw_Soft_Mod_Male_CSF_Vanilla</T>
+      <T n="slider_description">0x5960686C<!-- Apply jaw soft mod --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">13317021532494359409</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Shape Jaw Soft Mod 2-->
+    <U>
+      <T n="slider_display_name">0x133261E0<!--Head Shape Jaw Soft Mod 2--></T>
+      <T n="slider_raw_display_name">Head_Shape_Jaw_Soft_Mod_2_Female_CSF_Vanilla</T>
+      <T n="slider_description">0x5960686C<!-- Apply jaw soft mod --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">7374058798347764719</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x133261E0<!--Head Shape Jaw Soft Mod 2--></T>
+      <T n="slider_raw_display_name">Head_Shape_Jaw_Soft_Mod_2_Male_CSF_Vanilla</T>
+      <T n="slider_description">0x5960686C<!-- Apply jaw soft mod --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">13317021532494359410</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Shape Jaw Soft Mod 3-->
+    <U>
+      <T n="slider_display_name">0x133261E1<!--Head Shape Jaw Soft Mod 3--></T>
+      <T n="slider_raw_display_name">Head_Shape_Jaw_Soft_Mod_3_Female_CSF_Vanilla</T>
+      <T n="slider_description">0x5960686C<!-- Apply jaw soft mod --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">7374058798347764718</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x133261E1<!--Head Shape Jaw Soft Mod 3--></T>
+      <T n="slider_raw_display_name">Head_Shape_Jaw_Soft_Mod_3_Male_CSF_Vanilla</T>
+      <T n="slider_description">0x5960686C<!-- Apply jaw soft mod --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">13317021532494359411</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Neck Shape Back Contract/Extend-->
+    <U>
+      <T n="slider_display_name">0x72B044DD<!--Neck Shape Back Contract/Extend--></T>
+      <T n="slider_raw_display_name">Neck_Shape_Back_Contract_Extend_Female_CSF_Vanilla</T>
+      <T n="slider_description">0xA6ACE4BF<!-- Change neck shape --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">3078880065704035811</T>
+      <T n="slider_negative_modifier_id">9100829031187904001</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x72B044DD<!--Neck Shape Back Contract/Extend--></T>
+      <T n="slider_raw_display_name">Neck_Shape_Back_Contract_Extend_Male_CSF_Vanilla</T>
+      <T n="slider_description">0xA6ACE4BF<!-- Change neck shape --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">13340458819235837030</T>
+      <T n="slider_negative_modifier_id">11634698229744512068</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Size Small/Big-->
+    <U>
+      <T n="slider_display_name">0x47E0E174<!--Head Size Small/Big--></T>
+      <T n="slider_raw_display_name">Head_Size_Small_Big_CSF_Vanilla</T>
+      <T n="slider_description">0x4778BAB7<!-- Change head size --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">8590297934528026115</T>
+      <T n="slider_negative_modifier_id">17108532045200055684</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Cranium Height Low/High-->
+    <U>
+      <T n="slider_display_name">0xCF1AFB04<!--Head Cranium Height Low/High--></T>
+      <T n="slider_raw_display_name">Head_Cranium_Height_Low_High_CSF_Vanilla</T>
+      <T n="slider_description">0xCDAA2446<!-- Change cranium height --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">8590297934528026115</T>
+      <T n="slider_negative_modifier_id">17108532045200055684</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Face Depth Backward/Forward-->
+    <U>
+      <T n="slider_display_name">0x19A41B76<!--Head Face Depth Backward/Forward--></T>
+      <T n="slider_raw_display_name">Head_Face_Depth_Backward_Forward_CSF_Vanilla</T>
+      <T n="slider_description">0x93C3CDC0<!-- Change face depth --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">17149458039953429403</T>
+      <T n="slider_negative_modifier_id">11205214907019669271</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Width Narrow/Wide-->
+    <U>
+      <T n="slider_display_name">0xC92A040A<!--Head Width Narrow/Wide--></T>
+      <T n="slider_raw_display_name">Head_Width_Narrow_Wide_CSF_Vanilla</T>
+      <T n="slider_description">0xBF888BB6<!-- Change head width --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">4948847164690752846</T>
+      <T n="slider_negative_modifier_id">4171167489848825662</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Bone Width Narrow/Wide-->
+    <U>
+      <T n="slider_display_name">0xAEE72CAA<!--Head Bone Width Narrow/Wide--></T>
+      <T n="slider_raw_display_name">Head_Bone_Width_Narrow_Wide_CSF_Vanilla</T>
+      <T n="slider_description">0x498667D4<!-- Change head bone width --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">10104729436287173028</T>
+      <T n="slider_negative_modifier_id">6633838625941578132</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Height Short/Long-->
+    <U>
+      <T n="slider_display_name">0xE307A15B<!--Head Height Short/Long--></T>
+      <T n="slider_raw_display_name">Head_Height_Short_Long_CSF_Vanilla</T>
+      <T n="slider_description">0x88428BF5<!-- Change head height --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">17640420822899231937</T>
+      <T n="slider_negative_modifier_id">13976026715787200791</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Forehead Backward/Forward-->
+    <U>
+      <T n="slider_display_name">0x2561C0C6<!--Head Forehead Backward/Forward--></T>
+      <T n="slider_raw_display_name">Head_Forehead_Backward_Forward_CSF_Vanilla</T>
+      <T n="slider_description">0x1B5F6475<!-- Change forehead position --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">3401032725487800308</T>
+      <T n="slider_negative_modifier_id">7076842881077312646</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Forehead Width Narrow/Wide-->
+    <U>
+      <T n="slider_display_name">0xC371C694<!--Head Forehead Width Narrow/Wide--></T>
+      <T n="slider_raw_display_name">Head_Forehead_Width_Narrow_Wide_CSF_Vanilla</T>
+      <T n="slider_description">0x4669F37C<!-- Change forehead width --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">16123149972064770128</T>
+      <T n="slider_negative_modifier_id">2425030913929917336</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Shape Taper In/Out-->
+    <U>
+      <T n="slider_display_name">0xC25DAEE6<!--Head Shape Taper In/Out--></T>
+      <T n="slider_raw_display_name">Head_Shape_Taper_In_Out_CSF_Vanilla</T>
+      <T n="slider_description">0xCA388FF3<!-- Change forehead width --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">4908009738861017247</T>
+      <T n="slider_negative_modifier_id">4004203129055173720</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Face Down Child-->
+    <U>
+      <T n="slider_display_name">0x287ADEA4<!--Head Face Down Child--></T>
+      <T n="slider_raw_display_name">Head_Face_Down_Child_CSF_Vanilla</T>
+      <T n="slider_description">0x92227A28<!-- Move head down --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">0.0</T>
+      <T n="slider_negative_modifier_id">18313229626627055690</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Skull Back Backward/Forward-->
+    <U>
+      <T n="slider_display_name">0x54CE5446<!--Head Skull Back Backward/Forward--></T>
+      <T n="slider_raw_display_name">Head_Skull_Back_Backward_Forward_CSF_Vanilla</T>
+      <T n="slider_description">0x22E399B6<!-- Change skull back position --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">10724374695110541596</T>
+      <T n="slider_negative_modifier_id">3452999888837388222</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Skull Base Backward/Forward-->
+    <U>
+      <T n="slider_display_name">0x5220243C<!--Head Skull Base Backward/Forward--></T>
+      <T n="slider_raw_display_name">Head_Skull_Base_Backward_Forward_CSF_Vanilla</T>
+      <T n="slider_description">0x97054D53<!-- Change skull base position --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">2494246670349364092</T>
+      <T n="slider_negative_modifier_id">5899500722723573918</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Skull Size Large-->
+    <U>
+      <T n="slider_display_name">0xA800C51A<!--Head Skull Size Large--></T>
+      <T n="slider_raw_display_name">Head_Skull_Size_Large_CSF_Vanilla</T>
+      <T n="slider_description">0x06E6AE5A<!-- Change skull size --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">16255219628117640025</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Skull Size Flat-->
+    <U>
+      <T n="slider_display_name">0x687022DC<!--Head Skull Size Flat--></T>
+      <T n="slider_raw_display_name">Head_Skull_Size_Flat_CSF_Vanilla</T>
+      <T n="slider_description">0x06E6AE5A<!-- Change skull size --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">0.0</T>
+      <T n="slider_negative_modifier_id">15736912955264198433</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Head Skull Shape Square/Round-->
+    <U>
+      <T n="slider_display_name">0x235CAED9<!--Head Skull Shape Square/Round--></T>
+      <T n="slider_raw_display_name">Head_Skull_Shape_Square_Round_CSF_Vanilla</T>
+      <T n="slider_description">0x1BC67E0C<!-- Change skull base position --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">10995655158579423300</T>
+      <T n="slider_negative_modifier_id">8964994683070886601</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Neck Size Thin/Thick-->
+    <U>
+      <T n="slider_display_name">0x25A9186E<!--Neck Size Thin/Thick--></T>
+      <T n="slider_raw_display_name">Neck_Size_Thin_Thick_Female_CSF_Vanilla</T>
+      <T n="slider_description">0x23EA30A2<!-- Change neck size --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">16892734955963417493</T>
+      <T n="slider_negative_modifier_id">14190157834369024263</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x25A9186E<!--Neck Size Thin/Thick--></T>
+      <T n="slider_raw_display_name">Neck_Size_Thin_Thick_Male_CSF_Vanilla</T>
+      <T n="slider_description">0x23EA30A2<!-- Change neck size --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">4033677695323829934</T>
+      <T n="slider_negative_modifier_id">2969311785434397098</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+  </L>
+</I>

@@ -140,7 +140,7 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             self.log.debug('Applying facial attribute.')
             modified_facial_attributes = self._get_existing_modifiers_for_edit(sim_info, exclude_facial_modifier_ids=(*custom_slider.get_modifier_ids(), slider_id))
 
-            if slider_amount > 0.0:
+            if slider_amount > 0.0 or slider_amount == custom_slider.minimum_value or slider_amount == custom_slider.maximum_value:
                 self.log.debug('Adding the custom slider because the amount is greater than zero.')
                 new_modifier = BlobSimFacialCustomizationData().Modifier()
                 new_modifier.key = slider_id
