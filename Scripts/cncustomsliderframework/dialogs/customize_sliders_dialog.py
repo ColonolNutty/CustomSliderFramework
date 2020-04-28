@@ -25,6 +25,8 @@ from sims4communitylib.dialogs.option_dialogs.options.objects.common_dialog_inpu
     CommonDialogInputFloatOption
 from sims4communitylib.dialogs.option_dialogs.options.objects.common_dialog_option_category import \
     CommonDialogObjectOptionCategory
+from sims4communitylib.dialogs.option_dialogs.options.objects.common_dialog_select_option import \
+    CommonDialogSelectOption
 from sims4communitylib.enums.icons_enum import CommonIconId
 from sims4communitylib.logging.has_log import HasLog
 from sims4communitylib.mod_support.mod_identity import CommonModIdentity
@@ -108,18 +110,58 @@ class CSFCustomizeSlidersDialog(CommonService, HasLog):
                 ),
                 on_chosen=lambda *_, **__: _on_reset_all_sliders(),
                 always_visible=True
-            ),
+            )
         )
 
         sliders: Tuple[CSFCustomSlider] = CSFCustomSliderRegistry().get_loaded_sliders(sim_info)
         self.log.debug('Adding slider count {}'.format(len(sliders)))
         sorted_sliders = sorted(sliders, key=lambda s: s.raw_display_name)
+        slider_categories: List[CSFSliderCategory] = list()
         object_categories: List[str] = list()
         for custom_slider in sorted_sliders:
             for slider_category in custom_slider.categories:
                 if slider_category.name in object_categories:
                     continue
+                slider_categories.append(slider_category)
                 object_categories.append(slider_category.name)
+
+        def _on_randomize_slider_category(category_name: str, category: CSFSliderCategory):
+            self.log.debug('Confirming reset of sliders in category {}.'.format(category_name))
+
+            def _on_confirm(_) -> None:
+                self.log.debug('Randomizing all sliders in category {}.'.format(category_name))
+                for slider in sorted_sliders:
+                    if category not in slider.categories:
+                        continue
+                    self.slider_application_service.apply_random(sim_info, slider)
+                _reopen_dialog()
+
+            def _on_cancel(_) -> None:
+                self.log.debug('Cancelled randomization of sliders in category {}.'.format(category_name))
+                _reopen_dialog()
+
+            CommonOkCancelDialog(
+                CSFStringId.CONFIRMATION,
+                CSFStringId.RANDOMIZE_SLIDER_CONFIRMATION,
+                mod_identity=self.mod_identity
+            ).show(on_ok_selected=_on_confirm, on_cancel_selected=_on_cancel)
+
+        for slider_category in slider_categories:
+            option_dialog.add_option(
+                CommonDialogSelectOption(
+                    slider_category.name,
+                    slider_category,
+                    CommonDialogOptionContext(
+                        CSFStringId.RANDOMIZE_SLIDER_NAME,
+                        CSFStringId.RANDOMIZE_SLIDER_DESCRIPTION,
+                        title_tokens=(slider_category.name, ),
+                        description_tokens=(slider_category.name, ),
+                        tag_list=CSFSliderCategory.get_names()
+                    ),
+                    on_chosen=_on_randomize_slider_category,
+                    always_visible=True
+                )
+            )
 
         for custom_slider in sorted_sliders:
             if custom_slider.description is not None:

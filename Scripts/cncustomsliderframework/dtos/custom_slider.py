@@ -38,6 +38,12 @@ class CSFCustomSlider:
         self._icon_id = icon_id
         self._available_for = available_for
         self._categories = categories
+        category_names: List[str] = list()
+        for slider_category in self.categories:
+            if slider_category.name in category_names:
+                continue
+            category_names.append(slider_category.name)
+        self._category_names = tuple(category_names)
         self._minimum_value = minimum_value
         self._maximum_value = maximum_value
         self._positive_modifier_id = positive_modifier_id
@@ -72,6 +78,11 @@ class CSFCustomSlider:
     def categories(self) -> Tuple[CSFSliderCategory]:
         """ Categories the slider is a part of. """
         return self._categories
+
+    @property
+    def category_names(self) -> Tuple[str]:
+        """ The name of the categories the slider is a part of. """
+        return self._category_names
 
     @property
     def minimum_value(self) -> float:

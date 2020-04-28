@@ -6,6 +6,7 @@ https://creativecommons.org/licenses/by-nd/4.0/legalcode
 
 Copyright (c) COLONOLNUTTY
 """
+import random
 from typing import Iterator
 
 from cncustomsliderframework.dtos.custom_slider import CSFCustomSlider
@@ -163,6 +164,13 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             self.log.debug('No slider found with name: {}'.format(name))
             return False
         self.log.debug('Slider found, attempting to apply.')
+        return self.apply_slider(sim_info, custom_slider, amount)
+
+    def apply_random(self, sim_info: SimInfo, custom_slider: CSFCustomSlider) -> bool:
+        """ Apply a random value for a slider. """
+        name = custom_slider.raw_display_name
+        amount = random.randint(int(custom_slider.minimum_value), int(custom_slider.maximum_value))
+        self.log.debug('Attempting to apply slider with name {} and amount {}'.format(name, amount))
         return self.apply_slider(sim_info, custom_slider, amount)
 
     def reset_slider(self, sim_info: SimInfo, custom_slider: CSFCustomSlider) -> bool:

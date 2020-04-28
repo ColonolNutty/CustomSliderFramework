@@ -24,7 +24,14 @@ class CSFStringId(Int):
     RESET_ALL_SLIDERS_DESCRIPTION = 3476540725
     ARE_YOU_SURE_YOU_WANT_TO_RESET_ALL_SLIDERS = 4271554317
     CONFIRMATION = 2520436614
-    # Tokens: {0.String} (Name) {1.String} (Default Val) {2.String} (Min Value) {3.String} (Max Value)
+    # Tokens: {0.String} (Name)
     CHANGE_THE_SLIDER = 3295228480
     # Tokens: {0.String} (Text) {1.String} (Default Val) {2.String} (Min Value) {3.String} (Max Value)
     DEFAULT_MIN_MAX = 3502481568
+
+    # Tokens: {0.String}
+    RANDOMIZE_SLIDER_NAME = 4029355371
+    # Tokens: {0.String}
+    RANDOMIZE_SLIDER_DESCRIPTION = 645050160
+    # Tokens: {0.String}
+    RANDOMIZE_SLIDER_CONFIRMATION = 1549399939
