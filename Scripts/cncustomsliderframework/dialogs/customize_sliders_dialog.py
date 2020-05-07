@@ -30,15 +30,16 @@ from sims4communitylib.dialogs.option_dialogs.options.objects.common_dialog_sele
 from sims4communitylib.enums.icons_enum import CommonIconId
 from sims4communitylib.logging.has_log import HasLog
 from sims4communitylib.mod_support.mod_identity import CommonModIdentity
-from sims4communitylib.services.common_service import CommonService
+from sims4communitylib.utils.common_function_utils import CommonFunctionUtils
 from sims4communitylib.utils.localization.common_localization_utils import CommonLocalizationUtils
 from sims4communitylib.utils.sims.common_sim_name_utils import CommonSimNameUtils
 
 
-class CSFCustomizeSlidersDialog(CommonService, HasLog):
+class CSFCustomizeSlidersDialog(HasLog):
     """ A dialog for changing custom sliders. """
-    def __init__(self) -> None:
+    def __init__(self, on_close: Callable[..., Any]=CommonFunctionUtils.noop):
         super().__init__()
+        self._on_close = on_close
         self.slider_application_service = CSFCustomSliderApplicationService()
         self.slider_registry = CSFCustomSliderRegistry()
 
@@ -52,14 +53,14 @@ class CSFCustomizeSlidersDialog(CommonService, HasLog):
     def log_identifier(self) -> str:
         return 'csf_customize_sliders_dialog'
 
-    def open(self, sim_info: SimInfo, on_close: Callable[..., Any]=None, current_page: int=1) -> None:
+    def open(self, sim_info: SimInfo, page: int=1) -> None:
         """ Open the dialog. """
         self.log.debug('Opening customize sliders dialog for \'{}\'.'.format(CommonSimNameUtils.get_full_name(sim_info)))
 
         def _on_close() -> None:
             self.log.debug('Customize Slider dialog closed.')
-            if on_close is not None:
-                on_close()
+            if self._on_close is not None:
+                self._on_close()
 
         option_dialog = CommonChooseObjectOptionDialog(
             CSFStringId.CUSTOMIZE_SLIDERS,
@@ -70,7 +71,7 @@ class CSFCustomizeSlidersDialog(CommonService, HasLog):
 
         def _reopen_dialog() -> None:
             self.log.debug('Reopening customize sliders dialog.')
-            self.open(sim_info, on_close=on_close, current_page=option_dialog.current_page)
+            self.open(sim_info, page=option_dialog.current_page)
 
         def _on_reset_all_sliders() -> None:
             self.log.debug('Confirming all sliders reset.')
@@ -203,6 +204,6 @@ class CSFCustomizeSlidersDialog(CommonService, HasLog):
 
         option_dialog.show(
             sim_info=sim_info,
-            page=current_page,
+            page=page,
             categories=categories
         )

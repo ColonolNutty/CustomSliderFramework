@@ -96,6 +96,18 @@ class CSFCustomSliderRegistry(CommonService, HasLog):
                     continue
                 yield custom_slider
 
+    def has_available_sliders(self, sim_info: SimInfo) -> bool:
+        """ Determine if sliders are available for the Sim. """
+        if self._loaded_sliders is None or len(self._loaded_sliders) == 0:
+            self._initialize_registry()
+        if sim_info is None:
+            return False
+        for slider in self._loaded_sliders:
+            if not slider.is_available_for(sim_info):
+                continue
+            return True
+        return False
+
     def get_loaded_sliders(self, sim_info: SimInfo) -> Tuple[CSFCustomSlider]:
         """ Retrieve loaded sliders. """
         if self._loaded_sliders is None or len(self._loaded_sliders) == 0:
