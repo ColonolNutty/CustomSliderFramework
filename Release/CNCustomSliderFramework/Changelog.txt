@@ -1,0 +1,3 @@
+Version 1.5:
+- Overhauled the entire back-end for loading and querying Sliders, thus improving the load times as well as the performance of the mod.
+- CSF now requires at least version 1.56 of Sims 4 Community Library
