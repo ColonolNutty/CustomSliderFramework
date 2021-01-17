@@ -7,15 +7,9 @@ https://creativecommons.org/licenses/by-nd/4.0/legalcode
 Copyright (c) COLONOLNUTTY
 """
 # noinspection PyBroadException
-try:
-    # noinspection PyUnresolvedReferences
-    from enum import Int
-except:
-    # noinspection PyMissingOrEmptyDocstring
-    class Int:
-        pass
+from sims4communitylib.enums.enumtypes.common_int import CommonInt
 
 
-class CSFInteractionId(Int):
+class CSFInteractionId(CommonInt):
     """ Interaction identifiers used by CSF. """
     CUSTOMIZE_SLIDERS = 14234589963287049225

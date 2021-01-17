@@ -6,14 +6,13 @@ https://creativecommons.org/licenses/by-nd/4.0/legalcode
 
 Copyright (c) COLONOLNUTTY
 """
-from typing import Callable, Any, Tuple, List
+from typing import Callable, Tuple, List
 
 from cncustomsliderframework.custom_slider_application_service import CSFCustomSliderApplicationService
-from cncustomsliderframework.custom_slider_registry import CSFCustomSliderRegistry
-from cncustomsliderframework.dtos.custom_slider import CSFCustomSlider
+from cncustomsliderframework.dtos.sliders.slider import CSFSlider
 from cncustomsliderframework.enums.string_ids import CSFStringId
 from cncustomsliderframework.modinfo import ModInfo
-from cncustomsliderframework.dtos.slider_category import CSFSliderCategory
+from cncustomsliderframework.enums.slider_category import CSFSliderCategory
 from sims.sim_info import SimInfo
 from sims4communitylib.dialogs.common_choice_outcome import CommonChoiceOutcome
 from sims4communitylib.dialogs.ok_cancel_dialog import CommonOkCancelDialog
@@ -37,11 +36,12 @@ from sims4communitylib.utils.sims.common_sim_name_utils import CommonSimNameUtil
 
 class CSFCustomizeSlidersDialog(HasLog):
     """ A dialog for changing custom sliders. """
-    def __init__(self, on_close: Callable[..., Any]=CommonFunctionUtils.noop):
+    def __init__(self, on_close: Callable[[], None]=CommonFunctionUtils.noop):
+        from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
         super().__init__()
         self._on_close = on_close
         self.slider_application_service = CSFCustomSliderApplicationService()
-        self.slider_registry = CSFCustomSliderRegistry()
+        self._slider_query_utils = CSFSliderQueryUtils()
 
     # noinspection PyMissingOrEmptyDocstring
     @property
@@ -107,14 +107,14 @@ class CSFCustomizeSlidersDialog(HasLog):
                 CommonDialogOptionContext(
                     CSFStringId.RESET_ALL_SLIDERS_NAME,
                     CSFStringId.RESET_ALL_SLIDERS_DESCRIPTION,
-                    tag_list=CSFSliderCategory.get_names()
+                    tag_list=[slider_category.name for slider_category in CSFSliderCategory.values]
                 ),
                 on_chosen=lambda *_, **__: _on_reset_all_sliders(),
                 always_visible=True
             )
         )
 
-        sliders: Tuple[CSFCustomSlider] = CSFCustomSliderRegistry().get_loaded_sliders(sim_info)
+        sliders: Tuple[CSFSlider] = self._slider_query_utils.get_sliders_for_sim(sim_info)
         self.log.debug('Adding slider count {}'.format(len(sliders)))
         sorted_sliders = sorted(sliders, key=lambda s: s.raw_display_name)
         slider_categories: List[CSFSliderCategory] = list()
@@ -157,7 +157,7 @@ class CSFCustomizeSlidersDialog(HasLog):
                         CSFStringId.RANDOMIZE_SLIDER_DESCRIPTION,
                         title_tokens=(slider_category.name, ),
                         description_tokens=(slider_category.name, ),
-                        tag_list=CSFSliderCategory.get_names()
+                        tag_list=[slider_category.name for slider_category in CSFSliderCategory.values]
                     ),
                     on_chosen=_on_randomize_slider_category,
                     always_visible=True
@@ -193,6 +193,7 @@ class CSFCustomizeSlidersDialog(HasLog):
         categories: List[CommonDialogObjectOptionCategory] = list()
 
         for category in object_categories:
+            # noinspection PyTypeChecker
             categories.append(
                 CommonDialogObjectOptionCategory(
                     category,

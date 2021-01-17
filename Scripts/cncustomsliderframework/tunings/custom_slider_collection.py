@@ -7,12 +7,13 @@ https://creativecommons.org/licenses/by-nd/4.0/legalcode
 Copyright (c) COLONOLNUTTY
 """
 import services
-from cncustomsliderframework.dtos.slider_category import CSFSliderCategory
+from cncustomsliderframework.enums.slider_category import CSFSliderCategory
 from sims.sim_info_types import Gender, Age
 from sims4.localization import TunableLocalizedString
 from sims4.resources import Types
 from sims4.tuning.instances import HashedTunedInstanceMetaclass
-from sims4.tuning.tunable import Tunable, TunableList, HasTunableFactory, AutoFactoryInit, TunableEnumSet
+from sims4.tuning.tunable import Tunable, TunableList, HasTunableFactory, AutoFactoryInit, TunableEnumSet, TunableSet
+from sims4.tuning.tunable_base import GroupNames
 from sims4communitylib.enums.common_species import CommonSpecies
 
 
@@ -29,9 +30,10 @@ class CSFCustomSliderInfo(HasTunableFactory, AutoFactoryInit):
         'slider_positive_modifier_id': Tunable(tunable_type=int, default=0),
         'slider_negative_modifier_id': Tunable(tunable_type=int, default=0),
         'available_for_genders': TunableEnumSet(enum_type=Gender, default_enum_list=frozenset((Gender.MALE, Gender.FEMALE))),
-        'available_for_ages': TunableEnumSet(enum_type=Age, default_enum_list=frozenset((Age.TODDLER, Age.CHILD, Age.TEEN, Age.YOUNGADULT, Age.ADULT, Age.ELDER))),
+        'available_for_ages': TunableEnumSet(enum_type=Age, default_enum_list=frozenset((Age.BABY, Age.TODDLER, Age.CHILD, Age.TEEN, Age.YOUNGADULT, Age.ADULT, Age.ELDER))),
         'available_for_species': TunableEnumSet(enum_type=CommonSpecies, default_enum_list=frozenset((CommonSpecies.HUMAN, CommonSpecies.SMALL_DOG, CommonSpecies.LARGE_DOG, CommonSpecies.CAT))),
         'slider_categories': TunableEnumSet(enum_type=CSFSliderCategory, default_enum_list=frozenset((CSFSliderCategory.OTHER,))),
+        'tags': TunableSet(tunable=Tunable(tunable_type=str, default=''), tuning_group=GroupNames.TAG),
     }
 
 

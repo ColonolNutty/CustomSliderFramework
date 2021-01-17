@@ -9,7 +9,7 @@ Copyright (c) COLONOLNUTTY
 import random
 from typing import Iterator
 
-from cncustomsliderframework.dtos.custom_slider import CSFCustomSlider
+from cncustomsliderframework.dtos.sliders.slider import CSFSlider
 from cncustomsliderframework.modinfo import ModInfo
 from protocolbuffers.PersistenceBlobs_pb2 import BlobSimFacialCustomizationData
 from sims.sim_info import SimInfo
@@ -80,7 +80,7 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             existing_modifiers.sculpts.append(sculpt)
         return existing_modifiers
 
-    def get_current_slider_value(self, sim_info: SimInfo, custom_slider: CSFCustomSlider) -> float:
+    def get_current_slider_value(self, sim_info: SimInfo, custom_slider: CSFSlider) -> float:
         """ Retrieve the current value of a facial modifier. """
         if sim_info is None or custom_slider is None:
             return False
@@ -109,7 +109,7 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
                 return body_modifier.amount/0.01
         return 0.0
 
-    def apply_slider(self, sim_info: SimInfo, custom_slider: CSFCustomSlider, amount: float) -> bool:
+    def apply_slider(self, sim_info: SimInfo, custom_slider: CSFSlider, amount: float) -> bool:
         """ Apply a slider to a Sim. """
         try:
             if sim_info is None or custom_slider is None:
@@ -157,29 +157,33 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
 
     def apply_slider_by_name(self, sim_info: SimInfo, name: str, amount: float) -> bool:
         """ Apply a slider with its name. """
-        from cncustomsliderframework.custom_slider_registry import CSFCustomSliderRegistry
+        from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
         self.log.debug('Attempting to apply slider with name {} and amount {}'.format(name, amount))
-        custom_slider = CSFCustomSliderRegistry().find_custom_slider_by_name(sim_info, name)
+        custom_sliders = CSFSliderQueryUtils().get_sliders_by_name(sim_info, name)
+        if not custom_sliders:
+            self.log.debug('No slider found with name: {}'.format(name))
+            return False
+        custom_slider = next(iter(custom_sliders))
         if custom_slider is None:
             self.log.debug('No slider found with name: {}'.format(name))
             return False
         self.log.debug('Slider found, attempting to apply.')
         return self.apply_slider(sim_info, custom_slider, amount)
 
-    def apply_random(self, sim_info: SimInfo, custom_slider: CSFCustomSlider) -> bool:
+    def apply_random(self, sim_info: SimInfo, custom_slider: CSFSlider) -> bool:
         """ Apply a random value for a slider. """
         name = custom_slider.raw_display_name
         amount = random.randint(int(custom_slider.minimum_value), int(custom_slider.maximum_value))
         self.log.debug('Attempting to apply slider with name {} and amount {}'.format(name, amount))
         return self.apply_slider(sim_info, custom_slider, amount)
 
-    def reset_slider(self, sim_info: SimInfo, custom_slider: CSFCustomSlider) -> bool:
+    def reset_slider(self, sim_info: SimInfo, custom_slider: CSFSlider) -> bool:
         """ Reset a Slider to its default for a Sim. """
         return self.apply_slider(sim_info, custom_slider, 0.0)
 
     def reset_all_sliders(self, sim_info: SimInfo) -> bool:
         """ Reset all Custom Sliders for a Sim. """
-        from cncustomsliderframework.custom_slider_registry import CSFCustomSliderRegistry
-        for custom_slider in CSFCustomSliderRegistry().get_loaded_sliders(sim_info):
+        from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
+        for custom_slider in CSFSliderQueryUtils().get_sliders_for_sim(sim_info):
             self.reset_slider(sim_info, custom_slider)
         return True

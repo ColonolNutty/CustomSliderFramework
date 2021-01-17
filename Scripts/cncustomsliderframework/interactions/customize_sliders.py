@@ -38,13 +38,6 @@ class CSFCustomizeSlidersInteraction(CommonImmediateSuperInteraction):
     # noinspection PyMissingOrEmptyDocstring
     @classmethod
     def on_test(cls, interaction_sim: Sim, interaction_target: Any, interaction_context: InteractionContext, **kwargs) -> TestResult:
-        cls.get_log().format_with_message(
-            'Running \'{}\' on_test.'.format(cls.__name__),
-            interaction_sim=interaction_sim,
-            interaction_target=interaction_target,
-            interaction_context=interaction_context,
-            kwargles=kwargs
-        )
         if interaction_target is None or not CommonTypeUtils.is_sim_or_sim_info(interaction_target):
             cls.get_log().debug('Failed, Target is not a Sim.')
             return TestResult.NONE
@@ -53,11 +46,6 @@ class CSFCustomizeSlidersInteraction(CommonImmediateSuperInteraction):
 
     # noinspection PyMissingOrEmptyDocstring
     def on_started(self, interaction_sim: Sim, interaction_target: Sim) -> bool:
-        self.log.format_with_message(
-            'Running \'{}\' on_started.'.format(self.__class__.__name__),
-            interaction_sim=interaction_sim,
-            interaction_target=interaction_target
-        )
         target_sim_info = CommonSimUtils.get_sim_info(interaction_target)
         CSFCustomizeSlidersDialog().open(target_sim_info)
         return True

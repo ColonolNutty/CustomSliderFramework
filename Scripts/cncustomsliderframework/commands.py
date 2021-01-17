@@ -7,7 +7,6 @@ https://creativecommons.org/licenses/by-nd/4.0/legalcode
 Copyright (c) COLONOLNUTTY
 """
 from cncustomsliderframework.custom_slider_application_service import CSFCustomSliderApplicationService
-from cncustomsliderframework.custom_slider_registry import CSFCustomSliderRegistry
 from protocolbuffers import PersistenceBlobs_pb2
 from server_commands.argument_helpers import get_optional_target, OptionalSimInfoParam
 from sims4.commands import Command, CommandType, CheatOutput
@@ -25,13 +24,21 @@ def _csf_apply_slider(slider_name: str, amount: float, opt_sim: OptionalSimInfoP
     output('Applying slider to \'{}\'.'.format(CommonSimNameUtils.get_full_name(sim_info)))
     facial_attributes = PersistenceBlobs_pb2.BlobSimFacialCustomizationData()
     facial_attributes.MergeFromString(sim_info.facial_attributes)
-    custom_slider = CSFCustomSliderRegistry().find_custom_slider_by_name(sim_info, slider_name)
+    from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
+    custom_sliders = CSFSliderQueryUtils().get_sliders_by_name(sim_info, slider_name)
+    if not custom_sliders:
+        output('Invalid Slider! \'{}\''.format(slider_name))
+        output('Available Sliders:')
+        for custom_slider in CSFSliderQueryUtils().get_sliders_for_sim(sim_info):
+            output('>{}'.format(custom_slider.raw_display_name))
+        return False
+    custom_slider = next(iter(custom_sliders))
     if custom_slider is not None:
         output('Slider found.')
     else:
         output('Invalid Slider! \'{}\''.format(slider_name))
         output('Available Sliders:')
-        for custom_slider in CSFCustomSliderRegistry().get_loaded_sliders(sim_info):
+        for custom_slider in CSFSliderQueryUtils().get_sliders_for_sim(sim_info):
             output('>{}'.format(custom_slider.raw_display_name))
         return False
     # noinspection PyBroadException
@@ -52,7 +59,8 @@ def _csf_help(opt_sim: OptionalSimInfoParam=None, _connection: int=None):
         output('Failed, No Sim found!')
         return
     output('Available Sliders:')
-    for custom_slider in CSFCustomSliderRegistry().get_loaded_sliders(sim_info):
+    from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
+    for custom_slider in sorted(CSFSliderQueryUtils().get_sliders_for_sim(sim_info), key=lambda sl: sl.raw_display_name):
         output('>{}'.format(custom_slider.raw_display_name))
     output('Available Commands:')
     output('csf.apply_slider <slider_name> <amount>')
@@ -72,13 +80,21 @@ def _csf_reset_slider(slider_name: str, opt_sim: OptionalSimInfoParam=None, _con
         output('Failed, No Sim found!')
         return False
     output('Resetting slider for \'{}\'.'.format(CommonSimNameUtils.get_full_name(sim_info)))
-    custom_slider = CSFCustomSliderRegistry().find_custom_slider_by_name(sim_info, slider_name)
+    from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
+    custom_sliders = CSFSliderQueryUtils().get_sliders_by_name(sim_info, slider_name)
+    if not custom_sliders:
+        output('Invalid Slider! \'{}\''.format(slider_name))
+        output('Available Sliders:')
+        for custom_slider in CSFSliderQueryUtils().get_sliders_for_sim(sim_info):
+            output('>{}'.format(custom_slider.raw_display_name))
+        return False
+    custom_slider = next(iter(custom_sliders))
     if custom_slider is not None:
         output('Slider found.')
     else:
         output('Invalid Slider! \'{}\''.format(slider_name))
         output('Available Sliders:')
-        for custom_slider in CSFCustomSliderRegistry().get_loaded_sliders(sim_info):
+        for custom_slider in CSFSliderQueryUtils().get_sliders_for_sim(sim_info):
             output('>{}'.format(custom_slider.raw_display_name))
         return False
     CSFCustomSliderApplicationService().reset_slider(sim_info, custom_slider)

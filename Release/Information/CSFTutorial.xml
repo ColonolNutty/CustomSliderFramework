@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Default_Sliders" s="13119357382950656630">
+  <L n="custom_slider_info_list">
+    <U>
+      <!--A String Table Key, this will display on the slider in the Custom Sliders dialog.-->
+      <T n="slider_display_name">0xDA918D52<!--Hand--></T>
+      <!--Raw Text to denote the display name of the slider, it is used when sorting alphabetically, it isn't actually displayed.-->
+      <T n="slider_raw_display_name">Hand</T>
+      <!--Raw Text denoting the author of this Slider.-->
+      <T n="slider_author">ColonolNutty</T>
+      <!-- The Decimal Identifier of an icon to use for the slider in the slider dialog. This should be pointing at a DST Image that is 56x56 pixels in size. If not specified the icon will be a right arrow.-->
+      <T n="slider_icon_id">0</T>
+      <!-- The minimum value allowed to be entered. Default is -100.0 -->
+      <T n="slider_minimum_value">-100.0</T>
+      <!-- The maximum value allowed to be entered. Default is 100.0 -->
+      <T n="slider_maximum_value">100.0</T>
+      <!-- The modifier that will be used when a positive value is entered for a slider. -->
+      <T n="slider_positive_modifier_id">17832649487024862641</T>
+	  <L n="available_for_ages"><!-- Ages this slider is available for. See the Age enum. Excluding this element will default to (BABY, CHILD, TODDLER, TEEN, YOUNGADULT, ADULT, ELDER).-->
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders"><!-- Genders this slider is available for. See the Gender enum. Excluding this element will default to (MALE, FEMALE).-->
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species"><!-- Species this slider is available for. See s4cl.CommonSpecies enum. Excluding this element will default to (HUMAN, CAT, SMALL_DOG, LARGE_DOG).-->
+	    <E>HUMAN</E>
+	    <E>CAT</E>
+	    <E>SMALL_DOG</E>
+	    <E>LARGE_DOG</E>
+	  </L>
+    </U>
+  </L>
+</I>

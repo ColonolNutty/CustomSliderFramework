@@ -7,16 +7,10 @@ https://creativecommons.org/licenses/by-nd/4.0/legalcode
 Copyright (c) COLONOLNUTTY
 """
 # noinspection PyBroadException
-try:
-    # noinspection PyUnresolvedReferences
-    from enum import Int
-except:
-    # noinspection PyMissingOrEmptyDocstring
-    class Int:
-        pass
+from sims4communitylib.enums.enumtypes.common_int import CommonInt
 
 
-class CSFStringId(Int):
+class CSFStringId(CommonInt):
     """ String identifiers used by CSF. """
     CUSTOMIZE_SLIDERS = 3991219124
     CHOOSE_SLIDERS_TO_MODIFY = 2510536869
@@ -35,3 +29,13 @@ class CSFStringId(Int):
     RANDOMIZE_SLIDER_DESCRIPTION = 645050160
     # Tokens: {0.String}
     RANDOMIZE_SLIDER_CONFIRMATION = 1549399939
+
+    LOADING_SLIDERS = 176561745
+    LOADING_SLIDERS_DESCRIPTION = 393250339
+    FINISHED_LOADING_SLIDERS = 4219407949
+    # Tokens: {0.String} (Num of SLIDERS)
+    FINISHED_LOADING_SLIDERS_DESCRIPTION = 3919004570
+
+    SLIDERS_ARE_STILL_LOADING = 1675808145
+    # Tokens: {0.String} (FINISHED_LOADING_SLIDERS)
+    SLIDERS_ARE_STILL_LOADING_DESCRIPTION = 2361048415
