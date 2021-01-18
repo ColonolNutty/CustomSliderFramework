@@ -1,3 +1,6 @@
+Version 1.6:
+- Added a small dialog when there are no sliders found for a Sim or when the sliders are still loading upon opening the Customize Sliders dialog
+
 Version 1.5:
 - Overhauled the entire back-end for loading and querying Sliders, thus improving the load times as well as the performance of the mod.
 - CSF now requires at least version 1.56 of Sims 4 Community Library
