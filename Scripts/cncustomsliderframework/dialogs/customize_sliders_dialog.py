@@ -15,6 +15,7 @@ from cncustomsliderframework.modinfo import ModInfo
 from cncustomsliderframework.enums.slider_category import CSFSliderCategory
 from sims.sim_info import SimInfo
 from sims4communitylib.dialogs.common_choice_outcome import CommonChoiceOutcome
+from sims4communitylib.dialogs.common_ok_dialog import CommonOkDialog
 from sims4communitylib.dialogs.ok_cancel_dialog import CommonOkCancelDialog
 from sims4communitylib.dialogs.option_dialogs.common_choose_object_option_dialog import CommonChooseObjectOptionDialog
 from sims4communitylib.dialogs.option_dialogs.options.common_dialog_option_context import CommonDialogOptionContext
@@ -115,6 +116,24 @@ class CSFCustomizeSlidersDialog(HasLog):
         )
 
         sliders: Tuple[CSFSlider] = self._slider_query_utils.get_sliders_for_sim(sim_info)
+
+        if not sliders:
+            from cncustomsliderframework.sliders.slider_query_registry import CSFSliderQueryRegistry
+            if CSFSliderQueryRegistry()._collecting:
+                CommonOkDialog(
+                    CSFStringId.SLIDERS_ARE_STILL_LOADING,
+                    CSFStringId.SLIDERS_ARE_STILL_LOADING_DESCRIPTION,
+                    description_tokens=(CSFStringId.FINISHED_LOADING_SLIDERS,),
+                    mod_identity=ModInfo.get_identity()
+                ).show()
+            else:
+                CommonOkDialog(
+                    CSFStringId.NO_SLIDERS_FOUND,
+                    CSFStringId.NO_SLIDERS_FOUND,
+                    mod_identity=ModInfo.get_identity()
+                ).show()
+            _on_close()
+            return
         self.log.debug('Adding slider count {}'.format(len(sliders)))
         sorted_sliders = sorted(sliders, key=lambda s: s.raw_display_name)
         slider_categories: List[CSFSliderCategory] = list()
