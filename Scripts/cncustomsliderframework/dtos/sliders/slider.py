@@ -9,12 +9,13 @@ Copyright (c) COLONOLNUTTY
 from pprint import pformat
 from typing import Tuple, List, Union
 
+from sims.sim_info import SimInfo
+from protocolbuffers.Localization_pb2 import LocalizedString
 from cncustomsliderframework.enums.slider_category import CSFSliderCategory
 from cncustomsliderframework.tunings.custom_slider_collection import CSFCustomSliderInfo
-from protocolbuffers.Localization_pb2 import LocalizedString
-from sims.sim_info import SimInfo
-from sims.sim_info_types import Gender, Age
 from sims4communitylib.classes.calculations.common_available_for_sim import CommonAvailableForSim
+from sims4communitylib.enums.common_age import CommonAge
+from sims4communitylib.enums.common_gender import CommonGender
 from sims4communitylib.enums.common_occult_type import CommonOccultType
 from sims4communitylib.enums.common_species import CommonSpecies
 from sims4communitylib.utils.common_log_registry import CommonLog
@@ -250,8 +251,8 @@ class CSFSlider:
             log.warn('No positive or negative modifier id specified for slider \'{}\''.format(error_display_name))
             return None
         categories: Tuple[CSFSliderCategory] = getattr(package_slider, 'slider_categories', tuple())
-        available_for_genders: Tuple[Gender] = tuple(getattr(package_slider, 'available_for_genders', tuple()))
-        available_for_ages: Tuple[Age] = tuple(getattr(package_slider, 'available_for_ages', tuple()))
+        available_for_genders: Tuple[CommonGender] = tuple(getattr(package_slider, 'available_for_genders', tuple()))
+        available_for_ages: Tuple[CommonAge] = tuple([CommonAge.convert_from_vanilla(age) for age in tuple(getattr(package_slider, 'available_for_ages', tuple()))])
         available_for_species: Tuple[CommonSpecies] = tuple(getattr(package_slider, 'available_for_species', tuple()))
         if not available_for_genders and not available_for_ages and not available_for_species:
             log.warn('No Genders, Ages, or Species specified for slider \'{}\''.format(error_display_name))
