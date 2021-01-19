@@ -1,3 +1,6 @@
+Version 1.7:
+- CSF now requires at least version 1.57 of Sims 4 Community Library
+
 Version 1.6:
 - Added a small dialog when there are no sliders found for a Sim or when the sliders are still loading upon opening the Customize Sliders dialog
 
