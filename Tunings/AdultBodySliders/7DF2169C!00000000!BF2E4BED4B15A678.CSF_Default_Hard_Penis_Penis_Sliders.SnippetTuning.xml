@@ -5,7 +5,7 @@
       <T n="slider_display_name">0x6C3C8BDC<!--Hard Penis Size Small/Big (CSF Default)--></T>
       <T n="slider_raw_display_name">Hard_Penis_Size_Small_Big_CSF_Default</T>
       <T n="slider_description">0xE566F79C<!-- Change penis size --></T>
-      <T n="slider_author">ColonolNutty</T>
+      <T n="slider_author">CSF</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">13024784738330615220</T>
@@ -27,7 +27,7 @@
       <T n="slider_display_name">0x18570C2A<!--Hard Penis Size 2 Small/Big (CSF Default)--></T>
       <T n="slider_raw_display_name">Hard_Penis_Size_Small_Big_2_CSF_Default</T>
       <T n="slider_description">0xE566F79C<!-- Change penis size --></T>
-      <T n="slider_author">ColonolNutty</T>
+      <T n="slider_author">CSF</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">10296124817125204702</T>
@@ -49,7 +49,7 @@
       <T n="slider_display_name">0x343034BF<!--Hard Penis Vertical Rotation Down/Up (CSF Default)--></T>
       <T n="slider_raw_display_name">Hard_Penis_Vertical_Rotation_Down_Up_CSF_Default</T>
       <T n="slider_description">0x3CDCDA00<!-- Change penis vertical rotation --></T>
-      <T n="slider_author">ColonolNutty</T>
+      <T n="slider_author">CSF</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">10536643890677355518</T>
