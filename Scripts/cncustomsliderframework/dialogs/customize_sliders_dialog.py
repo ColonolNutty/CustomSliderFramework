@@ -32,7 +32,6 @@ from sims4communitylib.logging.has_log import HasLog
 from sims4communitylib.mod_support.mod_identity import CommonModIdentity
 from sims4communitylib.utils.common_function_utils import CommonFunctionUtils
 from sims4communitylib.utils.localization.common_localization_utils import CommonLocalizationUtils
-from sims4communitylib.utils.sims.common_sim_name_utils import CommonSimNameUtils
 
 
 class CSFCustomizeSlidersDialog(HasLog):
@@ -56,7 +55,7 @@ class CSFCustomizeSlidersDialog(HasLog):
 
     def open(self, sim_info: SimInfo, page: int=1) -> None:
         """ Open the dialog. """
-        self.log.debug('Opening customize sliders dialog for \'{}\'.'.format(CommonSimNameUtils.get_full_name(sim_info)))
+        self.log.format_with_message('Opening customize sliders dialog for Sim.', sim=sim_info)
 
         def _on_close() -> None:
             self.log.debug('Customize Slider dialog closed.')
@@ -135,6 +134,7 @@ class CSFCustomizeSlidersDialog(HasLog):
                 ).show()
             _on_close()
             return
+
         self.log.debug('Adding slider count {}'.format(len(sliders)))
         sorted_sliders = sorted(sliders, key=lambda s: s.name)
         slider_categories: List[CSFSliderCategory] = list()
