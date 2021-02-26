@@ -14,7 +14,7 @@ from cncustomsliderframework.sliders.slider_query_registry import CSFSliderQuery
 from cncustomsliderframework.sliders.slider_tag_type import CSFSliderTagType
 
 
-@CSFSliderQueryRegistry.register_tag_handler(filter_type=CSFSliderTagType.UNIQUE_IDENTIFIER)
+@CSFSliderQueryRegistry.register_tag_handler(tag_type=CSFSliderTagType.UNIQUE_IDENTIFIER)
 class CSFUniqueIdentifierTagHandler(CSFSliderTagHandler):
     """ Tags. """
 

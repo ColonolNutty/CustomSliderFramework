@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Vanilla_LargeDog_Head_Sliders" s="18341285488801409895">
+  <L n="custom_slider_info_list">
+    <U>
+      <T n="slider_display_name">0x4CFF791A<!--Head Small/Large--></T>
+      <T n="slider_raw_display_name">Head_Small_Large_LargeDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">10541610716969781196</T>
+      <T n="slider_negative_modifier_id">9136839907808134132</T>
+	  <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>LARGE_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xCFC4755E<!--Head Narrow/Wide--></T>
+      <T n="slider_raw_display_name">Head_Narrow_Wide_LargeDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">10792369077524055148</T>
+      <T n="slider_negative_modifier_id">7802590549669414606</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>LARGE_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x8643614B<!--Head Crown Flat/Dome--></T>
+      <T n="slider_raw_display_name">Head_Crown_Flat_Dome_LargeDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">3952162922907090745</T>
+      <T n="slider_negative_modifier_id">5281949669115497845</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>LARGE_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x70110E22<!--Head Skull Point--></T>
+      <T n="slider_raw_display_name">Head_Skull_Point_LargeDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">9265249226011012964</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>LARGE_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x19435AB0<!--Head Skull Split--></T>
+      <T n="slider_raw_display_name">Head_Skull_Split_LargeDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">510697923985708078</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>LARGE_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x628FE533<!--Head Lean/Full--></T>
+      <T n="slider_raw_display_name">Head_Lean_Full_LargeDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">5834139293447385636</T>
+      <T n="slider_negative_modifier_id">9502601565884475407</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>LARGE_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x35D48AEE<!--Neck Short--></T>
+      <T n="slider_raw_display_name">Neck_Short_LargeDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">17448997511301386304</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>LARGE_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xF34004E9<!--Neck Thin/Thick--></T>
+      <T n="slider_raw_display_name">Neck_Thin_Thick_LargeDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">11410117806150676613</T>
+      <T n="slider_negative_modifier_id">11060354431975213143</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>LARGE_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x0DAC9039<!--Jaw Round/Square--></T>
+      <T n="slider_raw_display_name">Jaw_Round_Square_LargeDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">13561139455142027930</T>
+      <T n="slider_negative_modifier_id">4519124348910135969</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>LARGE_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x43FE7ADD<!--Jaw Underbite--></T>
+      <T n="slider_raw_display_name">Jaw_Underbite_LargeDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">9508479311014122149</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>LARGE_DOG</E>
+	  </L>
+    </U>
+  </L>
+</I>

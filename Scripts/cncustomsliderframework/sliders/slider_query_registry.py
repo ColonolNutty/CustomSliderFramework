@@ -7,8 +7,6 @@ https://creativecommons.org/licenses/by-nd/4.0/legalcode
 Copyright (c) COLONOLNUTTY
 """
 import collections
-import time
-from threading import Thread
 from typing import List, Dict, Any, Tuple, Set, Callable
 
 from cncustomsliderframework.dtos.sliders.slider import CSFSlider
@@ -20,7 +18,9 @@ from cncustomsliderframework.sliders.query.tag_handlers.slider_tag_handler impor
 from cncustomsliderframework.sliders.slider_tag_type import CSFSliderTagType
 from cncustomsliderframework.sliders.tag_filters.slider_tag_filter import CSFSliderTagFilter
 from sims4.commands import Command, CheatOutput, CommandType
+from sims4communitylib.classes.time.common_stop_watch import CommonStopWatch
 from sims4communitylib.events.event_handling.common_event_registry import CommonEventRegistry
+from sims4communitylib.events.interval.common_interval_event_service import CommonIntervalEventRegistry
 from sims4communitylib.events.zone_spin.events.zone_late_load import S4CLZoneLateLoadEvent
 from sims4communitylib.logging.has_log import HasLog
 from sims4communitylib.mod_support.mod_identity import CommonModIdentity
@@ -66,18 +66,28 @@ class CSFSliderQueryRegistry(CommonService, HasLog):
         self._all: List[CSFSlider] = list()
         self._registry = CSFSliderRegistry()
 
-    def add_tag_handler(self, tag_handler_init: Callable[[CSFSliderTagType], CSFSliderTagHandler], tag: CSFSliderTagType):
-        """ Add a query filter. """
+    def add_tag_handler(
+        self,
+        tag_handler_init: Callable[[CSFSliderTagType], CSFSliderTagHandler],
+        tag: CSFSliderTagType
+    ):
+        """ Add a tag handler. """
         self.__tag_handlers.append(tag_handler_init(tag))
 
-    def create_query(self, slider_filters: Tuple[CSFSliderTagFilter], query_type: CSFQueryType=CSFQueryType.ALL_INTERSECT_ANY_MUST_HAVE_ONE) -> CSFSliderQuery:
+    def create_query(
+        self,
+        slider_filters: Tuple[CSFSliderTagFilter],
+        query_type: CSFQueryType=CSFQueryType.ALL_INTERSECT_ANY_MUST_HAVE_ONE
+    ) -> CSFSliderQuery:
         """ Create a query for sliders. """
         return CSFSliderQuery(slider_filters, query_type=query_type)
 
     def has_sliders(self, queries: Tuple[CSFSliderQuery]) -> bool:
         """ Determine if sliders are available for tags. """
         self.log.format_with_message('Checking if has sliders', queries=queries)
-        return any(self.get_sliders(queries))
+        for _ in self.get_sliders(queries):
+            return True
+        return False
 
     def get_all_sliders(self) -> Tuple[CSFSlider]:
         """ Get all sliders. """
@@ -86,7 +96,7 @@ class CSFSliderQueryRegistry(CommonService, HasLog):
         return tuple(self._all)
 
     def get_sliders(self, queries: Tuple[CSFSliderQuery]) -> Set[CSFSlider]:
-        """ Query for sliders. """
+        """ Retrieve sliders matching the queries. """
         self.log.format_with_message('Getting sliders', queries=queries)
         if self._collecting:
             return set()
@@ -117,7 +127,8 @@ class CSFSliderQueryRegistry(CommonService, HasLog):
                 self.log.debug('Before intersect for all_tags {}'.format(len(found_slider_identifiers)))
                 new_found_sliders = found_slider_identifiers & new_found_sliders
                 self.log.debug('After intersect for all_tags {}'.format(len(new_found_sliders)))
-
+            else:
+                self.log.debug('Found with all_tags {}'.format(len(new_found_sliders)))
             found_slider_identifiers = new_found_sliders
 
         if found_slider_identifiers is None and all_tags:
@@ -210,25 +221,28 @@ class CSFSliderQueryRegistry(CommonService, HasLog):
     def _organize(self, sliders: Tuple[CSFSlider]):
         self.log.debug('Collecting Sliders Query Data...')
         self.slider_library.clear()
+        new_slider_library = dict()
+        tag_handlers = tuple(self._tag_handlers)
         for slider in sliders:
-            self.log.debug('Handling tags for slider {}'.format(slider.raw_display_name))
+            self.log.format_with_message('Handling tags for Slider', cas_part=slider.name)
             slider_identifier = slider.unique_identifier
-            slider_keys = list()
-            for slider_tag_handler in self._tag_handlers:
-                if not slider_tag_handler.applies(slider):
+            slider_tag_keys = list()
+            for tag_handler in tag_handlers:
+                if not tag_handler.applies(slider):
                     continue
-                tag_type = slider_tag_handler.tag_type
-                for slider_tag in slider_tag_handler.get_tags(slider):
+                tag_type = tag_handler.tag_type
+                for slider_tag in tag_handler.get_tags(slider):
                     tag_key = (tag_type, slider_tag)
-                    slider_keys.append(tag_key)
-                    if tag_key not in self.slider_library:
-                        self.slider_library[tag_key] = set()
-                    if slider_identifier in self.slider_library[tag_key]:
+                    slider_tag_keys.append(tag_key)
+                    if tag_key not in new_slider_library:
+                        new_slider_library[tag_key] = set()
+                    if slider_identifier in new_slider_library[tag_key]:
                         continue
-                    self.slider_library[tag_key].add(slider_identifier)
-            self.log.format_with_message('Applied tags to slider.', display_name=slider.raw_display_name, keys=slider_keys)
+                    new_slider_library[tag_key].add(slider_identifier)
+            self.log.format_with_message('Applied tags to slider.', display_name=slider.name, keys=slider_tag_keys)
 
-        self.log.format_with_message('Completed collecting Sliders Query Data.', slider_library=self.slider_library)
+        self.log.format_with_message('Completed collecting Sliders Query Data.', slider_library=new_slider_library)
+        self.slider_library = new_slider_library
 
     def trigger_collection(self, show_loading_notification: bool=True) -> None:
         """trigger_collection(show_loading_notification=True)
@@ -256,42 +270,47 @@ class CSFSliderQueryRegistry(CommonService, HasLog):
             except Exception as ex:
                 self.log.error('Error occurred while collecting sliders.', exception=ex)
                 self._collecting = False
-        thread = Thread(target=_recollect_data)
-        thread.daemon = True
-        thread.start()
+        _recollect_data()
 
     def _collect(self) -> int:
         if self._collecting:
             return -1
         self._collecting = True
         try:
-            ts = time.perf_counter()
-            sliders = self._registry.collect()
+            stop_watch = CommonStopWatch()
+            stop_watch.start()
+            self._all = tuple(self._registry.sliders.values())
             self.log.format_with_message(
-                'Loaded sliders',
-                all_list=sliders,
+                'Loaded Sliders',
+                all_list=self._all,
             )
-            if self.log.enabled:
-                self.log.debug('Took {}s to collect sliders.'.format('%.3f' % (time.perf_counter() - ts)))
-            self._all = sliders
-            ts = time.perf_counter()
+            enabled = self.log.enabled
+            self.log.enable()
+            self.log.debug('Took {}s to collect {} Sliders.'.format('%.3f' % (stop_watch.stop()), len(self._all)))
+            if not enabled:
+                self.log.disable()
+            stop_watch.start()
             self._organize(self._all)
+            self._collecting = False
+            self.log.enable()
+            self.log.debug('Took {}s to organize Sliders'.format('%.3f' % (stop_watch.stop())))
+            if not enabled:
+                self.log.disable()
             if self.log.enabled:
-                self.log.debug('Took {}s to organize sliders'.format('%.3f' % (time.perf_counter() - ts)))
-                self.log.debug('Loaded {} sliders.'.format(len(self._all)))
+                self.log.debug('Loaded {} Sliders.'.format(len(self._all)))
             return len(self._all)
         except Exception as ex:
-            self.log.error('Error occurred while collecting sliders.', exception=ex)
+            self.log.error('Error occurred while collecting Sliders.', exception=ex)
             return -1
         finally:
             self._collecting = False
 
     @classmethod
-    def register_tag_handler(cls, filter_type: CSFSliderTagType) -> Callable[[Any], Any]:
+    def register_tag_handler(cls, tag_type: CSFSliderTagType) -> Callable[[Any], Any]:
         """ Register a tag handler. """
-        def _method_wrapper(slider_filter: Callable[[CSFSliderTagType], CSFSliderTagHandler]):
-            cls().add_tag_handler(slider_filter, filter_type)
-            return slider_filter
+        def _method_wrapper(tag_handler_callback: Callable[[CSFSliderTagType], CSFSliderTagHandler]):
+            cls().add_tag_handler(tag_handler_callback, tag_type)
+            return tag_handler_callback
         return _method_wrapper
 
     @staticmethod
@@ -302,6 +321,15 @@ class CSFSliderQueryRegistry(CommonService, HasLog):
             return False
         CSFSliderQueryRegistry().trigger_collection(show_loading_notification=False)
         return True
+
+    @staticmethod
+    @CommonIntervalEventRegistry.run_once(ModInfo.get_identity(), milliseconds=10)
+    def _show_sliders_loading_notification_on_first_update() -> None:
+        if CSFSliderQueryRegistry()._collecting:
+            CommonBasicNotification(
+                CSFStringId.LOADING_SLIDERS,
+                CSFStringId.LOADING_SLIDERS_DESCRIPTION
+            ).show()
 
 
 @Command('csf.reload_sliders', command_type=CommandType.Live)

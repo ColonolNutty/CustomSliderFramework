@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Vanilla_SmallDog_Ears_Sliders" s="17135597466438784370">
+  <L n="custom_slider_info_list">
+    <U>
+      <T n="slider_display_name">0x98A82E75<!--Ear Rotation In/Out--></T>
+      <T n="slider_raw_display_name">Ears_Rotate_In_Out_SmallDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">9632975648624229838</T>
+      <T n="slider_negative_modifier_id">16916606650123220019</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>SMALL_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xFF57084F<!--Ear Size Small/Large--></T>
+      <T n="slider_raw_display_name">Ears_Size_Small_Large_SmallDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">5179975589320542469</T>
+      <T n="slider_negative_modifier_id">8500164458533019325</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>SMALL_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xE908DC5B<!--Ear Size Narrow/Wide--></T>
+      <T n="slider_raw_display_name">Ears_Size_Narrow_Wide_SmallDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">4342417250274411077</T>
+      <T n="slider_negative_modifier_id">9600400438664329661</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>SMALL_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x442B7AED<!--Ear Size Short/Long--></T>
+      <T n="slider_raw_display_name">Ears_Size_Short_Long_SmallDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">17388616396273962458</T>
+      <T n="slider_negative_modifier_id">6635266293742282582</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>SMALL_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x30EA7908<!--Ear Side/Top--></T>
+      <T n="slider_raw_display_name">Ears_Side_Top_SmallDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">9121400182834403945</T>
+      <T n="slider_negative_modifier_id">1769027877306257817</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>SMALL_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xAE4DE7A5<!--Ears Up Tip Flop--></T>
+      <T n="slider_raw_display_name">Ears_UpTipFlop_SmallDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">6019650425893233633</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>SMALL_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xD30F3EE2<!--Ears Down Mod--></T>
+      <T n="slider_raw_display_name">Ears_DownMod_SmallDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">3775055541722236666</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>SMALL_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xFE47DB4F<!--Ears Back--></T>
+      <T n="slider_raw_display_name">Ears_Back_SmallDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">8310723631613526615</T>
+      <L n="slider_categories">
+        <E>FACE</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>SMALL_DOG</E>
+	  </L>
+    </U>
+  </L>
+</I>

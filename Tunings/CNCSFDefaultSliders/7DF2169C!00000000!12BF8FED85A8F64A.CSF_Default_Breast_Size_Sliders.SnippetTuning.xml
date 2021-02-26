@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Default_Breast_Size_Sliders" s="1350956663546902090">
+  <L n="custom_slider_info_list">
+    <U>
+      <T n="slider_display_name">0x5946D91F<!--Breast Size Small/Big (CSF Default)--></T>
+      <T n="slider_raw_display_name">Breast_Size_Small_Big_CSF_Default</T>
+      <T n="slider_description">0x61C9BA59</T>
+      <T n="slider_author">CSF</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">17409725556757345916</T>
+      <T n="slider_negative_modifier_id">16419776751737088495</T>
+	  <L n="slider_categories">
+	    <E>BODY</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x412F3506<!--Breast Vertical Rotation Down/Up (CSF Default)--></T>
+      <T n="slider_raw_display_name">Breast_Vertical_Rotation_Down_Up_CSF_Default</T>
+      <T n="slider_description">0xF317C2E3</T>
+      <T n="slider_author">CSF</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">12750319751461700392</T>
+      <T n="slider_negative_modifier_id">12178308043115561936</T>
+	  <L n="slider_categories">
+	    <E>BODY</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x54CCB046<!--Breast Separation In/Out (CSF Default)--></T>
+      <T n="slider_raw_display_name">Breast_Separation_In_Out_CSF_Default</T>
+      <T n="slider_description">0x55C5F7A8</T>
+      <T n="slider_author">CSF</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">14348896741668569854</T>
+      <T n="slider_negative_modifier_id">14766054170565856715</T>
+	  <L n="slider_categories">
+	    <E>BODY</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x6D8847D1<!--Breast Vertical Position Down/Up (CSF Default)--></T>
+      <T n="slider_raw_display_name">Breast_Vertical_Position_Down_Up_CSF_Default</T>
+      <T n="slider_description">0xC810D081</T>
+      <T n="slider_author">CSF</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">11624787769210868957</T>
+      <T n="slider_negative_modifier_id">16410734589395685386</T>
+      <L n="slider_categories">
+        <E>BODY</E>
+      </L>
+      <L n="available_for_ages">
+        <E>TEEN</E>
+        <E>YOUNGADULT</E>
+        <E>ADULT</E>
+        <E>ELDER</E>
+      </L>
+      <L n="available_for_species">
+        <E>HUMAN</E>
+      </L>
+    </U>
+  </L>
+</I>

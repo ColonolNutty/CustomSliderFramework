@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Vanilla_Cat_Head_Sliders" s="8751531314893795416">
+  <L n="custom_slider_info_list">
+    <U>
+      <T n="slider_display_name">0x1CF9F447<!--Head Size Small/Large--></T>
+      <T n="slider_raw_display_name">Head_Size_Small_Large_Cat_CSF_Vanilla</T>
+      <T n="slider_description">0x6B871754<!-- Change head size --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">5262280578217352965</T>
+      <T n="slider_negative_modifier_id">12945754096946812573</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>CAT</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xCA61425C<!--Head Width Narrow--></T>
+      <T n="slider_raw_display_name">Head_Shape_Narrow_Cat_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">3289864217409210141</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>CAT</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xFAFFF610<!--Head Shape Square/Round--></T>
+      <T n="slider_raw_display_name">Head_Shape_Square_Round_Cat_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">5240468034125897525</T>
+      <T n="slider_negative_modifier_id">9604168905492947960</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>CAT</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xD400E0DF<!--Head Shape Indented/Pointy--></T>
+      <T n="slider_raw_display_name">Head_Shape_Indented_Pointy_Cat_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">8793255189526652322</T>
+      <T n="slider_negative_modifier_id">6620845013388036383</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>CAT</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x8828CADC<!--Head Shape Lean/Full--></T>
+      <T n="slider_raw_display_name">Head_Shape_Lean_Full_Cat_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">13104263451966608055</T>
+      <T n="slider_negative_modifier_id">16765070924449606696</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>CAT</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xC7519D78<!--Head Shape Correction--></T>
+      <T n="slider_raw_display_name">Head_Shape_Correction_Cat_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">5729867082078605344</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>CAT</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x79D06DF5<!--Neck Shape Short--></T>
+      <T n="slider_raw_display_name">Neck_Shape_Short_Cat_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">16889299401629543521</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>CAT</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x1EFF25E0<!--Neck Shape Thin--></T>
+      <T n="slider_raw_display_name">Neck_Shape_Thin_Cat_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">8594750171191900612</T>
+	  <L n="slider_categories">
+	    <E>FACE</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>CAT</E>
+	  </L>
+    </U>
+  </L>
+</I>

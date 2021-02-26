@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Vanilla_Belly_Sliders" s="16423320475383051473">
+  <L n="custom_slider_info_list">
+    <!--Belly Size Small/Big-->
+    <U>
+      <T n="slider_display_name">0xC2A0363C<!--Belly Size Small/Big--></T>
+      <T n="slider_raw_display_name">Belly_Size_Small_Big_Female_CSF_Vanilla</T>
+      <T n="slider_description">0x90EDDEBF<!-- Change belly size --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">16391756994022883177</T>
+      <T n="slider_negative_modifier_id">15575175292544645782</T>
+	  <L n="slider_categories">
+	    <E>BODY</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xC2A0363C<!--Belly Size Small/Big--></T>
+      <T n="slider_raw_display_name">Belly_Size_Small_Big_Male_CSF_Vanilla</T>
+      <T n="slider_description">0x90EDDEBF<!-- Change belly size --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">5705220627947342604</T>
+      <T n="slider_negative_modifier_id">167019263877688587</T>
+	  <L n="slider_categories">
+	    <E>BODY</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TODDLER</E>
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <!--Belly Shape Pregnant-->
+    <U>
+      <T n="slider_display_name">0xC024560F<!--Belly Shape Pregnant--></T>
+      <T n="slider_raw_display_name">Belly_Shape_Pregnant_Female_CSF_Vanilla</T>
+      <T n="slider_description">0xCC275EE1<!-- Change belly shape pregnant --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">7820304832749714014</T>
+	  <L n="slider_categories">
+	    <E>BODY</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xC024560F<!--Belly Shape Pregnant--></T>
+      <T n="slider_raw_display_name">Belly_Shape_Pregnant_Male_CSF_Vanilla</T>
+      <T n="slider_description">0xCC275EE1<!-- Change belly shape pregnant --></T>
+      <T n="slider_author">Maxis</T>
+      <T n="slider_minimum_value">0.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">17572369455932934659</T>
+	  <L n="slider_categories">
+	    <E>BODY</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+  </L>
+</I>

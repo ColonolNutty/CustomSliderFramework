@@ -6,7 +6,7 @@ https://creativecommons.org/licenses/by-nd/4.0/legalcode
 
 Copyright (c) COLONOLNUTTY
 """
-from typing import Tuple, Iterator
+from typing import Tuple, Iterator, Union
 
 from cncustomsliderframework.dtos.sliders.slider import CSFSlider
 from cncustomsliderframework.enums.query_type import CSFQueryType
@@ -41,11 +41,17 @@ class CSFSliderQueryUtils(HasLog):
     def __init__(self) -> None:
         super().__init__()
         from cncustomsliderframework.sliders.slider_query_registry import CSFSliderQueryRegistry
+        from cncustomsliderframework.sliders.slider_registry import CSFSliderRegistry
         self._query_registry = CSFSliderQueryRegistry()
+        self._registry = CSFSliderRegistry()
 
     def get_all(self) -> Tuple[CSFSlider]:
         """ Get all Sliders. """
         return self._query_registry.get_all_sliders()
+
+    def locate_by_identifier(self, identifier: str) -> Union[CSFSlider, None]:
+        """ Locate a Slider by its identifier. """
+        return self._registry.locate_by_identifier(identifier)
 
     def get_sliders_by_name(
         self,

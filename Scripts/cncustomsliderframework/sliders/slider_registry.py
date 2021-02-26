@@ -6,11 +6,12 @@ https://creativecommons.org/licenses/by-nd/4.0/legalcode
 
 Copyright (c) COLONOLNUTTY
 """
-from typing import Iterator, Tuple, Dict, List, Union
+from typing import Iterator, Dict, List, Union
 
 from cncustomsliderframework.dtos.sliders.slider import CSFSlider
 from cncustomsliderframework.modinfo import ModInfo
 from cncustomsliderframework.sliders.slider_loaders.base_slider_loader import CSFBaseSliderLoader
+from sims4.commands import CheatOutput, Command, CommandType
 from sims4communitylib.logging.has_log import HasLog
 from sims4communitylib.mod_support.mod_identity import CommonModIdentity
 from sims4communitylib.services.common_service import CommonService
@@ -18,6 +19,15 @@ from sims4communitylib.services.common_service import CommonService
 
 class CSFSliderRegistry(CommonService, HasLog):
     """ A registry that contains sliders. """
+    def __init__(self) -> None:
+        super().__init__()
+        self._loaded = False
+        self.sliders: Dict[str, CSFSlider] = None
+        from cncustomsliderframework.sliders.slider_loaders.csf_slider_loader import \
+            CSFCustomSliderFrameworkSliderLoader
+        self._slider_loaders: List[CSFBaseSliderLoader] = list((
+            CSFCustomSliderFrameworkSliderLoader(),
+        ))
 
     # noinspection PyMissingOrEmptyDocstring
     @property
@@ -29,26 +39,16 @@ class CSFSliderRegistry(CommonService, HasLog):
     def log_identifier(self) -> str:
         return 'csf_slider_registry'
 
-    def __init__(self) -> None:
-        from cncustomsliderframework.sliders.slider_loaders.csf_slider_loader import CSFCustomSliderFrameworkSliderLoader
-        super().__init__()
-        self._loaded = False
-        self._slider_loaders: List[CSFBaseSliderLoader] = list((
-            CSFCustomSliderFrameworkSliderLoader(),
-        ))
-        self._slider_cache: Dict[str, Dict[str, CSFSlider]] = dict()
-        self.sliders: Dict[str, CSFSlider] = None
-
     @property
     def sliders(self) -> Dict[str, CSFSlider]:
         """A library of sliders organized by their identifiers."""
-        if self.__sliders is None:
+        if self._sliders is None:
             self.load()
-        return self.__sliders
+        return self._sliders
 
     @sliders.setter
     def sliders(self, value: Dict[str, CSFSlider]):
-        self.__sliders = value
+        self._sliders = value
 
     @property
     def slider_loaders(self) -> List[CSFBaseSliderLoader]:
@@ -67,6 +67,22 @@ class CSFSliderRegistry(CommonService, HasLog):
         slider_registry.slider_loaders.append(slider_loader)
         return True
 
+    def add_slider(self, slider: CSFSlider) -> bool:
+        """add_slider(slider)
+
+        Add a Slider to the registry.
+
+        :param slider: An instance of a Slider
+        :type slider: CSFSlider
+        :return: True, if the slider was successfully added. False, if not.
+        :rtype: bool
+        """
+        unique_id = slider.unique_identifier
+        if unique_id in self.sliders:
+            return False
+        self.sliders[unique_id] = slider
+        return True
+
     def load(self) -> None:
         """ Load data. """
         if self._loaded:
@@ -75,6 +91,9 @@ class CSFSliderRegistry(CommonService, HasLog):
 
             sliders_library: Dict[str, CSFSlider] = dict()
             for slider in self._load():
+                identifier = slider.unique_identifier
+                if identifier in sliders_library:
+                    continue
                 self._add_additional_slider_data(slider)
                 sliders_library[slider.unique_identifier] = slider
 
@@ -86,6 +105,8 @@ class CSFSliderRegistry(CommonService, HasLog):
     def _load(self) -> Iterator[CSFSlider]:
         for slider_loader in self.slider_loaders:
             for slider in slider_loader.load():
+                if slider is None:
+                    continue
                 yield slider
 
     def _get_sliders(self) -> Iterator[CSFSlider]:
@@ -94,20 +115,20 @@ class CSFSliderRegistry(CommonService, HasLog):
 
     def locate_by_identifier(self, identifier: str) -> Union[CSFSlider, None]:
         """Locate a slider by an identifier."""
-        if identifier not in self.sliders:
-            return None
-        return self.sliders[identifier]
-
-    def collect(self) -> Tuple[CSFSlider]:
-        """ Collect sliders. """
-        try:
-            self.log.debug('Collecting sliders...')
-            return tuple(self._get_sliders())
-        except Exception as ex:
-            self.log.error('Error while collecting sliders.', exception=ex)
-            return tuple()
+        return self.sliders.get(identifier, None)
 
     # noinspection PyUnusedLocal
     def _add_additional_slider_data(self, slider: CSFSlider) -> None:
-        self.log.debug('Adding additional slider data...')
+        self.log.debug('Adding additional slider data')
         pass
+
+
+@Command('csf.show_sliders', command_type=CommandType.Live)
+def _csf_show_sliders(_connection: int=None):
+    output = CheatOutput(_connection)
+    output('Showing loaded Sliders')
+    CSFSliderRegistry().log.enable()
+    for (unique_id, slider) in CSFSliderRegistry().sliders.items():
+        CSFSliderRegistry().log.debug(repr(slider))
+    CSFSliderRegistry().log.disable()
+    output('Done showing loaded Sliders.')

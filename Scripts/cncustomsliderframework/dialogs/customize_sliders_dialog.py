@@ -67,7 +67,8 @@ class CSFCustomizeSlidersDialog(HasLog):
             CSFStringId.CUSTOMIZE_SLIDERS,
             CSFStringId.CHOOSE_SLIDERS_TO_MODIFY,
             mod_identity=self.mod_identity,
-            on_close=_on_close
+            on_close=_on_close,
+            per_page=400
         )
 
         def _reopen_dialog() -> None:
@@ -135,7 +136,7 @@ class CSFCustomizeSlidersDialog(HasLog):
             _on_close()
             return
         self.log.debug('Adding slider count {}'.format(len(sliders)))
-        sorted_sliders = sorted(sliders, key=lambda s: s.raw_display_name)
+        sorted_sliders = sorted(sliders, key=lambda s: s.name)
         slider_categories: List[CSFSliderCategory] = list()
         object_categories: List[str] = list()
         for custom_slider in sorted_sliders:
@@ -193,7 +194,7 @@ class CSFCustomizeSlidersDialog(HasLog):
 
             option_dialog.add_option(
                 CommonDialogInputFloatOption(
-                    custom_slider.raw_display_name,
+                    custom_slider.unique_identifier,
                     self.slider_application_service.get_current_slider_value(sim_info, custom_slider),
                     CommonDialogOptionContext(
                         custom_slider.display_name,
