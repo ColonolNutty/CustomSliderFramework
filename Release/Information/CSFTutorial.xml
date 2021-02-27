@@ -16,7 +16,7 @@
       <T n="slider_maximum_value">100.0</T>
       <!-- The modifier that will be used when a positive value is entered for a slider. -->
       <T n="slider_positive_modifier_id">17832649487024862641</T>
-	  <L n="available_for_ages"><!-- Ages this slider is available for. See the Age enum. Excluding this element will default to (BABY, CHILD, TODDLER, TEEN, YOUNGADULT, ADULT, ELDER).-->
+	  <L n="available_for_ages"><!-- Ages this slider is available for. See the s4cl.CommonAge enum. Excluding this element will default to (BABY, CHILD, TODDLER, TEEN, YOUNGADULT, ADULT, ELDER).-->
 	    <E>CHILD</E>
 	    <E>TODDLER</E>
 	    <E>TEEN</E>
@@ -28,7 +28,7 @@
 	    <E>MALE</E>
 	    <E>FEMALE</E>
 	  </L>
-	  <L n="available_for_species"><!-- Species this slider is available for. See s4cl.CommonSpecies enum. Excluding this element will default to (HUMAN, CAT, SMALL_DOG, LARGE_DOG).-->
+	  <L n="available_for_species"><!-- Species this slider is available for. See the s4cl.CommonSpecies enum. Excluding this element will default to (HUMAN, CAT, SMALL_DOG, LARGE_DOG).-->
 	    <E>HUMAN</E>
 	    <E>CAT</E>
 	    <E>SMALL_DOG</E>

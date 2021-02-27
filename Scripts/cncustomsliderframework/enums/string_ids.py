@@ -77,3 +77,6 @@ class CSFStringId(CommonInt):
 
     NO_SLIDERS_DETECTED_NAME = 3109711885
     NO_SLIDERS_DETECTED_DESCRIPTION = 3333739470
+
+    # Tokens: {0.String} (Template Name) {1.String} (Age) {2.String} (Species)
+    TEMPLATE_DISPLAY_NAME_AGE_SPECIES = 901356426

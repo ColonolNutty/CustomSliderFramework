@@ -80,8 +80,30 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             existing_modifiers.sculpts.append(sculpt)
         return existing_modifiers
 
+    def get_current_slider_value_by_identifier(self, sim_info: SimInfo, identifier: str) -> float:
+        """ Retrieve the current value of a slider by its identifier. """
+        from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
+        custom_slider = CSFSliderQueryUtils().locate_by_identifier(identifier)
+        if custom_slider is None:
+            self.log.debug('No slider found with identifier: {}'.format(identifier))
+            return False
+        return self.get_current_slider_value(sim_info, custom_slider)
+
+    def get_current_slider_value_by_name(self, sim_info: SimInfo, slider_name: str) -> float:
+        """ Retrieve the current value of a slider by its name. """
+        from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
+        custom_sliders = CSFSliderQueryUtils().get_sliders_by_name(sim_info, slider_name)
+        if not custom_sliders:
+            self.log.debug('No sliders found with name: {}'.format(slider_name))
+            return False
+        custom_slider = next(iter(custom_sliders))
+        if custom_slider is None:
+            self.log.debug('No slider found with name: {}'.format(slider_name))
+            return False
+        return self.get_current_slider_value(sim_info, custom_slider)
+
     def get_current_slider_value(self, sim_info: SimInfo, custom_slider: CSFSlider) -> float:
-        """ Retrieve the current value of a facial modifier. """
+        """ Retrieve the current value of a slider. """
         if sim_info is None or custom_slider is None:
             return False
         facial_attributes = self._get_facial_attributes(sim_info)
@@ -165,7 +187,7 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
         self.log.debug('Attempting to apply slider with name {} and amount {}'.format(name, amount))
         custom_sliders = CSFSliderQueryUtils().get_sliders_by_name(sim_info, name)
         if not custom_sliders:
-            self.log.debug('No slider found with name: {}'.format(name))
+            self.log.debug('No sliders found with name: {}'.format(name))
             return False
         custom_slider = next(iter(custom_sliders))
         if custom_slider is None:

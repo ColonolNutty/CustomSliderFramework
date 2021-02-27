@@ -8,18 +8,14 @@ Copyright (c) COLONOLNUTTY
 """
 from typing import Callable, Any, Union
 from sims.sim_info import SimInfo
-from event_testing.results import TestResult
 from protocolbuffers.Localization_pb2 import LocalizedString
 from cncustomsliderframework.dialogs.customize_sliders_dialog import CSFCustomizeSlidersDialog
-from cncustomsliderframework.interactions.customize_sliders import CSFCustomizeSlidersInteraction
 from cncustomsliderframework.modinfo import ModInfo
 from cncustomsliderframework.enums.string_ids import CSFStringId
 from sims4communitylib.mod_support.mod_identity import CommonModIdentity
 from sims4communitylib.utils.common_function_utils import CommonFunctionUtils
 from sims4communitylib.utils.common_type_utils import CommonTypeUtils
 from sims4communitylib.utils.sims.common_sim_utils import CommonSimUtils
-from sims4communitylib.utils.common_injection_utils import CommonInjectionUtils
-from sims4communitylib.utils.common_log_registry import CommonLogRegistry
 
 # noinspection PyBroadException
 try:
@@ -72,13 +68,5 @@ try:
 
 
     S4MSMModSettingsRegistry().register_menu_item(_CSFMSMMenuItem())
-
-    log = CommonLogRegistry().register_log(ModInfo.get_identity(), 'csf_customize_sliders')
-
-    # noinspection PyUnusedLocal
-    @CommonInjectionUtils.inject_safely_into(ModInfo.get_identity(), CSFCustomizeSlidersInteraction, CSFCustomizeSlidersInteraction.on_test.__name__)
-    def _hide_interaction(original, cls, *_, **__) -> TestResult:
-        log.debug('Hiding the Customize Sliders interaction in favor of the Mod Settings Menu.')
-        return TestResult.NONE
 except:
     pass

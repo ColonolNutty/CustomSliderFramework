@@ -9,12 +9,16 @@ Copyright (c) COLONOLNUTTY
 from typing import Dict, Any, Iterator, Tuple, Union
 
 from cncustomsliderframework.dtos.sliders.slider import CSFSlider
+from cncustomsliderframework.enums.string_ids import CSFStringId
 from cncustomsliderframework.modinfo import ModInfo
+from protocolbuffers.Localization_pb2 import LocalizedString
 from sims.sim_info import SimInfo
 from sims4communitylib.enums.common_age import CommonAge
+from sims4communitylib.enums.common_species import CommonSpecies
 from sims4communitylib.logging.has_class_log import HasClassLog
 from sims4communitylib.mod_support.mod_identity import CommonModIdentity
 from sims4communitylib.utils.common_resource_utils import CommonResourceUtils
+from sims4communitylib.utils.localization.common_localization_utils import CommonLocalizationUtils
 from sims4communitylib.utils.sims.common_sim_name_utils import CommonSimNameUtils
 
 
@@ -48,6 +52,11 @@ class CSFSliderTemplate(HasClassLog):
         return self._template_name
 
     @property
+    def display_name(self) -> LocalizedString:
+        """The display name of the template."""
+        return self._display_name
+
+    @property
     def source_sim_full_name(self) -> str:
         """The name of the Sim the template was created from."""
         return self._source_sim_full_name
@@ -56,6 +65,11 @@ class CSFSliderTemplate(HasClassLog):
     def source_sim_age(self) -> CommonAge:
         """The age of the Sim the template was created from."""
         return self._source_sim_age
+
+    @property
+    def source_sim_species(self) -> CommonSpecies:
+        """The species of the Sim the template was created from."""
+        return self._source_sim_species
 
     @property
     def slider_to_value_library(self) -> Dict[str, float]:
@@ -70,12 +84,28 @@ class CSFSliderTemplate(HasClassLog):
             template_name = template_name.replace(char, replacement)
         return template_name
 
-    def __init__(self, template_name: str, source_sim_full_name: str, source_sim_age: CommonAge, slider_to_value_library: Dict[str, float]):
+    def __init__(
+        self,
+        template_name: str,
+        source_sim_full_name: str,
+        source_sim_age: CommonAge,
+        source_sim_species: CommonSpecies,
+        slider_to_value_library: Dict[str, float]
+    ):
         super().__init__()
         self._template_name = template_name
         self._source_sim_full_name = source_sim_full_name
         self._source_sim_age = source_sim_age
+        self._source_sim_species = source_sim_species
         self._slider_to_value_library = slider_to_value_library
+        self._display_name = CommonLocalizationUtils.create_localized_string(
+            CSFStringId.TEMPLATE_DISPLAY_NAME_AGE_SPECIES,
+            tokens=(
+                template_name,
+                source_sim_age.name,
+                source_sim_species.name
+            )
+        )
 
     def get_sliders(self, sim_info: SimInfo) -> Iterator[Tuple[CSFSlider, float]]:
         """Retrieve sliders associated with this template."""
@@ -113,7 +143,13 @@ class CSFSliderTemplate(HasClassLog):
                 continue
             slider_value = slider_application_service.get_current_slider_value(sim_info, slider)
             slider_to_value_library[slider_identifier] = slider_value
-        return cls(template_name, CommonSimNameUtils.get_full_name(sim_info), CommonAge.get_age(sim_info), slider_to_value_library)
+        return cls(
+            template_name,
+            CommonSimNameUtils.get_full_name(sim_info),
+            CommonAge.get_age(sim_info),
+            CommonSpecies.get_species(sim_info),
+            slider_to_value_library
+        )
 
     def to_hashable(self) -> Dict[str, Any]:
         """Convert the template into something that is hashable."""
@@ -121,6 +157,7 @@ class CSFSliderTemplate(HasClassLog):
         data['template_name'] = self.template_name
         data['source_sim_name'] = self.source_sim_full_name
         data['source_sim_age'] = self.source_sim_age.name
+        data['source_sim_species'] = self.source_sim_species.name
         data['slider_data'] = self.slider_to_value_library
         return data
 
@@ -134,18 +171,32 @@ class CSFSliderTemplate(HasClassLog):
             return None
         source_sim_name = data.get('source_sim_name', None)
         if source_sim_name is None:
-            log.error('Missing Source Sim Name.')
+            log.format_error_with_message('Missing Source Sim Name.', template_name=template_name)
             return None
         source_sim_age_str = data.get('source_sim_age', None)
         if source_sim_age_str is None:
-            log.error("Missing Source Sim Age.")
+            log.format_error_with_message('Missing Source Sim Age.', template_name=template_name)
             return None
         source_sim_age = CommonResourceUtils.get_enum_by_name(source_sim_age_str, CommonAge, default_value=CommonAge.INVALID)
         if source_sim_age == CommonAge.INVALID:
-            log.error('Source Sim Age was invalid.')
+            log.format_error_with_message('The Source Sim Age was invalid.', template_name=template_name)
+            return None
+        source_sim_species_str = data.get('source_sim_species', None)
+        if source_sim_species_str is None:
+            log.format_error_with_message('Missing Source Sim Species.', template_name=template_name)
+            return None
+        source_sim_species = CommonResourceUtils.get_enum_by_name(source_sim_species_str, CommonSpecies, default_value=CommonSpecies.INVALID)
+        if source_sim_species == CommonSpecies.INVALID:
+            log.format_error_with_message('The Source Sim Species was invalid.', template_name=template_name)
             return None
         slider_data = data.get('slider_data', None)
         if slider_data is None:
-            log.error('Missing slider data.')
+            log.format_error_with_message('Missing slider data.', template_name=template_name)
             return None
-        return cls(template_name, source_sim_name, source_sim_age, slider_data)
+        return cls(
+            template_name,
+            source_sim_name,
+            source_sim_age,
+            source_sim_species,
+            slider_data
+        )

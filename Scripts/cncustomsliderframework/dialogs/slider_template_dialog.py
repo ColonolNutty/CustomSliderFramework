@@ -216,12 +216,13 @@ class CSFSliderTemplateDialog(HasLog):
             _on_close()
 
         for (template_name, template) in self._template_utils.template_library.items():
+            template: CSFSliderTemplate = template
             option_dialog.add_option(
                 CommonDialogObjectOption(
                     template_name,
                     template,
                     CommonDialogOptionContext(
-                        template_name,
+                        template.display_name,
                         0,
                         icon=CommonIconUtils.load_filled_circle_icon() if CSFSliderTemplateDialog._SELECTED_TEMPLATE == template else CommonIconUtils.load_unfilled_circle_icon(),
                     ),
