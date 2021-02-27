@@ -6,7 +6,7 @@ https://creativecommons.org/licenses/by/4.0/legalcode
 Copyright (c) COLONOLNUTTY
 """
 import sims4.commands
-from typing import Any, Callable, Union, Iterator
+from typing import Any, Callable, Union, Iterator, Dict
 
 from pprint import pformat
 from protocolbuffers.Localization_pb2 import LocalizedString
@@ -32,7 +32,8 @@ class CommonInputTextDialog(CommonDialog):
         description_identifier,\
         initial_value,\
         title_tokens=(),\
-        description_tokens=()\
+        description_tokens=(),\
+        substitute_characters=()\
     )
 
     Create a dialog that prompts the player to enter text.
@@ -73,6 +74,8 @@ class CommonInputTextDialog(CommonDialog):
     :type title_tokens: Iterator[Any], optional
     :param description_tokens: Tokens to format into the description.
     :type description_tokens: Iterator[Any], optional
+    :param substitute_characters: A mapping of characters with their replacements if found within the entered text. Default is None.
+    :type substitute_characters: Dict[str, str], optional
     """
     def __init__(
         self,
@@ -81,7 +84,8 @@ class CommonInputTextDialog(CommonDialog):
         description_identifier: Union[int, str, LocalizedString, CommonStringId],
         initial_value: str,
         title_tokens: Iterator[Any]=(),
-        description_tokens: Iterator[Any]=()
+        description_tokens: Iterator[Any]=(),
+        substitute_characters: Dict[str, str]=None
     ):
         super().__init__(
             title_identifier,
@@ -91,6 +95,7 @@ class CommonInputTextDialog(CommonDialog):
             mod_identity=mod_identity
         )
         self.initial_value = initial_value
+        self.substitute_characters = substitute_characters
 
     # noinspection PyMissingOrEmptyDocstring
     @property
@@ -141,6 +146,10 @@ class CommonInputTextDialog(CommonDialog):
                 self.log.format_with_message('Value entered, attempting to parse it.', value=input_text)
 
                 input_text = str(input_text)
+
+                if self.substitute_characters is not None:
+                    for (char, replacement) in self.substitute_characters.items():
+                        input_text = input_text.replace(char, replacement)
 
                 self.log.format_with_message('Value entered.', input_value=input_text)
                 result = on_submit(input_text, CommonChoiceOutcome.CHOICE_MADE)

@@ -6,17 +6,29 @@ https://creativecommons.org/licenses/by-nd/4.0/legalcode
 
 Copyright (c) COLONOLNUTTY
 """
-from typing import Dict, Any, Iterator, Tuple
+from typing import Dict, Any, Iterator, Tuple, Union
 
 from cncustomsliderframework.dtos.sliders.slider import CSFSlider
 from cncustomsliderframework.modinfo import ModInfo
 from sims.sim_info import SimInfo
 from sims4communitylib.logging.has_class_log import HasClassLog
 from sims4communitylib.mod_support.mod_identity import CommonModIdentity
+from sims4communitylib.utils.sims.common_sim_name_utils import CommonSimNameUtils
 
 
 class CSFSliderTemplate(HasClassLog):
     """ A template of sliders. """
+    _FILE_NAME_REPLACEMENT_CHARACTERS: Dict[str, str] = {
+        '<': '_',
+        '>': '_',
+        ':': '_',
+        '"': '_',
+        '/': '_',
+        '\\': '_',
+        '|': '_',
+        '?': '_',
+        '*': '_'
+    }
 
     # noinspection PyMissingOrEmptyDocstring
     @classmethod
@@ -33,9 +45,28 @@ class CSFSliderTemplate(HasClassLog):
         """The name of the template."""
         return self._template_name
 
-    def __init__(self, template_name: str, slider_to_value_library: Dict[str, float]):
+    @property
+    def source_sim_full_name(self) -> str:
+        """The name of the Sim the template was created from."""
+        return self._source_sim_full_name
+
+    @property
+    def slider_to_value_library(self) -> Dict[str, float]:
+        """A mapping of slider identifiers to their values."""
+        return self._slider_to_value_library
+
+    @property
+    def template_file_name(self) -> str:
+        """The name of the file the template is stored in."""
+        template_name = self.template_name
+        for (char, replacement) in CSFSliderTemplate._FILE_NAME_REPLACEMENT_CHARACTERS.items():
+            template_name = template_name.replace(char, replacement)
+        return template_name
+
+    def __init__(self, template_name: str, source_sim_full_name: str, slider_to_value_library: Dict[str, float]):
         super().__init__()
         self._template_name = template_name
+        self._source_sim_full_name = source_sim_full_name
         self._slider_to_value_library = slider_to_value_library
 
     def get_sliders(self, sim_info: SimInfo) -> Iterator[Tuple[CSFSlider, float]]:
@@ -74,16 +105,26 @@ class CSFSliderTemplate(HasClassLog):
                 continue
             slider_value = slider_application_service.get_current_slider_value(sim_info, slider)
             slider_to_value_library[slider_identifier] = slider_value
-        return cls(template_name, slider_to_value_library)
+        return cls(template_name, CommonSimNameUtils.get_full_name(sim_info), slider_to_value_library)
 
     def to_hashable(self) -> Dict[str, Any]:
         """Convert the template into something that is hashable."""
         data = dict()
-        data['slider_data'] = self._slider_to_value_library
+        data['template_name'] = self.template_name
+        data['source_sim_name'] = self.source_sim_full_name
+        data['slider_data'] = self.slider_to_value_library
         return data
 
     @classmethod
-    def from_hashable(cls, template_name: str, data: Dict[str, Any]) -> 'CSFSliderTemplate':
-        """Convert the template into something that is hashable."""
-        slider_data = data['slider_data']
-        return cls(template_name, slider_data)
+    def from_hashable(cls, data: Dict[str, Any]) -> Union['CSFSliderTemplate', None]:
+        """Create a template from a library of data."""
+        template_name = data.get('template_name', None)
+        if template_name is None:
+            return None
+        source_sim_name = data.get('source_sim_name', None)
+        if source_sim_name is None:
+            return None
+        slider_data = data.get('slider_data', None)
+        if slider_data is None:
+            return None
+        return cls(template_name, source_sim_name, slider_data)

@@ -70,6 +70,21 @@ class CSFSliderTemplateUtils(CommonService, HasLog):
         self.save_template(template)
         return True
 
+    def save_template(self, template: CSFSliderTemplate, folder_path: str=None) -> bool:
+        """Save templates."""
+        if folder_path is None:
+            folder_path = self._folder_path()
+            os.makedirs(folder_path, exist_ok=True)
+
+        template_file_name = template.template_file_name
+        template_file_path = os.path.join(folder_path, '{}.json'.format(template_file_name))
+        if os.path.exists(template_file_path):
+            os.remove(template_file_path)
+
+        self.log.format_with_message('Saving template.', template_file_name=template_file_name)
+        template: CSFSliderTemplate = template
+        return CommonJSONIOUtils.write_to_file(template_file_path, template.to_hashable())
+
     def save_templates(self) -> bool:
         """Save templates."""
         folder_path = self._folder_path()
@@ -78,20 +93,6 @@ class CSFSliderTemplateUtils(CommonService, HasLog):
             template: CSFSliderTemplate = template
             self.save_template(template, folder_path=folder_path)
         return True
-
-    def save_template(self, template: CSFSliderTemplate, folder_path: str=None) -> bool:
-        """Save templates."""
-        if folder_path is None:
-            folder_path = self._folder_path()
-            os.makedirs(folder_path, exist_ok=True)
-
-        template_file_path = os.path.join(folder_path, template.template_name)
-        if os.path.exists(template_file_path):
-            os.remove(template_file_path)
-
-        self.log.format_with_message('Saving template.', template=template.template_name)
-        template: CSFSliderTemplate = template
-        return CommonJSONIOUtils.write_to_file(template_file_path, template.to_hashable())
 
     def _load(self) -> Dict[str, 'CSFSliderTemplate']:
         folder_path = self._folder_path()
@@ -104,9 +105,12 @@ class CSFSliderTemplateUtils(CommonService, HasLog):
             return dict()
 
         template_library = dict()
-        for (template_name, template_data) in loaded_data.items():
-            template_library[template_name] = CSFSliderTemplate.from_hashable(template_name, template_data)
-
+        for (template_file_name, template_data) in loaded_data.items():
+            template = CSFSliderTemplate.from_hashable(template_data)
+            if template is None:
+                self.log.format_with_message('Failed to load template', template_file_name=template_file_name)
+                continue
+            template_library[template.template_name] = template
         return template_library
 
     def _folder_path(self) -> str:

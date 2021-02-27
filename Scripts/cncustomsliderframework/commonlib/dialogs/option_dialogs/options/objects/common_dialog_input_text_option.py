@@ -5,7 +5,7 @@ https://creativecommons.org/licenses/by/4.0/legalcode
 
 Copyright (c) COLONOLNUTTY
 """
-from typing import Any, Callable, Union, Iterator
+from typing import Any, Callable, Union, Iterator, Dict
 
 from cncustomsliderframework.commonlib.dialogs.common_input_text_dialog import CommonInputTextDialog
 from protocolbuffers.Localization_pb2 import LocalizedString
@@ -28,6 +28,8 @@ class CommonDialogInputTextOption(CommonDialogObjectOption):
         context,\
         on_chosen=CommonFunctionUtils.noop,\
         always_visible=False,\
+        dialog_title_identifier=None,\
+        dialog_title_tokens=()\
         dialog_description_identifier=None,\
         dialog_description_tokens=()\
     )
@@ -47,11 +49,18 @@ class CommonDialogInputTextOption(CommonDialogObjectOption):
     :param always_visible: If set to True, the option will always appear in the dialog no matter which page.\
     If False, the option will act as normal. Default is False.
     :type always_visible: bool, optional
+    :param dialog_title_identifier: The title that will display in the input dialog separately from the option.\
+    If not provided, the title from the provided context will be used instead.
+    :type dialog_title_identifier: Union[int, str, LocalizedString, CommonStringId], optional
+    :param dialog_title_tokens: An iterable of Tokens that will be formatted into the dialog title.
+    :type dialog_title_tokens: Iterator[Any], optional
     :param dialog_description_identifier: The description that will display in the input dialog separately from the option.\
     If not provided the description from the provided context will be used instead.
     :type dialog_description_identifier: Union[int, str, LocalizedString, CommonStringId], optional
     :param dialog_description_tokens: An iterable of Tokens that will be formatted into the dialog description.
     :type dialog_description_tokens: Iterator[Any], optional
+    :param substitute_characters: A mapping of characters with their replacements if found within the entered text. Default is None.
+    :type substitute_characters: Dict[str, str], optional
     """
     def __init__(
         self,
@@ -61,18 +70,26 @@ class CommonDialogInputTextOption(CommonDialogObjectOption):
         context: CommonDialogOptionContext,
         on_chosen: Callable[[DialogOptionIdentifierType, str, CommonChoiceOutcome], None]=CommonFunctionUtils.noop,
         always_visible: bool=False,
+        dialog_title_identifier: Union[int, str, LocalizedString, CommonStringId]=None,
+        dialog_title_tokens: Iterator[Any]=(),
         dialog_description_identifier: Union[int, str, LocalizedString, CommonStringId]=None,
-        dialog_description_tokens: Iterator[Any]=()
+        dialog_description_tokens: Iterator[Any]=(),
+        substitute_characters: Dict[str, str]=None
     ):
+        if dialog_title_identifier is not None:
+            dialog_title = CommonLocalizationUtils.create_localized_string(dialog_title_identifier, tokens=tuple(dialog_title_tokens))
+        else:
+            dialog_title = context.title
         if dialog_description_identifier is not None:
             dialog_description = CommonLocalizationUtils.create_localized_string(dialog_description_identifier, tokens=tuple(dialog_description_tokens))
         else:
             dialog_description = context.description
         self._dialog = CommonInputTextDialog(
             mod_identity,
-            context.title,
+            dialog_title,
             dialog_description,
-            initial_value
+            initial_value,
+            substitute_characters=substitute_characters
         )
 
         def _on_submit(_: str, __: CommonChoiceOutcome):
