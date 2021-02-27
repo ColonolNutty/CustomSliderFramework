@@ -1,3 +1,6 @@
+Version 1.9:
+- Fixed the View Template option not properly showing the template values.
+
 Version 1.8:
 - Added the ability to create Slider Templates from your Sims as well as the ability to apply these templates to other Sims.
   - Slider Templates may be found within "The Sims 4/Mods/mod_data/cncustomsliderframework/slider_templates".
