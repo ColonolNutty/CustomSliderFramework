@@ -116,6 +116,10 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
                 self.log.debug('Missing sim_info or custom_slider')
                 return False
 
+            if not custom_slider.is_available_for(sim_info):
+                self.log.format_with_message('The specified slider is not available for the Sim.', sim=sim_info, slider=custom_slider)
+                return False
+
             self.log.debug('Determining which slider to use for {} with amount {}.'.format(custom_slider.raw_display_name, amount))
             if amount >= 0:
                 self.log.debug('Amount is greater than or equal to 0.0. It is {}.'.format(amount))
@@ -166,6 +170,17 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
         custom_slider = next(iter(custom_sliders))
         if custom_slider is None:
             self.log.debug('No slider found with name: {}'.format(name))
+            return False
+        self.log.debug('Slider found, attempting to apply.')
+        return self.apply_slider(sim_info, custom_slider, amount)
+
+    def apply_slider_by_identifier(self, sim_info: SimInfo, identifier: str, amount: float) -> bool:
+        """ Apply a slider with its identifier. """
+        from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
+        self.log.debug('Attempting to apply slider with identifier {} and amount {}'.format(identifier, amount))
+        custom_slider = CSFSliderQueryUtils().locate_by_identifier(identifier)
+        if custom_slider is None:
+            self.log.debug('No slider found with identifier: {}'.format(identifier))
             return False
         self.log.debug('Slider found, attempting to apply.')
         return self.apply_slider(sim_info, custom_slider, amount)

@@ -9,6 +9,7 @@ Copyright (c) COLONOLNUTTY
 from typing import Callable, Tuple, List
 
 from cncustomsliderframework.custom_slider_application_service import CSFCustomSliderApplicationService
+from cncustomsliderframework.dialogs.slider_template_dialog import CSFSliderTemplateDialog
 from cncustomsliderframework.dtos.sliders.slider import CSFSlider
 from cncustomsliderframework.enums.string_ids import CSFStringId
 from cncustomsliderframework.modinfo import ModInfo
@@ -73,6 +74,18 @@ class CSFCustomizeSlidersDialog(HasLog):
         def _reopen_dialog() -> None:
             self.log.debug('Reopening customize sliders dialog.')
             self.open(sim_info, page=option_dialog.current_page)
+
+        option_dialog.add_option(
+            CommonDialogActionOption(
+                CommonDialogOptionContext(
+                    CSFStringId.SLIDER_TEMPLATES_NAME,
+                    CSFStringId.SLIDER_TEMPLATES_DESCRIPTION,
+                    tag_list=[slider_category.name for slider_category in CSFSliderCategory.values]
+                ),
+                on_chosen=lambda *_, **__: CSFSliderTemplateDialog(on_close=_reopen_dialog).open(sim_info),
+                always_visible=True
+            )
+        )
 
         def _on_reset_all_sliders() -> None:
             self.log.debug('Confirming all sliders reset.')
