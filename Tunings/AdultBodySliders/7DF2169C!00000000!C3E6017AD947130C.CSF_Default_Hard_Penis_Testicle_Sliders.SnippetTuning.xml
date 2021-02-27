@@ -2,8 +2,8 @@
 <I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Default_Hard_Penis_Testicle_Sliders" s="14115971709182350092">
   <L n="custom_slider_info_list">
     <U>
-      <T n="slider_display_name">0x6BC3E3DF<!--Hard Penis Testicle Asymmetry Left Down/Right Down (CSF Default)--></T>
-      <T n="slider_raw_display_name">Hard_Penis_Testicle_Asymmetry_Left_Down_Right_Down_CSF_Default</T>
+      <T n="slider_display_name">0x2F7001B7<!--Hard Penis Testicle Asymmetry Left Down/Right Down--></T>
+      <T n="slider_raw_display_name">Hard_Penis_Testicle_Asymmetry_Left_Down_Right_Down</T>
       <T n="slider_description">0x82011A86<!-- Change testicle asymmetry --></T>
       <T n="slider_author">CSF</T>
       <T n="slider_minimum_value">-100.0</T>
@@ -24,8 +24,8 @@
 	  </L>
     </U>
     <U>
-      <T n="slider_display_name">0xC6A08CCD<!--Hard Penis Testicle Size Small/Big (CSF Default)--></T>
-      <T n="slider_raw_display_name">Hard_Penis_Testicle_Size_Small_Big_CSF_Default</T>
+      <T n="slider_display_name">0xF2B2853D<!--Hard Penis Testicle Size Small/Big--></T>
+      <T n="slider_raw_display_name">Hard_Penis_Testicle_Size_Small_Big</T>
       <T n="slider_description">0x9CCBCBBE<!-- Change testicle size --></T>
       <T n="slider_author">CSF</T>
       <T n="slider_minimum_value">-100.0</T>
@@ -46,8 +46,8 @@
 	  </L>
     </U>
     <U>
-      <T n="slider_display_name">0xDE989743<!--Hard Penis Testicle Size 2 Small/Big (CSF Default)--></T>
-      <T n="slider_raw_display_name">Hard_Penis_Testicle_Size_Small_Big_2_CSF_Default</T>
+      <T n="slider_display_name">0x94FFD363<!--Hard Penis Testicle Size 2 Small/Big--></T>
+      <T n="slider_raw_display_name">Hard_Penis_Testicle_Size_Small_Big_2</T>
       <T n="slider_description">0x9CCBCBBE<!-- Change testicle size --></T>
       <T n="slider_author">CSF</T>
       <T n="slider_minimum_value">-100.0</T>
