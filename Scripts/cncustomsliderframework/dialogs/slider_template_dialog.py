@@ -253,6 +253,9 @@ class CSFSliderTemplateDialog(HasLog):
             if on_close is not None:
                 on_close()
 
+        def _reopen() -> None:
+            self._view_template(sim_info, on_close=on_close)
+
         if CSFSliderTemplateDialog._SELECTED_TEMPLATE is None:
             def _on_acknowledge(_) -> None:
                 _on_close()
@@ -279,11 +282,13 @@ class CSFSliderTemplateDialog(HasLog):
                     slider.unique_identifier,
                     slider,
                     CommonDialogOptionContext(
-                        slider.name,
                         0,
-                        title_tokens=(str(amount),),
+                        CSFStringId.STRING_PLUS_STRING,
+                        description_tokens=(slider.display_name, str(amount),),
+                        icon=CommonIconUtils.load_arrow_right_icon(),
                         is_enabled=False
-                    )
+                    ),
+                    on_chosen=lambda *_, **__: _reopen()
                 )
             )
 
