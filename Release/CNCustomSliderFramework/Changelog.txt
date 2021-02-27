@@ -1,3 +1,14 @@
+Version 1.8:
+- Added the ability to create Slider Templates from your Sims as well as the ability to apply these templates to other Sims.
+  - Slider Templates may be found within "The Sims 4/Mods/mod_data/cncustomsliderframework/slider_templates".
+  - Share the templates with others!
+- Made some performance enhancements when loading sliders on household load.
+- Combined most of the sliders into a single package file for an easier install. (Also included it with the main download)
+- Removed the Customize Sliders interaction. Mod Settings Menu is now a hard requirement.
+- Custom Slider Framework now requires Mod Settings Menu. Instead of it being an optional install!
+- Combined the many slider package files into a single default slider package for easy install.
+- Included the default sliders with the main mod.
+
 Version 1.7:
 - CSF now requires at least version 1.57 of Sims 4 Community Library
 
