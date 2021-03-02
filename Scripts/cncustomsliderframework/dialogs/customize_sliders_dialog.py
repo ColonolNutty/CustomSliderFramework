@@ -105,13 +105,13 @@ class CSFCustomizeSlidersDialog(HasLog):
                 mod_identity=self.mod_identity
             ).show(on_ok_selected=_on_confirm, on_cancel_selected=_on_cancel)
 
-        def _on_slider_changed(slider_name: str, amount: float, outcome: CommonChoiceOutcome):
-            if slider_name is None or amount is None or CommonChoiceOutcome.is_error_or_cancel(outcome):
+        def _on_slider_changed(slider_unique_identifier: str, amount: float, outcome: CommonChoiceOutcome):
+            if slider_unique_identifier is None or amount is None or CommonChoiceOutcome.is_error_or_cancel(outcome):
                 self.log.debug('No slider chosen, dialog closed, or no amount specified.')
                 _reopen_dialog()
                 return
             self.log.debug('Slider changed, attempting to apply.')
-            self.slider_application_service.apply_slider_by_name(sim_info, slider_name, amount)
+            self.slider_application_service.apply_slider_by_identifier(sim_info, slider_unique_identifier, amount)
             _reopen_dialog()
 
         self.log.debug('Opening Customize Slider dialog.')
