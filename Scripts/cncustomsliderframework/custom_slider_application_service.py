@@ -10,6 +10,7 @@ import random
 from typing import Iterator
 
 from cncustomsliderframework.dtos.sliders.slider import CSFSlider
+from cncustomsliderframework.events.slider_changed_event import CSFSliderValueChanged
 from cncustomsliderframework.modinfo import ModInfo
 from protocolbuffers.PersistenceBlobs_pb2 import BlobSimFacialCustomizationData
 from sims.sim_info import SimInfo
@@ -131,7 +132,7 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
                 return body_modifier.amount/0.01
         return 0.0
 
-    def apply_slider(self, sim_info: SimInfo, custom_slider: CSFSlider, amount: float) -> bool:
+    def apply_slider(self, sim_info: SimInfo, custom_slider: CSFSlider, amount: float, trigger_event: bool=False) -> bool:
         """ Apply a slider to a Sim. """
         try:
             if sim_info is None or custom_slider is None:
@@ -164,6 +165,8 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
                 self.log.error('Slider key is zero!')
                 return False
 
+            current_slider_amount = self.get_current_slider_value(sim_info, custom_slider)
+
             self.log.debug('Applying facial attribute.')
             modified_facial_attributes = self._get_existing_modifiers_for_edit(sim_info, exclude_facial_modifier_ids=(*custom_slider.get_modifier_ids(), slider_id))
 
@@ -177,6 +180,9 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             else:
                 self.log.debug('Excluding the custom slider because the amount is zero.')
             self._set_facial_attributes(sim_info, modified_facial_attributes)
+            if trigger_event:
+                from sims4communitylib.events.event_handling.common_event_registry import CommonEventRegistry
+                CommonEventRegistry().dispatch(CSFSliderValueChanged(sim_info, custom_slider, current_slider_amount, slider_amount))
             return True
         except Exception as ex:
             CommonExceptionHandler.log_exception(self.mod_identity, 'Error occurred while applying slider: \'{}\''.format(custom_slider.raw_display_name), exception=ex)

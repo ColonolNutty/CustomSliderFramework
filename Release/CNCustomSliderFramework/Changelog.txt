@@ -1,3 +1,7 @@
+Version 1.11:
+- Fixed some issues with the Belly Shape Pregnancy sliders
+- Added variants of the Belly Shape Pregnancy sliders that are available for Cat, Large Dog, Small Dog, and Fox
+
 Version 1.10:
 - Fixed sliders not properly applying when customizing them.
 
