@@ -132,7 +132,7 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
                 return body_modifier.amount/0.01
         return 0.0
 
-    def apply_slider(self, sim_info: SimInfo, custom_slider: CSFSlider, amount: float, trigger_event: bool=False) -> bool:
+    def apply_slider(self, sim_info: SimInfo, custom_slider: CSFSlider, amount: float, trigger_event: bool=True) -> bool:
         """ Apply a slider to a Sim. """
         try:
             if sim_info is None or custom_slider is None:
@@ -187,7 +187,7 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
         except Exception as ex:
             CommonExceptionHandler.log_exception(self.mod_identity, 'Error occurred while applying slider: \'{}\''.format(custom_slider.raw_display_name), exception=ex)
 
-    def apply_slider_by_name(self, sim_info: SimInfo, name: str, amount: float) -> bool:
+    def apply_slider_by_name(self, sim_info: SimInfo, name: str, amount: float, trigger_event: bool=True) -> bool:
         """ Apply a slider with its name. """
         from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
         self.log.debug('Attempting to apply slider with name {} and amount {}'.format(name, amount))
@@ -200,9 +200,9 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             self.log.debug('No slider found with name: {}'.format(name))
             return False
         self.log.debug('Slider found, attempting to apply.')
-        return self.apply_slider(sim_info, custom_slider, amount)
+        return self.apply_slider(sim_info, custom_slider, amount, trigger_event=trigger_event)
 
-    def apply_slider_by_identifier(self, sim_info: SimInfo, identifier: str, amount: float) -> bool:
+    def apply_slider_by_identifier(self, sim_info: SimInfo, identifier: str, amount: float, trigger_event: bool=True) -> bool:
         """ Apply a slider with its identifier. """
         from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
         self.log.debug('Attempting to apply slider with identifier {} and amount {}'.format(identifier, amount))
@@ -211,18 +211,18 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             self.log.debug('No slider found with identifier: {}'.format(identifier))
             return False
         self.log.debug('Slider found, attempting to apply.')
-        return self.apply_slider(sim_info, custom_slider, amount)
+        return self.apply_slider(sim_info, custom_slider, amount, trigger_event=trigger_event)
 
-    def apply_random(self, sim_info: SimInfo, custom_slider: CSFSlider) -> bool:
+    def apply_random(self, sim_info: SimInfo, custom_slider: CSFSlider, trigger_event: bool=True) -> bool:
         """ Apply a random value for a slider. """
         name = custom_slider.raw_display_name
         amount = random.randint(int(custom_slider.minimum_value), int(custom_slider.maximum_value))
         self.log.debug('Attempting to apply slider with name {} and amount {}'.format(name, amount))
-        return self.apply_slider(sim_info, custom_slider, amount)
+        return self.apply_slider(sim_info, custom_slider, amount, trigger_event=trigger_event)
 
-    def reset_slider(self, sim_info: SimInfo, custom_slider: CSFSlider) -> bool:
+    def reset_slider(self, sim_info: SimInfo, custom_slider: CSFSlider, trigger_event: bool=True) -> bool:
         """ Reset a Slider to its default for a Sim. """
-        return self.apply_slider(sim_info, custom_slider, 0.0)
+        return self.apply_slider(sim_info, custom_slider, 0.0, trigger_event=trigger_event)
 
     def reset_all_sliders(self, sim_info: SimInfo) -> bool:
         """ Reset all Custom Sliders for a Sim. """

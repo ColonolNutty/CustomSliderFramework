@@ -48,7 +48,7 @@ def _csf_apply_slider(slider_name: str, amount: float, opt_sim: OptionalSimInfoP
         output('Amount must be a number! \'{}\''.format(amount))
         return False
     output('Applying Sim Attributes!')
-    return CSFCustomSliderApplicationService().apply_slider(sim_info, custom_slider, amount)
+    return CSFCustomSliderApplicationService().apply_slider(sim_info, custom_slider, amount, trigger_event=True)
 
 
 @Command('csf.help', command_type=CommandType.Live)
