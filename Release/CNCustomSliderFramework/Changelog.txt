@@ -2,6 +2,9 @@ Version 1.11:
 - Fixed some issues with the Belly Shape Pregnancy sliders
 - Added variants of the Belly Shape Pregnancy sliders that are available for Cat, Large Dog, Small Dog, and Fox
 - When sliders are changed using the CSF Customize Sliders dialog, an event will now be sent out to notify any mods that care about slider changes.
+- Fixed an issue with the Breast Size slider causing a gaping hole to appear in the chest of Sims at maximum size.
+- Removed a few duplicate strings from the string table
+- Separated the breast size sliders from the default sliders package because combining the breast size sliders with anything else seems to break it.
 
 Version 1.10:
 - Fixed sliders not properly applying when customizing them.
