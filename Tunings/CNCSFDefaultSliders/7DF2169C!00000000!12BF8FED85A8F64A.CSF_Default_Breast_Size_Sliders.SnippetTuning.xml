@@ -8,10 +8,10 @@
       <T n="slider_author">CSF</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
-      <T n="slider_positive_modifier_id">17409725556757345916</T>
-      <T n="slider_negative_modifier_id">16419776751737088495</T>
+      <T n="slider_positive_modifier_id">12612576050933967173</T>
+      <T n="slider_negative_modifier_id">9503439846270599606</T>
 	  <L n="slider_categories">
-	    <E>BODY</E>
+	    <E>CHEST</E>
 	  </L>
 	  <L n="available_for_ages">
 	    <E>TEEN</E>
@@ -36,7 +36,7 @@
       <T n="slider_positive_modifier_id">12750319751461700392</T>
       <T n="slider_negative_modifier_id">12178308043115561936</T>
 	  <L n="slider_categories">
-	    <E>BODY</E>
+	    <E>CHEST</E>
 	  </L>
 	  <L n="available_for_ages">
 	    <E>TEEN</E>
@@ -58,7 +58,7 @@
       <T n="slider_positive_modifier_id">14348896741668569854</T>
       <T n="slider_negative_modifier_id">14766054170565856715</T>
 	  <L n="slider_categories">
-	    <E>BODY</E>
+	    <E>CHEST</E>
 	  </L>
 	  <L n="available_for_ages">
 	    <E>TEEN</E>
@@ -80,7 +80,7 @@
       <T n="slider_positive_modifier_id">11624787769210868957</T>
       <T n="slider_negative_modifier_id">16410734589395685386</T>
       <L n="slider_categories">
-        <E>BODY</E>
+	    <E>CHEST</E>
       </L>
       <L n="available_for_ages">
         <E>TEEN</E>

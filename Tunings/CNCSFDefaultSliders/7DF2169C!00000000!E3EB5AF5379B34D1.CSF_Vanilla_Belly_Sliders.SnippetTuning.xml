@@ -11,7 +11,6 @@
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">5705220627947342604</T>
 	  <L n="slider_categories">
-	    <E>BODY</E>
 	    <E>BELLY</E>
 	  </L>
 	  <L n="available_for_ages">
@@ -41,7 +40,6 @@
       <T n="slider_positive_modifier_id">16391756994022883177</T>
       <T n="slider_negative_modifier_id">15575175292544645782</T>
 	  <L n="slider_categories">
-	    <E>BODY</E>
 	    <E>BELLY</E>
 	  </L>
 	  <L n="available_for_ages">
@@ -71,7 +69,6 @@
       <T n="slider_positive_modifier_id">2765508822704265995</T>
       <T n="slider_negative_modifier_id">14695981039346656037</T>
 	  <L n="slider_categories">
-	    <E>BODY</E>
 	    <E>BELLY</E>
 	  </L>
 	  <L n="available_for_ages">
@@ -100,7 +97,6 @@
       <T n="slider_positive_modifier_id">3769193182453411362</T>
       <T n="slider_negative_modifier_id">14695981039346656037</T>
 	  <L n="slider_categories">
-	    <E>BODY</E>
 	    <E>BELLY</E>
 	  </L>
 	  <L n="available_for_ages">
@@ -129,7 +125,6 @@
       <T n="slider_positive_modifier_id">18376736104160007674</T>
       <T n="slider_negative_modifier_id">14695981039346656037</T>
 	  <L n="slider_categories">
-	    <E>BODY</E>
 	    <E>BELLY</E>
 	  </L>
 	  <L n="available_for_ages">
@@ -158,7 +153,6 @@
       <T n="slider_positive_modifier_id">18376736104160007674</T>
       <T n="slider_negative_modifier_id">14695981039346656037</T>
 	  <L n="slider_categories">
-	    <E>BODY</E>
 	    <E>BELLY</E>
 	  </L>
 	  <L n="available_for_ages">
