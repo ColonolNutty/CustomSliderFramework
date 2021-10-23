@@ -1,3 +1,10 @@
+Version 1.12:
+- Added a sub dialog when modifying a slider so that more options per slider can be added.
+- Added the ability to remove a slider through a button click instead of having to manually enter a 0.0
+- Fixed an issue when sending the new value for a slider via the event
+- Added the ability to distinguish a face modifier from a body modifier via the slider snippets
+- Many of the sliders that were previously face modifiers now apply as body modifiers instead, thus fixing a few issues like when you remove a slider only for the slider to not actually be removed.
+
 Version 1.11:
 - Fixed some issues with the Belly Shape Pregnancy sliders
 - Added variants of the Belly Shape Pregnancy sliders that are available for Cat, Large Dog, Small Dog, and Fox
