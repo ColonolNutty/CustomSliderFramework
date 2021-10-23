@@ -202,8 +202,8 @@
 	  </L>
     </U>
     <U>
-      <T n="slider_display_name">0xF34004E9<!--Neck Thin/Thick--></T>
-      <T n="slider_raw_display_name">Neck_Thin_Thick_SmallDog_CSF_Vanilla</T>
+      <T n="slider_display_name">0x25A9186E<!--Neck Size Thin/Thick--></T>
+      <T n="slider_raw_display_name">Neck_Size_Thin_Thick_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
       <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_icon_id">0</T>

@@ -277,8 +277,8 @@ class CSFCustomizeSlidersDialog(HasLog):
         option_dialog.add_option(
             CommonDialogActionOption(
                 CommonDialogOptionContext(
-                    CSFStringId.REMOVE_SLIDER_CHANGES_NAME,
-                    CSFStringId.REMOVE_SLIDER_CHANGES_DESCRIPTION
+                    CSFStringId.RESET_SLIDER_NAME,
+                    CSFStringId.RESET_SLIDER_DESCRIPTION
                 ),
                 on_chosen=lambda *_, **__: _on_remove_slider(),
                 always_visible=True
