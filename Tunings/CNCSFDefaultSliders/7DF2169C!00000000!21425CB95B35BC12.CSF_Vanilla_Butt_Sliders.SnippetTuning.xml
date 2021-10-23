@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Vanilla_Butt_Sliders" s="2396579902883478546">
   <L n="custom_slider_info_list">
-    <!--Butt Size Small/Big-->
     <U>
       <T n="slider_display_name">0x65ABD4E3<!--Butt Size Small/Big--></T>
       <T n="slider_raw_display_name">Butt_Size_Small_Big_Female_CSF_Vanilla</T>
       <T n="slider_description">0xCC9BF17C<!-- Change butt size --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">11930680302218363414</T>
@@ -34,6 +34,7 @@
       <T n="slider_raw_display_name">Butt_Size_Small_Big_Male_CSF_Vanilla</T>
       <T n="slider_description">0xCC9BF17C<!-- Change butt size --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">12410017839419515581</T>

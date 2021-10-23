@@ -7,11 +7,13 @@ https://creativecommons.org/licenses/by-nd/4.0/legalcode
 Copyright (c) COLONOLNUTTY
 """
 import services
+from cncustomsliderframework.enums.modifier_types import CSFModifierType
 from sims.sim_info_types import Age
 from sims4.localization import TunableLocalizedString
 from sims4.resources import Types
 from sims4.tuning.instances import HashedTunedInstanceMetaclass
-from sims4.tuning.tunable import Tunable, TunableList, HasTunableFactory, AutoFactoryInit, TunableEnumSet, TunableSet
+from sims4.tuning.tunable import Tunable, TunableList, HasTunableFactory, AutoFactoryInit, TunableEnumSet, TunableSet, \
+    TunableEnumEntry
 from sims4.tuning.tunable_base import GroupNames
 from sims4communitylib.enums.common_gender import CommonGender
 from sims4communitylib.enums.common_species import CommonSpecies
@@ -25,6 +27,7 @@ class CSFCustomSliderInfo(HasTunableFactory, AutoFactoryInit):
         'slider_raw_display_name': Tunable(tunable_type=str, default=None),
         'slider_description': TunableLocalizedString(default=None),
         'slider_author': Tunable(tunable_type=str, default=None),
+        'slider_modifier_type': TunableEnumEntry(tunable_type=CSFModifierType, default=CSFModifierType.FACE_MODIFIER),
         'slider_icon_id': Tunable(tunable_type=int, default=0),
         'slider_minimum_value': Tunable(tunable_type=float, default=-100.0),
         'slider_maximum_value': Tunable(tunable_type=float, default=100.0),

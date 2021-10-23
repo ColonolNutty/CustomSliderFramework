@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Vanilla_Fox_Body_Sliders" s="6398208632725316035">
+  <L n="custom_slider_info_list">
+    <U>
+      <T n="slider_display_name">0xC024560F<!--Belly Shape Pregnant--></T>
+      <T n="slider_raw_display_name">Belly_Shape_Pregnant_Fox_CSF_Vanilla</T>
+      <T n="slider_description">0xCC275EE1<!-- Change belly shape pregnant --></T>
+      <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">18376736104160007674</T>
+      <T n="slider_negative_modifier_id">14695981039346656037</T>
+	  <L n="slider_categories">
+	    <E>BELLY</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>FOX</E>
+	  </L>
+    </U>
+  </L>
+</I>

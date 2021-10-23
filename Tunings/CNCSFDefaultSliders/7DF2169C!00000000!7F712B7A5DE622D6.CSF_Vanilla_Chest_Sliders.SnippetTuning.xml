@@ -7,6 +7,7 @@
       <T n="slider_raw_display_name">Chest_Size_Small_Big_CSF_Vanilla</T>
       <T n="slider_description">0x6EF87F76<!-- Change chest size --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">10160417097015316330</T>
@@ -34,6 +35,7 @@
       <T n="slider_raw_display_name">Chest_Depth_Shallow_Deep_Female_CSF_Vanilla</T>
       <T n="slider_description">0x7894E6CA<!-- Change chest depth --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">1305153429805576266</T>
@@ -61,6 +63,7 @@
       <T n="slider_raw_display_name">Chest_Depth_Shallow_Deep_Male_CSF_Vanilla</T>
       <T n="slider_description">0x7894E6CA<!-- Change chest depth --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">8989345570290811229</T>
@@ -89,6 +92,7 @@
       <T n="slider_raw_display_name">Chest_Rotation_In_Out_Female_CSF_Vanilla</T>
       <T n="slider_description">0x156AD133<!-- Change chest rotation --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">10172784403806973628</T>
@@ -116,6 +120,7 @@
       <T n="slider_raw_display_name">Chest_Rotation_In_Out_Male_CSF_Vanilla</T>
       <T n="slider_description">0x156AD133<!-- Change chest rotation --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">5941347650567105741</T>
@@ -144,6 +149,7 @@
       <T n="slider_raw_display_name">Chest_Vertical_Position_Down_Up_Female_CSF_Vanilla</T>
       <T n="slider_description">0x6E2FC90E<!-- Change chest vertical position --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">6248723735190925703</T>
@@ -169,8 +175,9 @@
     <U>
       <T n="slider_display_name">0x2B9A310B<!--Chest Vertical Position Down/Up--></T>
       <T n="slider_raw_display_name">Chest_Vertical_Position_Down_Up_Male_CSF_Vanilla</T>
-      <T n="slider_description">0x6E2FC90E<!-- Change chest verticla position--></T>
+      <T n="slider_description">0x6E2FC90E<!-- Change chest vertical position--></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">3999837669087888828</T>
@@ -197,8 +204,9 @@
     <U>
       <T n="slider_display_name">0xF0A5CFBE<!--Chest Shape Contract/Expand--></T>
       <T n="slider_raw_display_name">Chest_Shape_Contract_Expand_Female_CSF_Vanilla</T>
-      <T n="slider_description">0xF0A5CFBE<!-- Change chest shape --></T>
+      <T n="slider_description">0xE4CDFC5A<!-- Change chest shape --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">17857088923822951672</T>
@@ -224,8 +232,9 @@
     <U>
       <T n="slider_display_name">0xF0A5CFBE<!--Chest Shape Contract/Expand--></T>
       <T n="slider_raw_display_name">Chest_Shape_Contract_Expand_Male_CSF_Vanilla</T>
-      <T n="slider_description">0xF0A5CFBE<!-- Change chest shape --></T>
+      <T n="slider_description">0xE4CDFC5A<!-- Change chest shape --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">15406639143075942947</T>

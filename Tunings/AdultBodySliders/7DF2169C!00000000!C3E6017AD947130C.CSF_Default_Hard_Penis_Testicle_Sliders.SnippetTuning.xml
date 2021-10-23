@@ -6,6 +6,7 @@
       <T n="slider_raw_display_name">Hard_Penis_Testicle_Asymmetry_Left_Down_Right_Down</T>
       <T n="slider_description">0x82011A86<!-- Change testicle asymmetry --></T>
       <T n="slider_author">CSF</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">18421315526639373205</T>
@@ -28,6 +29,7 @@
       <T n="slider_raw_display_name">Hard_Penis_Testicle_Size_Small_Big</T>
       <T n="slider_description">0x9CCBCBBE<!-- Change testicle size --></T>
       <T n="slider_author">CSF</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">17369810486794218629</T>
@@ -50,6 +52,7 @@
       <T n="slider_raw_display_name">Hard_Penis_Testicle_Size_Small_Big_2</T>
       <T n="slider_description">0x9CCBCBBE<!-- Change testicle size --></T>
       <T n="slider_author">CSF</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">13190513629490450319</T>

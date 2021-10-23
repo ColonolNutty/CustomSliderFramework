@@ -5,6 +5,7 @@
       <T n="slider_display_name">0xE33CDFB7<!--Eyes Down/Up--></T>
       <T n="slider_raw_display_name">Eyes_Up_Down_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -33,6 +34,7 @@
       <T n="slider_display_name">0x0C795AC2<!--Eyes Narrow/Wide--></T>
       <T n="slider_raw_display_name">Eyes_Narrow_Wide_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -61,6 +63,7 @@
       <T n="slider_display_name">0x426F8A1E<!--Eyes Depth Recede/Bulge--></T>
       <T n="slider_raw_display_name">Eyes_Depth_Recede_Bulge_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -89,6 +92,7 @@
       <T n="slider_display_name">0x35DC9157<!--Upper Eyelid Position Lower/Higher--></T>
       <T n="slider_raw_display_name">Eyes_Lid_Upper_Position_Lower_Higher_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -117,6 +121,7 @@
       <T n="slider_display_name">0xA353B6C2<!--Lower Eyelid Position Lower/Higher--></T>
       <T n="slider_raw_display_name">Eyes_Lid_Lower_Position_Lower_Higher_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -145,6 +150,7 @@
       <T n="slider_display_name">0x11861EC0<!--Eyes Tilt In/Out--></T>
       <T n="slider_raw_display_name">Eyes_Tilt_In_Out_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -173,6 +179,7 @@
       <T n="slider_display_name">0xE5D08E9B<!--Eyes Size Small/Large--></T>
       <T n="slider_raw_display_name">Eyes_Size_Small_Large_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -201,6 +208,7 @@
       <T n="slider_display_name">0x6250C0EB<!--Eyes Crosseyes/Walleye--></T>
       <T n="slider_raw_display_name">Eyes_Crosseye_Walleye_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -229,6 +237,7 @@
       <T n="slider_display_name">0xB7719F54<!--Inner Brow Vertical Position--></T>
       <T n="slider_raw_display_name">Brows_Inner_Vertical_Position_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -256,6 +265,7 @@
       <T n="slider_display_name">0xB5B7C4F3<!--Outer Brow Vertical Position--></T>
       <T n="slider_raw_display_name">Brows_Outer_Vertical_Position_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -283,6 +293,7 @@
       <T n="slider_display_name">0x0DF047E2<!--Brows Foward Position--></T>
       <T n="slider_raw_display_name">Brows_Foward_Position_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>

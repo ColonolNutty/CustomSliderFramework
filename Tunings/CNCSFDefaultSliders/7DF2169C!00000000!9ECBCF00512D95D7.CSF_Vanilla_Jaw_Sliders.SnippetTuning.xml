@@ -6,6 +6,7 @@
       <T n="slider_raw_display_name">Jaw_Position_Down_Up_CSF_Vanilla</T>
       <T n="slider_description">0xACC010C7</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">18064054205832047496</T>
@@ -30,6 +31,7 @@
       <T n="slider_raw_display_name">Jaw_Shape_Narrow_Wide_CSF_Vanilla</T>
       <T n="slider_description">0x0C8368E1</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">814248654832380550</T>
@@ -54,6 +56,7 @@
       <T n="slider_raw_display_name">Jaw_Shape_Underbite_Overbite_CSF_Vanilla</T>
       <T n="slider_description">0x0C8368E1</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">17651112171472073623</T>
@@ -78,6 +81,7 @@
       <T n="slider_raw_display_name">Jaw_Shape_Flat_Angled_CSF_Vanilla</T>
       <T n="slider_description">0x0C8368E1</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">2982451868964808522</T>
@@ -102,6 +106,7 @@
       <T n="slider_raw_display_name">Jaw_Shape_Flat_Angled_CSF_Vanilla</T>
       <T n="slider_description">0x0C8368E1</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">8075502111906092726</T>

@@ -6,6 +6,7 @@
       <T n="slider_raw_display_name">Breast_Size_Small_Big_CSF_Default</T>
       <T n="slider_description">0x61C9BA59</T>
       <T n="slider_author">CSF</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">12612576050933967173</T>
@@ -31,6 +32,7 @@
       <T n="slider_raw_display_name">Breast_Vertical_Rotation_Down_Up_CSF_Default</T>
       <T n="slider_description">0xF317C2E3</T>
       <T n="slider_author">CSF</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">12750319751461700392</T>
@@ -53,6 +55,7 @@
       <T n="slider_raw_display_name">Breast_Separation_In_Out_CSF_Default</T>
       <T n="slider_description">0x55C5F7A8</T>
       <T n="slider_author">CSF</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">14348896741668569854</T>
@@ -75,6 +78,7 @@
       <T n="slider_raw_display_name">Breast_Vertical_Position_Down_Up_CSF_Default</T>
       <T n="slider_description">0xC810D081</T>
       <T n="slider_author">CSF</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">11624787769210868957</T>

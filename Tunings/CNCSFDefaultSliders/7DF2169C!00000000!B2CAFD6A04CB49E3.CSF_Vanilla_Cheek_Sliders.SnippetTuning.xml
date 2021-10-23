@@ -6,6 +6,7 @@
       <T n="slider_raw_display_name">Cheek_Position_Backward_Forward_CSF_Vanilla</T>
       <T n="slider_description">0x999ACF4C</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">2430963477715201215</T>
@@ -30,6 +31,7 @@
       <T n="slider_raw_display_name">Cheek_Position_Down_Up_CSF_Vanilla</T>
       <T n="slider_description">0x999ACF4C</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">1647071105695811359</T>
@@ -54,6 +56,7 @@
       <T n="slider_raw_display_name">Cheek_Shape_Gaunt_Full_CSF_Vanilla</T>
       <T n="slider_description">0xEF36D4EE</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">10435305242513908519</T>
@@ -78,6 +81,7 @@
       <T n="slider_raw_display_name">Cheek_Jowl_Position_Down_Up_CSF_Vanilla</T>
       <T n="slider_description">0x999ACF4C</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">8346319527942286863</T>
@@ -102,6 +106,7 @@
       <T n="slider_raw_display_name">Cheek_Shape_Angled_Round_CSF_Vanilla</T>
       <T n="slider_description">0xEF36D4EE</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">604929535228004456</T>
@@ -126,6 +131,7 @@
       <T n="slider_raw_display_name">Cheek_Shape_Sunken_Prominent_CSF_Vanilla</T>
       <T n="slider_description">0xEF36D4EE</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">15297754480551974982</T>
@@ -150,6 +156,7 @@
       <T n="slider_raw_display_name">Cheek_Shape_Flat_CSF_Vanilla</T>
       <T n="slider_description">0xEF36D4EE</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">0.0</T>
       <T n="slider_negative_modifier_id">10457303171655173781</T>

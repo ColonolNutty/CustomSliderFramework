@@ -6,6 +6,7 @@
       <T n="slider_raw_display_name">Brow_Apex_Position_In_Out_CSF_Vanilla</T>
       <T n="slider_description">0xE74F2F37</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">18126361085052373152</T>
@@ -30,6 +31,7 @@
       <T n="slider_raw_display_name">Brow_Position_Backward_Forward_CSF_Vanilla</T>
       <T n="slider_description">0xE74F2F37</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">4301356543452138165</T>
@@ -54,6 +56,7 @@
       <T n="slider_raw_display_name">Brow_Position_Down_Up_CSF_Vanilla</T>
       <T n="slider_description">0xE74F2F37</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">12443395535923202805</T>
@@ -78,6 +81,7 @@
       <T n="slider_raw_display_name">Brow_Position_Close_Far_CSF_Vanilla</T>
       <T n="slider_description">0xE74F2F37</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">16811532400880959555</T>
@@ -102,6 +106,7 @@
       <T n="slider_raw_display_name">Brow_Shape_Bent_Arched_CSF_Vanilla</T>
       <T n="slider_description">0x085F37BD</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">16737098168913094811</T>
@@ -126,6 +131,7 @@
       <T n="slider_raw_display_name">Brow_Rotation_In_Out_CSF_Vanilla</T>
       <T n="slider_description">0x085F37BD</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">17233218281378399315</T>
@@ -150,6 +156,7 @@
       <T n="slider_raw_display_name">Brow_Outside_Rotation_Down_Up_CSF_Vanilla</T>
       <T n="slider_description">0x085F37BD</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">3830954979808441285</T>

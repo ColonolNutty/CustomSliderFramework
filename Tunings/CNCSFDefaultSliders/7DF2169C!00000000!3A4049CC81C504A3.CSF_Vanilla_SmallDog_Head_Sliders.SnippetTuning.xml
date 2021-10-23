@@ -5,6 +5,7 @@
       <T n="slider_display_name">0x4CFF791A<!--Head Small/Large--></T>
       <T n="slider_raw_display_name">Head_Small_Large_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -33,6 +34,7 @@
       <T n="slider_display_name">0xCFC4755E<!--Head Narrow/Wide--></T>
       <T n="slider_raw_display_name">Head_Narrow_Wide_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -61,6 +63,7 @@
       <T n="slider_display_name">0x8643614B<!--Head Crown Flat/Dome--></T>
       <T n="slider_raw_display_name">Head_Crown_Flat_Dome_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -89,6 +92,7 @@
       <T n="slider_display_name">0x70110E22<!--Head Skull Point--></T>
       <T n="slider_raw_display_name">Head_Skull_Point_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -116,6 +120,7 @@
       <T n="slider_display_name">0x19435AB0<!--Head Skull Split--></T>
       <T n="slider_raw_display_name">Head_Skull_Split_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -143,6 +148,7 @@
       <T n="slider_display_name">0x628FE533<!--Head Lean/Full--></T>
       <T n="slider_raw_display_name">Head_Lean_Full_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -171,6 +177,7 @@
       <T n="slider_display_name">0x35D48AEE<!--Neck Short--></T>
       <T n="slider_raw_display_name">Neck_Short_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -198,6 +205,7 @@
       <T n="slider_display_name">0xF34004E9<!--Neck Thin/Thick--></T>
       <T n="slider_raw_display_name">Neck_Thin_Thick_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -226,6 +234,7 @@
       <T n="slider_display_name">0x0DAC9039<!--Jaw Round/Square--></T>
       <T n="slider_raw_display_name">Jaw_Round_Square_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -254,6 +263,7 @@
       <T n="slider_display_name">0x43FE7ADD<!--Jaw Underbite--></T>
       <T n="slider_raw_display_name">Jaw_Underbite_SmallDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>

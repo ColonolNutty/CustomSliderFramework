@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Vanilla_Body_Sliders" s="4760042387693337197">
   <L n="custom_slider_info_list">
-    <!--Body Shape Lean/Fit-->
     <U>
       <T n="slider_display_name">0x5374BA86<!--Body Shape Lean/Fit--></T>
       <T n="slider_raw_display_name">Body_Shape_Lean_Fit_Female_CSF_Vanilla</T>
       <T n="slider_description">0xBB205111<!-- Change body shape lean fit --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">6903059159111949002</T>
@@ -34,6 +34,7 @@
       <T n="slider_raw_display_name">Body_Shape_Lean_Fit_Male_CSF_Vanilla</T>
       <T n="slider_description">0xBB205111<!-- Change body shape lean fit --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">13954125528614864569</T>
@@ -62,6 +63,7 @@
       <T n="slider_raw_display_name">Body_Shape_Bony_Heavy_Female_CSF_Vanilla</T>
       <T n="slider_description">0xF9396C5B<!-- Change body shape bony heavy --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">13220175796036315854</T>
@@ -89,6 +91,7 @@
       <T n="slider_raw_display_name">Body_Shape_Bony_Heavy_Male_CSF_Vanilla</T>
       <T n="slider_description">0xF9396C5B<!-- Change body shape bony heavy --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">959247731198512041</T>
@@ -116,6 +119,7 @@
       <T n="slider_raw_display_name">Height_Short_Tall_CSF_Default</T>
       <T n="slider_description">0x65313E2A<!-- Change Height --></T>
       <T n="slider_author">CSF</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">13801231225349348340</T>
@@ -137,6 +141,7 @@
       <T n="slider_raw_display_name">Hand_Size_Small_Big_CSF_Default</T>
       <T n="slider_description">0x9A0AF2A5<!-- Change hand size --></T>
       <T n="slider_author">CSF</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>

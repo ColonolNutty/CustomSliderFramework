@@ -9,6 +9,7 @@ Copyright (c) COLONOLNUTTY
 from pprint import pformat
 from typing import Tuple, List, Union
 
+from cncustomsliderframework.enums.modifier_types import CSFModifierType
 from sims.sim_info import SimInfo
 from protocolbuffers.Localization_pb2 import LocalizedString
 from cncustomsliderframework.enums.slider_category import CSFSliderCategory
@@ -33,6 +34,7 @@ class CSFSlider:
         icon_id: int,
         available_for: CommonAvailableForSim,
         tags: Tuple[str],
+        modifier_type: CSFModifierType,
         categories: Tuple[CSFSliderCategory]=(CSFSliderCategory.OTHER, ),
         minimum_value: float=-100.0,
         maximum_value: float=100.0,
@@ -58,12 +60,13 @@ class CSFSlider:
         self._negative_modifier_id = negative_modifier_id
         self._unique_identifier = None
         self._tags = tags
+        self._modifier_type = modifier_type
 
     @property
     def unique_identifier(self) -> str:
         """An identifier that identifies the slider in a unique way."""
         if not self._unique_identifier:
-            self._unique_identifier = '{}{}{}{}'.format(self.author, self.name, str(self.positive_modifier_id), str(self.negative_modifier_id))
+            self._unique_identifier = f'{self.author}{self.name}{self.positive_modifier_id}{self.negative_modifier_id}'
             self._unique_identifier = ''.join((ch for ch in self._unique_identifier if ch.isalnum()))
         return self._unique_identifier
 
@@ -136,6 +139,26 @@ class CSFSlider:
     def available_for(self) -> CommonAvailableForSim:
         """ Availability of the slider. """
         return self._available_for
+
+    @property
+    def modifier_type(self) -> CSFModifierType:
+        """ The type of modifier the slider is. """
+        return self._modifier_type
+
+    @property
+    def is_face_modifier(self) -> bool:
+        """Whether the slider modifies the face or not."""
+        return self.modifier_type == CSFModifierType.FACE_MODIFIER
+
+    @property
+    def is_body_modifier(self) -> bool:
+        """Whether the slider modifies the body or not."""
+        return self.modifier_type == CSFModifierType.BODY_MODIFIER
+
+    @property
+    def is_sculpt(self) -> bool:
+        """Whether the slider is a sculpt or not."""
+        return self.modifier_type == CSFModifierType.SCULPT
 
     @property
     def tags(self) -> Tuple[str]:
@@ -239,6 +262,7 @@ class CSFSlider:
         author: str = getattr(package_slider, 'slider_author', None)
         if author is None:
             log.warn('No author was specified for slider \'{}\''.format(error_display_name))
+        modifier_type: CSFModifierType = getattr(package_slider, 'slider_modifier_type', CSFModifierType.FACE_MODIFIER)
         icon_id: int = getattr(package_slider, 'slider_icon_id', -1)
         minimum_value: float = getattr(package_slider, 'slider_minimum_value', 0.0)
         maximum_value: float = getattr(package_slider, 'slider_maximum_value', 0.0)
@@ -257,17 +281,7 @@ class CSFSlider:
         if not available_for_genders and not available_for_ages and not available_for_species:
             log.warn('No Genders, Ages, or Species specified for slider \'{}\''.format(error_display_name))
             return None
-        available_for = CommonAvailableForSim(available_for_genders, available_for_ages, available_for_species, (
-            CommonOccultType.NON_OCCULT,
-            CommonOccultType.ALIEN,
-            CommonOccultType.GHOST,
-            CommonOccultType.MERMAID,
-            CommonOccultType.PLANT_SIM,
-            CommonOccultType.ROBOT,
-            CommonOccultType.SKELETON,
-            CommonOccultType.VAMPIRE,
-            CommonOccultType.WITCH
-        ))
+        available_for = CommonAvailableForSim(available_for_genders, available_for_ages, available_for_species, [occult_type for occult_type in CommonOccultType.values if occult_type != CommonOccultType.NONE])
 
         tags = tuple(getattr(package_slider, 'tags', tuple()))
 
@@ -279,6 +293,7 @@ class CSFSlider:
             icon_id,
             available_for,
             tags,
+            modifier_type,
             categories=categories,
             minimum_value=minimum_value,
             maximum_value=maximum_value,

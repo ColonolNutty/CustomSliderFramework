@@ -7,6 +7,7 @@
       <T n="slider_raw_display_name">Head_Shape_Jaw_Soft_Mod_Female_CSF_Vanilla</T>
       <T n="slider_description">0x5960686C<!-- Apply jaw soft mod --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">7374058798347764716</T>
@@ -33,6 +34,7 @@
       <T n="slider_raw_display_name">Head_Shape_Jaw_Soft_Mod_Male_CSF_Vanilla</T>
       <T n="slider_description">0x5960686C<!-- Apply jaw soft mod --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">13317021532494359409</T>
@@ -60,6 +62,7 @@
       <T n="slider_raw_display_name">Head_Shape_Jaw_Soft_Mod_2_Female_CSF_Vanilla</T>
       <T n="slider_description">0x5960686C<!-- Apply jaw soft mod --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">7374058798347764719</T>
@@ -86,6 +89,7 @@
       <T n="slider_raw_display_name">Head_Shape_Jaw_Soft_Mod_2_Male_CSF_Vanilla</T>
       <T n="slider_description">0x5960686C<!-- Apply jaw soft mod --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">13317021532494359410</T>
@@ -113,6 +117,7 @@
       <T n="slider_raw_display_name">Head_Shape_Jaw_Soft_Mod_3_Female_CSF_Vanilla</T>
       <T n="slider_description">0x5960686C<!-- Apply jaw soft mod --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">7374058798347764718</T>
@@ -139,6 +144,7 @@
       <T n="slider_raw_display_name">Head_Shape_Jaw_Soft_Mod_3_Male_CSF_Vanilla</T>
       <T n="slider_description">0x5960686C<!-- Apply jaw soft mod --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">13317021532494359411</T>
@@ -166,6 +172,7 @@
       <T n="slider_raw_display_name">Neck_Shape_Back_Contract_Extend_Female_CSF_Vanilla</T>
       <T n="slider_description">0xA6ACE4BF<!-- Change neck shape --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">3078880065704035811</T>
@@ -193,6 +200,7 @@
       <T n="slider_raw_display_name">Neck_Shape_Back_Contract_Extend_Male_CSF_Vanilla</T>
       <T n="slider_description">0xA6ACE4BF<!-- Change neck shape --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">13340458819235837030</T>
@@ -221,6 +229,7 @@
       <T n="slider_raw_display_name">Head_Size_Small_Big_CSF_Vanilla</T>
       <T n="slider_description">0x4778BAB7<!-- Change head size --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">8590297934528026115</T>
@@ -246,6 +255,7 @@
       <T n="slider_raw_display_name">Head_Cranium_Height_Low_High_CSF_Vanilla</T>
       <T n="slider_description">0xCDAA2446<!-- Change cranium height --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">8590297934528026115</T>
@@ -271,6 +281,7 @@
       <T n="slider_raw_display_name">Head_Face_Depth_Backward_Forward_CSF_Vanilla</T>
       <T n="slider_description">0x93C3CDC0<!-- Change face depth --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">17149458039953429403</T>
@@ -296,6 +307,7 @@
       <T n="slider_raw_display_name">Head_Width_Narrow_Wide_CSF_Vanilla</T>
       <T n="slider_description">0xBF888BB6<!-- Change head width --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">4948847164690752846</T>
@@ -321,6 +333,7 @@
       <T n="slider_raw_display_name">Head_Bone_Width_Narrow_Wide_CSF_Vanilla</T>
       <T n="slider_description">0x498667D4<!-- Change head bone width --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">10104729436287173028</T>
@@ -346,6 +359,7 @@
       <T n="slider_raw_display_name">Head_Height_Short_Long_CSF_Vanilla</T>
       <T n="slider_description">0x88428BF5<!-- Change head height --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">17640420822899231937</T>
@@ -371,6 +385,7 @@
       <T n="slider_raw_display_name">Head_Forehead_Backward_Forward_CSF_Vanilla</T>
       <T n="slider_description">0x1B5F6475<!-- Change forehead position --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">3401032725487800308</T>
@@ -396,6 +411,7 @@
       <T n="slider_raw_display_name">Head_Forehead_Width_Narrow_Wide_CSF_Vanilla</T>
       <T n="slider_description">0x4669F37C<!-- Change forehead width --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">16123149972064770128</T>
@@ -421,6 +437,7 @@
       <T n="slider_raw_display_name">Head_Shape_Taper_In_Out_CSF_Vanilla</T>
       <T n="slider_description">0xCA388FF3<!-- Change forehead width --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">4908009738861017247</T>
@@ -446,6 +463,7 @@
       <T n="slider_raw_display_name">Head_Face_Down_Child_CSF_Vanilla</T>
       <T n="slider_description">0x92227A28<!-- Move head down --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">0.0</T>
       <T n="slider_negative_modifier_id">18313229626627055690</T>
@@ -470,6 +488,7 @@
       <T n="slider_raw_display_name">Head_Skull_Back_Backward_Forward_CSF_Vanilla</T>
       <T n="slider_description">0x22E399B6<!-- Change skull back position --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">10724374695110541596</T>
@@ -495,6 +514,7 @@
       <T n="slider_raw_display_name">Head_Skull_Base_Backward_Forward_CSF_Vanilla</T>
       <T n="slider_description">0x97054D53<!-- Change skull base position --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">2494246670349364092</T>
@@ -520,6 +540,7 @@
       <T n="slider_raw_display_name">Head_Skull_Size_Large_CSF_Vanilla</T>
       <T n="slider_description">0x06E6AE5A<!-- Change skull size --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">16255219628117640025</T>
@@ -544,6 +565,7 @@
       <T n="slider_raw_display_name">Head_Skull_Size_Flat_CSF_Vanilla</T>
       <T n="slider_description">0x06E6AE5A<!-- Change skull size --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">0.0</T>
       <T n="slider_negative_modifier_id">15736912955264198433</T>
@@ -568,6 +590,7 @@
       <T n="slider_raw_display_name">Head_Skull_Shape_Square_Round_CSF_Vanilla</T>
       <T n="slider_description">0x1BC67E0C<!-- Change skull base position --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">10995655158579423300</T>
@@ -593,6 +616,7 @@
       <T n="slider_raw_display_name">Neck_Size_Thin_Thick_Female_CSF_Vanilla</T>
       <T n="slider_description">0x23EA30A2<!-- Change neck size --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">16892734955963417493</T>
@@ -620,6 +644,7 @@
       <T n="slider_raw_display_name">Neck_Size_Thin_Thick_Male_CSF_Vanilla</T>
       <T n="slider_description">0x23EA30A2<!-- Change neck size --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">4033677695323829934</T>
@@ -647,6 +672,7 @@
       <T n="slider_raw_display_name">Neck_Size_Small_Big_CSF_Default</T>
       <T n="slider_description">0x23EA30A2<!-- Change neck size --></T>
       <T n="slider_author">CSF</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">13540934658970708314</T>

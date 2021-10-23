@@ -5,6 +5,7 @@
       <T n="slider_display_name">0x71A6D1F7<!--Nose Shape Heart--></T>
       <T n="slider_raw_display_name">Nose_Shape_Heart_Cat_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -32,6 +33,7 @@
       <T n="slider_display_name">0x215E7D06<!--Nose Shape Concave/Convex--></T>
       <T n="slider_raw_display_name">Nose_Shape_Concave_Convex_Cat_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -60,6 +62,7 @@
       <T n="slider_display_name">0xC3ADC32E<!--Nose Bridge Narrow/Wide--></T>
       <T n="slider_raw_display_name">Nose_Bridge_Shape_Narrow_Wide_Cat_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -88,6 +91,7 @@
       <T n="slider_display_name">0xE3F11107<!--Nose Vertical Position Down/Up--></T>
       <T n="slider_raw_display_name">Nose_Vertical_Position_Down_Up_Cat_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -116,6 +120,7 @@
       <T n="slider_display_name">0x391E41D9<!--Nose Depth In/Out--></T>
       <T n="slider_raw_display_name">Nose_Depth_In_Out_Cat_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -144,6 +149,7 @@
       <T n="slider_display_name">0x2FF396D6<!--Nose Size Small/Large--></T>
       <T n="slider_raw_display_name">Nose_Size_Small_Large_Cat_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -172,6 +178,7 @@
       <T n="slider_display_name">0xC8F4E409<!--Muzzle Mouth Corners Down/Up--></T>
       <T n="slider_raw_display_name">Muzzle_Shape_Mouth_Corners_Down_Up_Cat_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -200,6 +207,7 @@
       <T n="slider_display_name">0x6926840C<!--Muzzle Size Narrow/Wide--></T>
       <T n="slider_raw_display_name">Muzzle_Size_Narrow_Wide_Cat_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -228,6 +236,7 @@
       <T n="slider_display_name">0xAF1D1A2D<!--Muzzle Length Short/Long--></T>
       <T n="slider_raw_display_name">Muzzle_Length_Short_Long_Cat_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -256,6 +265,7 @@
       <T n="slider_display_name">0x5A465F46<!--Muzzle Height Flat/Tall--></T>
       <T n="slider_raw_display_name">Muzzle_Height_Flat_Tall_Cat_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -284,6 +294,7 @@
       <T n="slider_display_name">0xB2C482ED<!--Muzzle Shape Underbite--></T>
       <T n="slider_raw_display_name">Muzzle_Shape_Underbite_Cat_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -311,6 +322,7 @@
       <T n="slider_display_name">0xA27D38C4<!--Muzzle Shape Triangular--></T>
       <T n="slider_raw_display_name">Muzzle_Shape_Triangular_Cat_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -338,6 +350,7 @@
       <T n="slider_display_name">0xA69A27AF<!--Muzzle Shape Jowl--></T>
       <T n="slider_raw_display_name">Muzzle_Shape_Jowl_Cat_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>

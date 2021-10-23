@@ -2,48 +2,20 @@
 <I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Vanilla_LargeDog_Body_Sliders" s="6972350319997973285">
   <L n="custom_slider_info_list">
     <U>
-      <T n="slider_display_name">0xAFA86C75<!--Lower Leg Stance Narrow/Wide--></T>
-      <T n="slider_raw_display_name">Leg_Lower_Stance_Narrow_Wide_LargeDog_CSF_Vanilla</T>
+      <T n="slider_display_name">0xC024560F<!--Belly Shape Pregnant--></T>
+      <T n="slider_raw_display_name">Belly_Shape_Pregnant_Large_Dog_CSF_Vanilla</T>
+      <T n="slider_description">0xCC275EE1<!-- Change belly shape pregnant --></T>
       <T n="slider_author">Maxis</T>
-      <T n="slider_icon_id">0</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
-      <T n="slider_positive_modifier_id">10711135508812398146</T>
-      <T n="slider_negative_modifier_id">9443788042605941458</T>
+      <T n="slider_positive_modifier_id">3769193182453411362</T>
+      <T n="slider_negative_modifier_id">14695981039346656037</T>
 	  <L n="slider_categories">
-        <E>BODY</E>
-      </L>
+	    <E>BELLY</E>
+	  </L>
 	  <L n="available_for_ages">
 	    <E>CHILD</E>
-	    <E>TODDLER</E>
-	    <E>TEEN</E>
-	    <E>YOUNGADULT</E>
-	    <E>ADULT</E>
-	    <E>ELDER</E>
-	  </L>
-	  <L n="available_for_genders">
-	    <E>MALE</E>
-	    <E>FEMALE</E>
-	  </L>
-	  <L n="available_for_species">
-	    <E>LARGE_DOG</E>
-	  </L>
-    </U>
-    <U>
-      <T n="slider_display_name">0x3D3A7B55<!--Lower Leg Thickness Thin/Thick--></T>
-      <T n="slider_raw_display_name">Leg_Lower_Thickness_Thin_Thick_LargeDog_CSF_Vanilla</T>
-      <T n="slider_author">Maxis</T>
-      <T n="slider_icon_id">0</T>
-      <T n="slider_minimum_value">-100.0</T>
-      <T n="slider_maximum_value">100.0</T>
-      <T n="slider_positive_modifier_id">12610031914406824524</T>
-      <T n="slider_negative_modifier_id">1354545650510713776</T>
-	  <L n="slider_categories">
-        <E>BODY</E>
-      </L>
-	  <L n="available_for_ages">
-	    <E>CHILD</E>
-	    <E>TODDLER</E>
 	    <E>TEEN</E>
 	    <E>YOUNGADULT</E>
 	    <E>ADULT</E>
@@ -61,6 +33,7 @@
       <T n="slider_display_name">0xD4AD885A<!--Body Back Arch--></T>
       <T n="slider_raw_display_name">Body_Back_Arch_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -88,6 +61,7 @@
       <T n="slider_display_name">0x7377B4C0<!--Body Fat/Fit--></T>
       <T n="slider_raw_display_name">Body_Fat_Fit_LargeDog_CSF_Vanilla/FIT</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -116,6 +90,7 @@
       <T n="slider_display_name">0x6F903308<!--Body Small/Large--></T>
       <T n="slider_raw_display_name">Body_Small_Large_LargeDog_CSF_Vanilla/FIT</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -141,9 +116,68 @@
 	  </L>
     </U>
     <U>
+      <T n="slider_display_name">0xAFA86C75<!--Lower Leg Stance Narrow/Wide--></T>
+      <T n="slider_raw_display_name">Leg_Lower_Stance_Narrow_Wide_LargeDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">10711135508812398146</T>
+      <T n="slider_negative_modifier_id">9443788042605941458</T>
+	  <L n="slider_categories">
+        <E>BODY</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>LARGE_DOG</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0x3D3A7B55<!--Lower Leg Thickness Thin/Thick--></T>
+      <T n="slider_raw_display_name">Leg_Lower_Thickness_Thin_Thick_LargeDog_CSF_Vanilla</T>
+      <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
+      <T n="slider_icon_id">0</T>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">12610031914406824524</T>
+      <T n="slider_negative_modifier_id">1354545650510713776</T>
+	  <L n="slider_categories">
+        <E>BODY</E>
+      </L>
+	  <L n="available_for_ages">
+	    <E>CHILD</E>
+	    <E>TODDLER</E>
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>LARGE_DOG</E>
+	  </L>
+    </U>
+    <U>
       <T n="slider_display_name">0xFD42CC7D<!--Feet Size Small/Large--></T>
       <T n="slider_raw_display_name">Feet_Small_Large_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -172,6 +206,7 @@
       <T n="slider_display_name">0x3C9CC50A<!--Tail Thin/Thick--></T>
       <T n="slider_raw_display_name">Tail_Thin_Thick_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -200,6 +235,7 @@
       <T n="slider_display_name">0x12C4477D<!--Tail Short--></T>
       <T n="slider_raw_display_name">Tail_Short_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">0.0</T>
@@ -227,6 +263,7 @@
       <T n="slider_display_name">0xA41CCE83<!--Chest Depth--></T>
       <T n="slider_raw_display_name">Chest_Depth_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">0.0</T>
@@ -254,6 +291,7 @@
       <T n="slider_display_name">0x116D6812<!--Chest Size Small/Large--></T>
       <T n="slider_raw_display_name">Chest_Small_Large_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -282,6 +320,7 @@
       <T n="slider_display_name">0x07054981<!--Fore Legs Thin/Thick--></T>
       <T n="slider_raw_display_name">Fore_Legs_Thin_Thick_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -310,6 +349,7 @@
       <T n="slider_display_name">0x7AB924BB<!--Fore Legs Stance Narrow/Wide--></T>
       <T n="slider_raw_display_name">Fore_Legs_Stance_Narrow_Wide_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>

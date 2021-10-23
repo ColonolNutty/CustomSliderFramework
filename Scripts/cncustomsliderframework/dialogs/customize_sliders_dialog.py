@@ -71,7 +71,7 @@ class CSFCustomizeSlidersDialog(HasLog):
             per_page=400
         )
 
-        def _reopen_dialog() -> None:
+        def _reopen() -> None:
             self.log.debug('Reopening customize sliders dialog.')
             self.open(sim_info, page=option_dialog.current_page)
 
@@ -82,7 +82,7 @@ class CSFCustomizeSlidersDialog(HasLog):
                     CSFStringId.SLIDER_TEMPLATES_DESCRIPTION,
                     tag_list=[slider_category.name for slider_category in CSFSliderCategory.values]
                 ),
-                on_chosen=lambda *_, **__: CSFSliderTemplateDialog(on_close=_reopen_dialog).open(sim_info),
+                on_chosen=lambda *_, **__: CSFSliderTemplateDialog(on_close=_reopen).open(sim_info),
                 always_visible=True
             )
         )
@@ -93,26 +93,17 @@ class CSFCustomizeSlidersDialog(HasLog):
             def _on_confirm(_) -> None:
                 self.log.debug('Resetting all sliders.')
                 self.slider_application_service.reset_all_sliders(sim_info)
-                _reopen_dialog()
+                _reopen()
 
             def _on_cancel(_) -> None:
                 self.log.debug('Cancelled resetting of all sliders.')
-                _reopen_dialog()
+                _reopen()
 
             CommonOkCancelDialog(
                 CSFStringId.CONFIRMATION,
                 CSFStringId.ARE_YOU_SURE_YOU_WANT_TO_RESET_ALL_SLIDERS,
                 mod_identity=self.mod_identity
             ).show(on_ok_selected=_on_confirm, on_cancel_selected=_on_cancel)
-
-        def _on_slider_changed(slider_unique_identifier: str, amount: float, outcome: CommonChoiceOutcome):
-            if slider_unique_identifier is None or amount is None or CommonChoiceOutcome.is_error_or_cancel(outcome):
-                self.log.debug('No slider chosen, dialog closed, or no amount specified.')
-                _reopen_dialog()
-                return
-            self.log.debug('Slider changed, attempting to apply.')
-            self.slider_application_service.apply_slider_by_identifier(sim_info, slider_unique_identifier, amount)
-            _reopen_dialog()
 
         self.log.debug('Opening Customize Slider dialog.')
 
@@ -168,11 +159,11 @@ class CSFCustomizeSlidersDialog(HasLog):
                     if category not in slider.categories:
                         continue
                     self.slider_application_service.apply_random(sim_info, slider)
-                _reopen_dialog()
+                _reopen()
 
             def _on_cancel(_) -> None:
                 self.log.debug('Cancelled randomization of sliders in category {}.'.format(category_name))
-                _reopen_dialog()
+                _reopen()
 
             CommonOkCancelDialog(
                 CSFStringId.CONFIRMATION,
@@ -197,6 +188,13 @@ class CSFCustomizeSlidersDialog(HasLog):
                 )
             )
 
+        def _on_slider_changed(slider_unique_identifier: str, _custom_slider: CSFSlider):
+            if slider_unique_identifier is None or _custom_slider is None:
+                self.log.debug('No slider chosen, dialog closed.')
+                _reopen()
+                return
+            self._change_or_remove_slider_option(sim_info, _custom_slider, on_close=_reopen)
+
         for custom_slider in sorted_sliders:
             if custom_slider.description is not None:
                 # noinspection PyTypeChecker
@@ -206,20 +204,17 @@ class CSFCustomizeSlidersDialog(HasLog):
                 option_description = CommonLocalizationUtils.create_localized_string(CSFStringId.CHANGE_THE_SLIDER, tokens=(custom_slider.display_name, ))
 
             option_dialog.add_option(
-                CommonDialogInputFloatOption(
+                CommonDialogSelectOption(
                     custom_slider.unique_identifier,
-                    self.slider_application_service.get_current_slider_value(sim_info, custom_slider),
+                    custom_slider,
                     CommonDialogOptionContext(
                         custom_slider.display_name,
                         option_description,
+                        title_tokens=(str(self.slider_application_service.get_current_slider_value(sim_info, custom_slider)),),
                         icon=custom_slider.icon_id or None,
                         tag_list=tuple([category.name for category in custom_slider.categories])
                     ),
-                    min_value=custom_slider.minimum_value,
-                    max_value=custom_slider.maximum_value,
-                    on_chosen=_on_slider_changed,
-                    dialog_description_identifier=CSFStringId.DEFAULT_MIN_MAX,
-                    dialog_description_tokens=(option_description, str(0.0), str(custom_slider.minimum_value), str(custom_slider.maximum_value))
+                    on_chosen=_on_slider_changed
                 )
             )
 
@@ -241,3 +236,71 @@ class CSFCustomizeSlidersDialog(HasLog):
             page=page,
             categories=categories
         )
+
+    def _change_or_remove_slider_option(
+        self,
+        sim_info: SimInfo,
+        custom_slider: CSFSlider,
+        on_close: Callable[[], None]
+    ):
+        def _reopen() -> None:
+            self._change_or_remove_slider_option(sim_info, custom_slider, on_close)
+
+        def _on_slider_changed(slider_unique_identifier: str, amount: float, outcome: CommonChoiceOutcome):
+            if slider_unique_identifier is None or amount is None or CommonChoiceOutcome.is_error_or_cancel(outcome):
+                self.log.debug('No slider chosen, dialog closed, or no amount specified.')
+                _reopen()
+                return
+            self.log.debug('Slider changed, attempting to apply.')
+            self.slider_application_service.apply_slider(sim_info, custom_slider, amount, trigger_event=True)
+            _reopen()
+
+        def _on_remove_slider() -> None:
+            self.slider_application_service.remove_slider(sim_info, custom_slider, trigger_event=True)
+            _reopen()
+
+        if custom_slider.description is not None:
+            # noinspection PyTypeChecker
+            option_description = CommonLocalizationUtils.create_localized_string(custom_slider.description, tokens=(str(0.0), str(custom_slider.minimum_value), str(custom_slider.maximum_value)))
+        else:
+            # noinspection PyTypeChecker
+            option_description = CommonLocalizationUtils.create_localized_string(CSFStringId.CHANGE_THE_SLIDER, tokens=(custom_slider.display_name, ))
+
+        option_dialog = CommonChooseObjectOptionDialog(
+            custom_slider.display_name,
+            option_description,
+            mod_identity=self.mod_identity,
+            on_close=on_close,
+            per_page=400
+        )
+
+        option_dialog.add_option(
+            CommonDialogActionOption(
+                CommonDialogOptionContext(
+                    CSFStringId.REMOVE_SLIDER_CHANGES_NAME,
+                    CSFStringId.REMOVE_SLIDER_CHANGES_DESCRIPTION
+                ),
+                on_chosen=lambda *_, **__: _on_remove_slider(),
+                always_visible=True
+            )
+        )
+
+        option_dialog.add_option(
+            CommonDialogInputFloatOption(
+                custom_slider.unique_identifier,
+                self.slider_application_service.get_current_slider_value(sim_info, custom_slider),
+                CommonDialogOptionContext(
+                    CSFStringId.CHANGE_SLIDER_VALUE_NAME,
+                    CSFStringId.CHANGE_SLIDER_VALUE_DESCRIPTION,
+                    title_tokens=(str(self.slider_application_service.get_current_slider_value(sim_info, custom_slider)),),
+                    icon=custom_slider.icon_id or None
+                ),
+                min_value=custom_slider.minimum_value,
+                max_value=custom_slider.maximum_value,
+                on_chosen=_on_slider_changed,
+                dialog_description_identifier=CSFStringId.DEFAULT_MIN_MAX,
+                dialog_description_tokens=(option_description, str(0.0), str(custom_slider.minimum_value), str(custom_slider.maximum_value))
+            )
+        )
+
+        option_dialog.show(sim_info=sim_info)

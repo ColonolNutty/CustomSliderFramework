@@ -5,6 +5,7 @@
       <T n="slider_display_name">0xC3ADC32E<!--Nose Bridge Narrow/Wide--></T>
       <T n="slider_raw_display_name">Nose_Bridge_Narrow_Wide_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -33,6 +34,7 @@
       <T n="slider_display_name">0x376E59B9<!--Nose Bridge In/Out--></T>
       <T n="slider_raw_display_name">Nose_Bridge_In_Out_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -61,6 +63,7 @@
       <T n="slider_display_name">0xE3F11107<!--Nose Vertical Position Down/Up--></T>
       <T n="slider_raw_display_name">Nose_Vertical_Position_Down_Up_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -89,6 +92,7 @@
       <T n="slider_display_name">0x391E41D9<!--Nose Depth In/Out--></T>
       <T n="slider_raw_display_name">Nose_Depth_In_Out_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -117,6 +121,7 @@
       <T n="slider_display_name">0x2FF396D6<!--Nose Size Small/Large--></T>
       <T n="slider_raw_display_name">Nose_Size_Small_Large_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -145,6 +150,7 @@
       <T n="slider_display_name">0x273CF84D<!--Nose Narrow/Wide--></T>
       <T n="slider_raw_display_name">Nose_Narrow_Wide_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -173,6 +179,7 @@
       <T n="slider_display_name">0x2C70D51F<!--Nose Flat/Pointy--></T>
       <T n="slider_raw_display_name">Nose_Narrow_Wide_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -201,6 +208,7 @@
       <T n="slider_display_name">0x2994F511<!--Nose Flare Bottom/Top--></T>
       <T n="slider_raw_display_name">Nose_Flare_Bottom_Top_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -229,6 +237,7 @@
       <T n="slider_display_name">0xC8F4E409<!--Muzzle Mouth Corners Down/Up--></T>
       <T n="slider_raw_display_name">Muzzle_Mouth_Corners_Down_Up_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -257,6 +266,7 @@
       <T n="slider_display_name">0x6926840C<!--Muzzle Size Narrow/Wide--></T>
       <T n="slider_raw_display_name">Muzzle_Size_Narrow_Wide_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -285,6 +295,7 @@
       <T n="slider_display_name">0xAF1D1A2D<!--Muzzle Length Short/Long--></T>
       <T n="slider_raw_display_name">Muzzle_Length_Short_Long_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -313,6 +324,7 @@
       <T n="slider_display_name">0x5A465F46<!--Muzzle Height Flat/Tall--></T>
       <T n="slider_raw_display_name">Muzzle_Height_Flat_Tall_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -341,6 +353,7 @@
       <T n="slider_display_name">0x1BF4CFC2<!--Muzzle Jowl--></T>
       <T n="slider_raw_display_name">Muzzle_Jowl_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -368,6 +381,7 @@
       <T n="slider_display_name">0x5BE95EBC<!--Muzzle Teeth--></T>
       <T n="slider_raw_display_name">Muzzle_Teeth_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>

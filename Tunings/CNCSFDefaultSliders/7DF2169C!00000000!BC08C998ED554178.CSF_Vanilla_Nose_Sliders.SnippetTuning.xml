@@ -6,6 +6,7 @@
       <T n="slider_raw_display_name">Nose_Bridge_Shape_Narrow_Wide_CSF_Vanilla</T>
       <T n="slider_description">0x56BC6EB6</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">6967390397713475584</T>
@@ -30,6 +31,7 @@
       <T n="slider_raw_display_name">Nose_Bridge_Brow_Positon_Backward_Forward_CSF_Vanilla</T>
       <T n="slider_description">0x223FE754</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">12908741054336191488</T>
@@ -54,6 +56,7 @@
       <T n="slider_raw_display_name">Nose_Bridge_Brow_Positon_Down_CSF_Vanilla</T>
       <T n="slider_description">0x223FE754</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">0.0</T>
       <T n="slider_negative_modifier_id">18408192226370844717</T>
@@ -77,6 +80,7 @@
       <T n="slider_raw_display_name">Nose_Bridge_Brow_Positon_Down_Up_CSF_Vanilla</T>
       <T n="slider_description">0x223FE754</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">6275401643867103130</T>
@@ -101,6 +105,7 @@
       <T n="slider_raw_display_name">Nose_Bridge_Brow_Shape_Narrow_Wide_CSF_Vanilla</T>
       <T n="slider_description">0x56BC6EB6</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">6690679215440050412</T>
@@ -125,6 +130,7 @@
       <T n="slider_raw_display_name">Nose_Bump_Apex_Position_Low_High_CSF_Vanilla</T>
       <T n="slider_description">0x223FE754</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">3707965294119003396</T>
@@ -149,6 +155,7 @@
       <T n="slider_raw_display_name">Nose_Bump_Apex_Position_High_CSF_Vanilla</T>
       <T n="slider_description">0x223FE754</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">14206965741204473422</T>
@@ -172,6 +179,7 @@
       <T n="slider_raw_display_name">Nose_Bump_Position_Down_Up_CSF_Vanilla</T>
       <T n="slider_description">0x223FE754</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">5810182819069390265</T>
@@ -196,6 +204,7 @@
       <T n="slider_raw_display_name">Nose_Nostril_Apex_Position_In_Out_CSF_Vanilla</T>
       <T n="slider_description">0x223FE754</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">146051823133568483</T>
@@ -220,6 +229,7 @@
       <T n="slider_raw_display_name">Nose_Nostril_Position_Down_Up_CSF_Vanilla</T>
       <T n="slider_description">0x223FE754</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">17839119112349499282</T>
@@ -244,6 +254,7 @@
       <T n="slider_raw_display_name">Nose_Nostril_Shape_Flat_Arch_CSF_Vanilla</T>
       <T n="slider_description">0x56BC6EB6</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">7695590921836387013</T>
@@ -268,6 +279,7 @@
       <T n="slider_raw_display_name">Nose_Nostril_Shape_Closed_Open_CSF_Vanilla</T>
       <T n="slider_description">0x56BC6EB6</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">13939150108799863061</T>
@@ -292,6 +304,7 @@
       <T n="slider_raw_display_name">Nose_Nostril_Shape_Contract_Expand_CSF_Vanilla</T>
       <T n="slider_description">0x56BC6EB6</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">5306951458733428073</T>
@@ -316,6 +329,7 @@
       <T n="slider_raw_display_name">Nose_Nostril_Shape_Narrow_Wide_CSF_Vanilla</T>
       <T n="slider_description">0x56BC6EB6</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">11597246689681395965</T>
@@ -340,6 +354,7 @@
       <T n="slider_raw_display_name">Nose_Tip_Shape_Flat_Long_CSF_Vanilla</T>
       <T n="slider_description">0x56BC6EB6</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">14953623487774005769</T>
@@ -364,6 +379,7 @@
       <T n="slider_raw_display_name">Nose_Tip_Shape_Small_Big_CSF_Vanilla</T>
       <T n="slider_description">0x56BC6EB6</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">14858049066711041264</T>
@@ -388,6 +404,7 @@
       <T n="slider_raw_display_name">Nose_Tip_Shape_Rotation_Down_Up_CSF_Vanilla</T>
       <T n="slider_description">0x56BC6EB6</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">10994595152774120517</T>
@@ -412,6 +429,7 @@
       <T n="slider_raw_display_name">Nose_Tip_Shape_Narrow_Wide_CSF_Vanilla</T>
       <T n="slider_description">0x56BC6EB6</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">9261883413856599960</T>
@@ -436,6 +454,7 @@
       <T n="slider_raw_display_name">Nose_Position_Down_Up_CSF_Vanilla</T>
       <T n="slider_description">0x223FE754</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">16251484221193721993</T>
@@ -460,6 +479,7 @@
       <T n="slider_raw_display_name">Nose_Shape_Small_Big_CSF_Vanilla</T>
       <T n="slider_description">0x56BC6EB6</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">6477631883509580520</T>
@@ -484,6 +504,7 @@
       <T n="slider_raw_display_name">Nose_Shape_Flat_Long_CSF_Vanilla</T>
       <T n="slider_description">0x56BC6EB6</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">5423325676175371584</T>
@@ -508,6 +529,7 @@
       <T n="slider_raw_display_name">Nose_Shape_Narrow_Wide_CSF_Vanilla</T>
       <T n="slider_description">0x56BC6EB6</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">8285054274547873211</T>
@@ -532,6 +554,7 @@
       <T n="slider_raw_display_name">Nose_Shape_Rotation_In_Out_CSF_Vanilla</T>
       <T n="slider_description">0x56BC6EB6</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">17485107855933928645</T>

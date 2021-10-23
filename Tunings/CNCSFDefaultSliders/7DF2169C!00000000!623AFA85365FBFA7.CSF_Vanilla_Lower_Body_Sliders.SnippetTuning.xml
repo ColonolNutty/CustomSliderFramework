@@ -7,6 +7,7 @@
       <T n="slider_raw_display_name">Waist_Width_Narrow_Wide_Female_CSF_Vanilla</T>
       <T n="slider_description">0x633AADDC<!-- Change waist width --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">4618492751086940536</T>
@@ -34,6 +35,7 @@
       <T n="slider_raw_display_name">Waist_Width_Narrow_Wide_Male_CSF_Vanilla</T>
       <T n="slider_description">0x633AADDC<!-- Change waist width --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">8563047426330679043</T>
@@ -62,6 +64,7 @@
       <T n="slider_raw_display_name">Hip_Width_Narrow_Wide_Female_CSF_Vanilla</T>
       <T n="slider_description">0x70C0E0AE<!-- Change hip width --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">5374208749069135862</T>
@@ -89,6 +92,7 @@
       <T n="slider_raw_display_name">Hip_Width_Narrow_Wide_Male_CSF_Vanilla</T>
       <T n="slider_description">0x70C0E0AE<!-- Change hip width --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">712054970721619767</T>
@@ -117,6 +121,7 @@
       <T n="slider_raw_display_name">Thigh_Size_Small_Big_Female_CSF_Vanilla</T>
       <T n="slider_description">0x6B871754<!-- Change thigh size --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">7928916107912367106</T>
@@ -144,6 +149,7 @@
       <T n="slider_raw_display_name">Thigh_Size_Small_Big_Male_CSF_Vanilla</T>
       <T n="slider_description">0x6B871754<!-- Change thigh size --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">1701565032762897701</T>
@@ -171,6 +177,7 @@
       <T n="slider_raw_display_name">Thigh_Size_Small_Big_CSF_Default</T>
       <T n="slider_description">0x6B871754<!-- Change thigh size --></T>
       <T n="slider_author">CSF</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">11511866501461715328</T>
@@ -195,6 +202,7 @@
       <T n="slider_raw_display_name">Thigh_Separation_CSF_Default</T>
       <T n="slider_description">0x9038AA5F<!-- Change thigh separation --></T>
       <T n="slider_author">CSF</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">13319002811811289390</T>
@@ -219,6 +227,7 @@
       <T n="slider_raw_display_name">Lower_Leg_Size_Small_Big_Female_CSF_Vanilla</T>
       <T n="slider_description">0xD08866A3<!-- Change lower leg size --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">8990366144061439592</T>
@@ -246,6 +255,7 @@
       <T n="slider_raw_display_name">Lower_Leg_Small_Big_Male_CSF_Vanilla</T>
       <T n="slider_description">0xD08866A3<!-- Change lower leg size --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">1554888732433422503</T>
@@ -274,6 +284,7 @@
       <T n="slider_raw_display_name">Feet_Small_Big_Female_CSF_Vanilla</T>
       <T n="slider_description">0x8F2F4AF1<!-- Change feet size --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">3484085079657901585</T>
@@ -301,6 +312,7 @@
       <T n="slider_raw_display_name">Feet_Small_Big_Male_CSF_Vanilla</T>
       <T n="slider_description">0x8F2F4AF1<!-- Change feet size --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">9316276890694750978</T>
@@ -329,6 +341,7 @@
       <T n="slider_raw_display_name">Feet_Length_Short_Long_Female_CSF_Vanilla</T>
       <T n="slider_description">0xFB45B338<!-- Change feet length --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">6218576529835193767</T>
@@ -356,6 +369,7 @@
       <T n="slider_raw_display_name">Feet_Length_Short_Long_Male_CSF_Vanilla</T>
       <T n="slider_description">0xFB45B338<!-- Change feet length --></T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
       <T n="slider_positive_modifier_id">9881199360928443106</T>

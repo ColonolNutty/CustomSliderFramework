@@ -5,6 +5,7 @@
       <T n="slider_display_name">0x98A82E75<!--Ear Rotation In/Out--></T>
       <T n="slider_raw_display_name">Ears_Rotate_In_Out_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -33,6 +34,7 @@
       <T n="slider_display_name">0xFF57084F<!--Ear Size Small/Large--></T>
       <T n="slider_raw_display_name">Ears_Size_Small_Large_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -61,6 +63,7 @@
       <T n="slider_display_name">0xE908DC5B<!--Ear Size Narrow/Wide--></T>
       <T n="slider_raw_display_name">Ears_Size_Narrow_Wide_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -89,6 +92,7 @@
       <T n="slider_display_name">0x442B7AED<!--Ear Size Short/Long--></T>
       <T n="slider_raw_display_name">Ears_Size_Short_Long_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -117,6 +121,7 @@
       <T n="slider_display_name">0x30EA7908<!--Ear Side/Top--></T>
       <T n="slider_raw_display_name">Ears_Side_Top_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">-100.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -145,6 +150,7 @@
       <T n="slider_display_name">0xAE4DE7A5<!--Ears Up Tip Flop--></T>
       <T n="slider_raw_display_name">Ears_UpTipFlop_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -172,6 +178,7 @@
       <T n="slider_display_name">0xD30F3EE2<!--Ears Down Mod--></T>
       <T n="slider_raw_display_name">Ears_DownMod_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
@@ -199,6 +206,7 @@
       <T n="slider_display_name">0xFE47DB4F<!--Ears Back--></T>
       <T n="slider_raw_display_name">Ears_Back_LargeDog_CSF_Vanilla</T>
       <T n="slider_author">Maxis</T>
+      <E n="slider_modifier_type">FACE_MODIFIER</E>
       <T n="slider_icon_id">0</T>
       <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">100.0</T>
