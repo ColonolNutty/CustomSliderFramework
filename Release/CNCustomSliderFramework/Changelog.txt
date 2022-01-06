@@ -1,3 +1,7 @@
+Version 1.14:
+- Fixed an error that would occur when a slider specifies an icon in the snippet tuning.
+- Fixed a corruption issue with the max Breast slider
+
 Version 1.13:
 - Fixed an error where the sliders got mixed up for Bony, Lean, Heavy, and Fit.
 
