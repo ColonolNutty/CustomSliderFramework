@@ -15,6 +15,7 @@ from cncustomsliderframework.enums.string_ids import CSFStringId
 from cncustomsliderframework.modinfo import ModInfo
 from cncustomsliderframework.enums.slider_category import CSFSliderCategory
 from sims.sim_info import SimInfo
+from sims4.resources import Types
 from sims4communitylib.dialogs.common_choice_outcome import CommonChoiceOutcome
 from sims4communitylib.dialogs.common_ok_dialog import CommonOkDialog
 from sims4communitylib.dialogs.ok_cancel_dialog import CommonOkCancelDialog
@@ -32,6 +33,7 @@ from sims4communitylib.enums.icons_enum import CommonIconId
 from sims4communitylib.logging.has_log import HasLog
 from sims4communitylib.mod_support.mod_identity import CommonModIdentity
 from sims4communitylib.utils.common_function_utils import CommonFunctionUtils
+from sims4communitylib.utils.common_resource_utils import CommonResourceUtils
 from sims4communitylib.utils.localization.common_localization_utils import CommonLocalizationUtils
 
 
@@ -211,7 +213,7 @@ class CSFCustomizeSlidersDialog(HasLog):
                         custom_slider.display_name,
                         option_description,
                         title_tokens=(str(self.slider_application_service.get_current_slider_value(sim_info, custom_slider)),),
-                        icon=custom_slider.icon_id or None,
+                        icon=CommonResourceUtils.get_resource_key(Types.PNG, custom_slider.icon_id) if custom_slider.icon_id else None,
                         tag_list=tuple([category.name for category in custom_slider.categories])
                     ),
                     on_chosen=_on_slider_changed
