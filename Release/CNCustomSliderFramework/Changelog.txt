@@ -1,3 +1,10 @@
+Versioin 1.15:
+- Fixed an error in the Randomize confirmation dialog
+- Changed the maximum value for the CSF default breast slider to 99, to prevent the "hole in the chest" bug.
+- All slider values in CSF are now clamped when applying them, this means the minimum and maximum values of the sliders will now keep the new amount within those bounds.
+- Updated a few of the "get slider value" functions within the Slider Application Service, they will now return None instead of False if the slider is not found.
+- Added some doc strings to the Slider Application Service functions
+
 Version 1.14:
 - Fixed an error that would occur when a slider specifies an icon in the snippet tuning.
 - Fixed a corruption issue with the max Breast slider
