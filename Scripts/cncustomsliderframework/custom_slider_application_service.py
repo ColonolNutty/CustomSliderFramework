@@ -7,7 +7,7 @@ https://creativecommons.org/licenses/by-nd/4.0/legalcode
 Copyright (c) COLONOLNUTTY
 """
 import random
-from typing import Iterator
+from typing import Iterator, Union
 
 from cncustomsliderframework.dtos.sliders.slider import CSFSlider
 from cncustomsliderframework.events.slider_changed_event import CSFSliderValueChanged
@@ -55,7 +55,7 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
         for face_modifier in facial_attributes.face_modifiers:
             # Exclude the opposite modifier so it no longer applies.
             if face_modifier.key in exclude_modifier_ids:
-                self.log.debug('Excluding face modifier with key {}'.format(face_modifier.key))
+                self.log.debug(f'Excluding face modifier with key {face_modifier.key}')
                 continue
             # noinspection PyUnresolvedReferences
             existing_modifiers.face_modifiers.append(face_modifier)
@@ -64,6 +64,7 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
         # noinspection PyUnresolvedReferences
         for body_modifier in facial_attributes.body_modifiers:
             if body_modifier.key in exclude_modifier_ids:
+                self.log.debug(f'Excluding body modifier with key {body_modifier.key}')
                 continue
             # noinspection PyUnresolvedReferences
             existing_modifiers.body_modifiers.append(body_modifier)
@@ -76,32 +77,62 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             existing_modifiers.sculpts.append(sculpt)
         return existing_modifiers
 
-    def get_current_slider_value_by_identifier(self, sim_info: SimInfo, identifier: str) -> float:
-        """ Retrieve the current value of a slider by its identifier. """
+    def get_current_slider_value_by_identifier(self, sim_info: SimInfo, identifier: str) -> Union[float, None]:
+        """get_current_slider_value_by_identifier(sim_info, identifier)
+
+        Retrieve the current value of a slider by its identifier.
+
+        :param sim_info: An instance of a Sim.
+        :type sim_info: SimInfo
+        :param identifier: The identifier of a slider.
+        :type identifier: str
+        :return: The current slider value for the slider or None if the slider does not exist.
+        :rtype: Union[float, None]
+        """
         from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
         custom_slider = CSFSliderQueryUtils().locate_by_identifier(identifier)
         if custom_slider is None:
             self.log.debug('No slider found with identifier: {}'.format(identifier))
-            return False
+            return None
         return self.get_current_slider_value(sim_info, custom_slider)
 
-    def get_current_slider_value_by_name(self, sim_info: SimInfo, slider_name: str) -> float:
-        """ Retrieve the current value of a slider by its name. """
+    def get_current_slider_value_by_name(self, sim_info: SimInfo, slider_name: str) -> Union[float, None]:
+        """get_current_slider_value_by_identifier(sim_info, slider_name)
+
+        Retrieve the current value of a slider by its name.
+
+        :param sim_info: An instance of a Sim.
+        :type sim_info: SimInfo
+        :param slider_name: The name of a slider.
+        :type slider_name: str
+        :return: The current slider value for the slider or None if the slider does not exist.
+        :rtype: Union[float, None]
+        """
         from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
         custom_sliders = CSFSliderQueryUtils().get_sliders_by_name(sim_info, slider_name)
         if not custom_sliders:
             self.log.debug('No sliders found with name: {}'.format(slider_name))
-            return False
+            return None
         custom_slider = next(iter(custom_sliders))
         if custom_slider is None:
             self.log.debug('No slider found with name: {}'.format(slider_name))
-            return False
+            return None
         return self.get_current_slider_value(sim_info, custom_slider)
 
-    def get_current_slider_value(self, sim_info: SimInfo, custom_slider: CSFSlider) -> float:
-        """ Retrieve the current value of a slider. """
+    def get_current_slider_value(self, sim_info: SimInfo, custom_slider: CSFSlider) -> Union[float, None]:
+        """get_current_slider_value_by_identifier(sim_info, slider_name)
+
+        Retrieve the current value of a slider.
+
+        :param sim_info: An instance of a Sim.
+        :type sim_info: SimInfo
+        :param custom_slider: The slider to check.
+        :type custom_slider: CSFSlider
+        :return: The current slider value for the slider or None if the slider does not exist.
+        :rtype: Union[float, None]
+        """
         if sim_info is None or custom_slider is None:
-            return False
+            return None
         facial_attributes = self._get_facial_attributes(sim_info)
 
         # noinspection PyUnresolvedReferences
@@ -186,6 +217,8 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
                 self.log.format_with_message('Value is Zero, so we will remove the value instead.')
                 return self.remove_slider(sim_info, custom_slider, trigger_event=trigger_event)
 
+            amount = self._clamp_value(amount, custom_slider)
+
             self.log.debug(f'Determining which slider to use for {custom_slider.raw_display_name} with amount {amount}.')
             if amount > 0:
                 self.log.debug('Amount is greater than 0.0. It is {amount}.')
@@ -216,7 +249,7 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             self.log.debug('Adding the custom slider because the amount is greater than zero.')
             new_modifier = BlobSimFacialCustomizationData().Modifier()
             new_modifier.key = slider_id
-            new_modifier.amount = slider_amount
+            new_modifier.amount = self._clamp_value(slider_amount, custom_slider)
             if custom_slider.is_face_modifier:
                 # noinspection PyUnresolvedReferences
                 modified_facial_attributes.face_modifiers.append(new_modifier)
@@ -276,3 +309,6 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
         for custom_slider in CSFSliderQueryUtils().get_sliders_for_sim(sim_info):
             self.reset_slider(sim_info, custom_slider)
         return True
+
+    def _clamp_value(self, value: float, custom_slider: CSFSlider) -> float:
+        return min(max(value, custom_slider.minimum_value), custom_slider.maximum_value)

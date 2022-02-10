@@ -8,7 +8,7 @@
       <T n="slider_author">CSF</T>
       <E n="slider_modifier_type">BODY_MODIFIER</E>
       <T n="slider_minimum_value">-100.0</T>
-      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_maximum_value">99.0</T>
       <T n="slider_positive_modifier_id">12612576050933967173</T>
       <T n="slider_negative_modifier_id">9503439846270599606</T>
 	  <L n="slider_categories">

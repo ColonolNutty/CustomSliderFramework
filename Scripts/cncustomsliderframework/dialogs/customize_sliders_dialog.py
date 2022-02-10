@@ -170,6 +170,8 @@ class CSFCustomizeSlidersDialog(HasLog):
             CommonOkCancelDialog(
                 CSFStringId.CONFIRMATION,
                 CSFStringId.RANDOMIZE_SLIDER_CONFIRMATION,
+                title_tokens=(category.name, ),
+                description_tokens=(category.name,),
                 mod_identity=self.mod_identity
             ).show(on_ok_selected=_on_confirm, on_cancel_selected=_on_cancel)
 
