@@ -2,15 +2,14 @@
 <I c="CSFCustomSliderInfoCollection" i="snippet" m="cncustomsliderframework.tunings.custom_slider_collection" n="CSF_Default_Breast_Size_Sliders" s="1350956663546902090">
   <L n="custom_slider_info_list">
     <U>
-      <T n="slider_display_name">0x5946D91F<!--Breast Size Small/Big (CSF Default)--></T>
-      <T n="slider_raw_display_name">Breast_Size_Small_Big_CSF_Default</T>
+      <T n="slider_display_name">0x546CB6EB<!--Breast Size Big (CSF Default)--></T>
+      <T n="slider_raw_display_name">Breast_Size_Big_CSF_Default</T>
       <T n="slider_description">0x61C9BA59</T>
       <T n="slider_author">CSF</T>
       <E n="slider_modifier_type">BODY_MODIFIER</E>
-      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_minimum_value">0.0</T>
       <T n="slider_maximum_value">99.0</T>
       <T n="slider_positive_modifier_id">12612576050933967173</T>
-      <T n="slider_negative_modifier_id">9503439846270599606</T>
 	  <L n="slider_categories">
 	    <E>CHEST</E>
 	  </L>
