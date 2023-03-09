@@ -1,3 +1,7 @@
+Versioin 1.16:
+- Removed the Breast Size Small slider
+- Updated the Breast Size Big slider to scale properly and also to not have a hole in the chest.
+
 Versioin 1.15:
 - Fixed an error in the Randomize confirmation dialog
 - Changed the maximum value for the CSF default breast slider to 99, to prevent the "hole in the chest" bug.
