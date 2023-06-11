@@ -12,6 +12,7 @@ from cncustomsliderframework.sliders.slider_query_tag import CSFSliderQueryTag
 from cncustomsliderframework.sliders.slider_tag_type import CSFSliderTagType
 from cncustomsliderframework.sliders.tag_filters.slider_tag_filter import CSFSliderTagFilter
 from sims.sim_info import SimInfo
+from sims4communitylib.enums.common_age import CommonAge
 from sims4communitylib.enums.common_species import CommonSpecies
 from sims4communitylib.utils.sims.common_age_utils import CommonAgeUtils
 from sims4communitylib.utils.sims.common_gender_utils import CommonGenderUtils
@@ -28,7 +29,7 @@ class CSFSimDetailsSliderFilter(CSFSliderTagFilter):
     def get_tags(self) -> Tuple[CSFSliderQueryTag]:
         result: Tuple[CSFSliderQueryTag] = (
             CSFSliderQueryTag(CSFSliderTagType.GENDER, CommonGenderUtils.get_gender(self._sim_info)),
-            CSFSliderQueryTag(CSFSliderTagType.AGE, CommonAgeUtils.get_age(self._sim_info)),
+            CSFSliderQueryTag(CSFSliderTagType.AGE, CommonAge.get_age(self._sim_info)),
             CSFSliderQueryTag(CSFSliderTagType.SPECIES, CommonSpecies.get_species(self._sim_info)),
         )
         return result

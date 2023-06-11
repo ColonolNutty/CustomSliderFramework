@@ -1,3 +1,7 @@
+Version 1.17:
+- Fixed some sliders not being available for Teen Sims
+- Added 3 new Breast Size Sliders to increase the breasts even bigger, without the hole in the chest.
+
 Versioin 1.16:
 - Removed the Breast Size Small slider
 - Updated the Breast Size Big slider to scale properly and also to not have a hole in the chest.
