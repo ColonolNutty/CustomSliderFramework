@@ -13,3 +13,4 @@ class CSFModifierType(CommonInt):
     """ Modifier types. """
     FACE_MODIFIER: 'CSFModifierType' = 0
     BODY_MODIFIER: 'CSFModifierType' = 1
+    SCULPT: 'CSFModifierType' = 2

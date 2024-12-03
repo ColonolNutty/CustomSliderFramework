@@ -6,7 +6,8 @@ https://creativecommons.org/licenses/by-nd/4.0/legalcode
 
 Copyright (c) COLONOLNUTTY
 """
-from typing import Callable, Tuple, List
+from collections import defaultdict
+from typing import Callable, Tuple, List, Dict
 
 from cncustomsliderframework.custom_slider_application_service import CSFCustomSliderApplicationService
 from cncustomsliderframework.dialogs.slider_template_dialog import CSFSliderTemplateDialog
@@ -25,21 +26,19 @@ from sims4communitylib.dialogs.option_dialogs.options.objects.common_dialog_acti
     CommonDialogActionOption
 from sims4communitylib.dialogs.option_dialogs.options.objects.common_dialog_input_option import \
     CommonDialogInputFloatOption
-from sims4communitylib.dialogs.option_dialogs.options.objects.common_dialog_option_category import \
-    CommonDialogObjectOptionCategory
 from sims4communitylib.dialogs.option_dialogs.options.objects.common_dialog_select_option import \
     CommonDialogSelectOption
-from sims4communitylib.enums.icons_enum import CommonIconId
 from sims4communitylib.logging.has_log import HasLog
 from sims4communitylib.mod_support.mod_identity import CommonModIdentity
 from sims4communitylib.utils.common_function_utils import CommonFunctionUtils
+from sims4communitylib.utils.common_icon_utils import CommonIconUtils
 from sims4communitylib.utils.common_resource_utils import CommonResourceUtils
 from sims4communitylib.utils.localization.common_localization_utils import CommonLocalizationUtils
 
 
 class CSFCustomizeSlidersDialog(HasLog):
     """ A dialog for changing custom sliders. """
-    def __init__(self, on_close: Callable[[], None]=CommonFunctionUtils.noop):
+    def __init__(self, on_close: Callable[[], None] = CommonFunctionUtils.noop):
         from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
         super().__init__()
         self._on_close = on_close
@@ -56,7 +55,7 @@ class CSFCustomizeSlidersDialog(HasLog):
     def log_identifier(self) -> str:
         return 'csf_customize_sliders_dialog'
 
-    def open(self, sim_info: SimInfo, page: int=1) -> None:
+    def open(self, sim_info: SimInfo, page: int = 1) -> None:
         """ Open the dialog. """
         self.log.format_with_message('Opening customize sliders dialog for Sim.', sim=sim_info)
 
@@ -143,21 +142,69 @@ class CSFCustomizeSlidersDialog(HasLog):
 
         self.log.debug('Adding slider count {}'.format(len(sliders)))
         sorted_sliders = sorted(sliders, key=lambda s: s.name)
-        slider_categories: List[CSFSliderCategory] = list()
-        object_categories: List[str] = list()
+        sliders_by_category: Dict[CSFSliderCategory, List[CSFSlider]] = defaultdict(list)
         for custom_slider in sorted_sliders:
             for slider_category in custom_slider.categories:
-                if slider_category.name in object_categories:
+                if custom_slider in sliders_by_category[slider_category]:
                     continue
-                slider_categories.append(slider_category)
-                object_categories.append(slider_category.name)
+                sliders_by_category[slider_category].append(custom_slider)
+
+        def _on_category_chosen(_: str, _chosen: Tuple[CSFSliderCategory, List[CSFSlider]]):
+            if _chosen is None:
+                self.log.debug('No slider chosen, dialog closed.')
+                _on_close()
+                return
+            _chosen_category = _chosen[0]
+            _chosen_sliders = _chosen[1]
+            self._change_by_category(sim_info, _chosen_category, tuple(_chosen_sliders), on_close=_reopen)
+
+        for (category, _sliders) in sliders_by_category.items():
+            if not _sliders:
+                continue
+            option_dialog.add_option(
+                CommonDialogSelectOption(
+                    category.name,
+                    (category, _sliders),
+                    CommonDialogOptionContext(
+                        category.name,
+                        0,
+                        icon=CommonIconUtils.load_arrow_navigate_into_icon()
+                    ),
+                    on_chosen=_on_category_chosen
+                )
+            )
+
+        self.log.debug('Showing slider options.')
+
+        option_dialog.show(
+            sim_info=sim_info,
+            page=page
+        )
+
+    def _change_by_category(self, sim_info: SimInfo, slider_category: CSFSliderCategory, sliders: Tuple[CSFSlider], on_close: Callable[[], None], page: int = 1):
+        def _on_close() -> None:
+            self.log.debug('Customize Slider dialog closed.')
+            if self._on_close is not None:
+                self._on_close()
+
+        option_dialog = CommonChooseObjectOptionDialog(
+            CSFStringId.CUSTOMIZE_SLIDERS,
+            CSFStringId.CHOOSE_SLIDERS_TO_MODIFY,
+            mod_identity=self.mod_identity,
+            on_close=_on_close,
+            per_page=400
+        )
+
+        def _reopen() -> None:
+            self.log.debug('Reopening customize sliders dialog.')
+            self._change_by_category(sim_info, slider_category, sliders, on_close=on_close, page=option_dialog.current_page)
 
         def _on_randomize_slider_category(category_name: str, category: CSFSliderCategory):
             self.log.debug('Confirming reset of sliders in category {}.'.format(category_name))
 
             def _on_confirm(_) -> None:
                 self.log.debug('Randomizing all sliders in category {}.'.format(category_name))
-                for slider in sorted_sliders:
+                for slider in sliders:
                     if category not in slider.categories:
                         continue
                     self.slider_application_service.apply_random(sim_info, slider)
@@ -175,22 +222,21 @@ class CSFCustomizeSlidersDialog(HasLog):
                 mod_identity=self.mod_identity
             ).show(on_ok_selected=_on_confirm, on_cancel_selected=_on_cancel)
 
-        for slider_category in slider_categories:
-            option_dialog.add_option(
-                CommonDialogSelectOption(
-                    slider_category.name,
-                    slider_category,
-                    CommonDialogOptionContext(
-                        CSFStringId.RANDOMIZE_SLIDER_NAME,
-                        CSFStringId.RANDOMIZE_SLIDER_DESCRIPTION,
-                        title_tokens=(slider_category.name, ),
-                        description_tokens=(slider_category.name, ),
-                        tag_list=[slider_category.name for slider_category in CSFSliderCategory.values]
-                    ),
-                    on_chosen=_on_randomize_slider_category,
-                    always_visible=True
-                )
+        option_dialog.add_option(
+            CommonDialogSelectOption(
+                slider_category.name,
+                slider_category,
+                CommonDialogOptionContext(
+                    CSFStringId.RANDOMIZE_SLIDER_NAME,
+                    CSFStringId.RANDOMIZE_SLIDER_DESCRIPTION,
+                    title_tokens=(slider_category.name, ),
+                    description_tokens=(slider_category.name, ),
+                    tag_list=[slider_category.name for slider_category in CSFSliderCategory.values]
+                ),
+                on_chosen=_on_randomize_slider_category,
+                always_visible=True
             )
+        )
 
         def _on_slider_changed(slider_unique_identifier: str, _custom_slider: CSFSlider):
             if slider_unique_identifier is None or _custom_slider is None:
@@ -199,7 +245,9 @@ class CSFCustomizeSlidersDialog(HasLog):
                 return
             self._change_or_remove_slider_option(sim_info, _custom_slider, on_close=_reopen)
 
-        for custom_slider in sorted_sliders:
+        for custom_slider in sliders:
+            if slider_category not in custom_slider.categories:
+                continue
             if custom_slider.description is not None:
                 # noinspection PyTypeChecker
                 option_description = CommonLocalizationUtils.create_localized_string(custom_slider.description, tokens=(str(0.0), str(custom_slider.minimum_value), str(custom_slider.maximum_value)))
@@ -222,23 +270,9 @@ class CSFCustomizeSlidersDialog(HasLog):
                 )
             )
 
-        categories: List[CommonDialogObjectOptionCategory] = list()
-
-        for category in object_categories:
-            # noinspection PyTypeChecker
-            categories.append(
-                CommonDialogObjectOptionCategory(
-                    category,
-                    icon=CommonIconId.S4CLIB_UNFILLED_CIRCLE_ICON
-                )
-            )
-
-        self.log.debug('Showing slider options.')
-
         option_dialog.show(
             sim_info=sim_info,
-            page=page,
-            categories=categories
+            page=page
         )
 
     def _change_or_remove_slider_option(
