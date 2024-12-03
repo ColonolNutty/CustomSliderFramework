@@ -1,3 +1,6 @@
+Version 1.18:
+- Removed the categories from the slider menu, now there are individual menus you can navigate into for each category instead of all sliders being on one giant dialog.
+
 Version 1.17:
 - Fixed some sliders not being available for Teen Sims
 - Added 3 new Breast Size Sliders to increase the breasts even bigger, without the hole in the chest.
