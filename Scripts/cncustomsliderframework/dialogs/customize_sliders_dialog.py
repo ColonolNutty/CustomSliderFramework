@@ -184,8 +184,12 @@ class CSFCustomizeSlidersDialog(HasLog):
     def _change_by_category(self, sim_info: SimInfo, slider_category: CSFSliderCategory, sliders: Tuple[CSFSlider], on_close: Callable[[], None], page: int = 1):
         def _on_close() -> None:
             self.log.debug('Customize Slider dialog closed.')
-            if self._on_close is not None:
-                self._on_close()
+            if on_close is not None:
+                on_close()
+
+        def _reopen() -> None:
+            self.log.debug('Reopening customize sliders dialog.')
+            self._change_by_category(sim_info, slider_category, sliders, on_close=_on_close, page=option_dialog.current_page)
 
         option_dialog = CommonChooseObjectOptionDialog(
             CSFStringId.CUSTOMIZE_SLIDERS,
@@ -194,10 +198,6 @@ class CSFCustomizeSlidersDialog(HasLog):
             on_close=_on_close,
             per_page=400
         )
-
-        def _reopen() -> None:
-            self.log.debug('Reopening customize sliders dialog.')
-            self._change_by_category(sim_info, slider_category, sliders, on_close=on_close, page=option_dialog.current_page)
 
         def _on_randomize_slider_category(category_name: str, category: CSFSliderCategory):
             self.log.debug('Confirming reset of sliders in category {}.'.format(category_name))
