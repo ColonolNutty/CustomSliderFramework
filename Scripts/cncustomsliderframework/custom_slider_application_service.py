@@ -9,18 +9,15 @@ Copyright (c) COLONOLNUTTY
 import random
 from typing import Iterator, Union
 
-from cncustomsliderframework.dtos.sliders.applied_slider import CSFAppliedSlider
 from cncustomsliderframework.dtos.sliders.slider import CSFSlider
 from cncustomsliderframework.events.slider_changed_event import CSFSliderValueChanged
 from cncustomsliderframework.modinfo import ModInfo
-from cncustomsliderframework.persistence.sim_data.csf_sim_slider_system_data_storage import CSFSimSliderSystemData
 from protocolbuffers.PersistenceBlobs_pb2 import BlobSimFacialCustomizationData
 from sims.sim_info import SimInfo
 from sims4communitylib.exceptions.common_exceptions_handler import CommonExceptionHandler
 from sims4communitylib.logging.has_log import HasLog
 from sims4communitylib.mod_support.mod_identity import CommonModIdentity
 from sims4communitylib.services.common_service import CommonService
-from sims4communitylib.utils.sims.common_sim_type_utils import CommonSimTypeUtils
 
 
 class CSFCustomSliderApplicationService(CommonService, HasLog):
@@ -37,14 +34,15 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
 
     def reapply_all_sliders(self, sim_info: SimInfo):
         """Reapply all sliders on a Sim."""
-        sim_data = CSFSimSliderSystemData(sim_info)
-        current_sim_type = CommonSimTypeUtils.determine_sim_type(sim_info, use_current_occult_type=True)
-        slider_library = sim_data.applied_sliders.get_library(current_sim_type)
-        if slider_library is None:
-            return
-        for slider in slider_library.sliders.values():
-            slider: CSFAppliedSlider = slider
-            self.apply_slider_by_name(sim_info, slider.slider_name, slider.slider_value)
+        pass
+        # sim_data = CSFSimSliderSystemData(sim_info)
+        # current_sim_type = CommonSimTypeUtils.determine_sim_type(sim_info, use_current_occult_type=True)
+        # slider_library = sim_data.applied_sliders.get_library(current_sim_type)
+        # if slider_library is None:
+        #     return
+        # for slider in slider_library.sliders.values():
+        #     slider: CSFAppliedSlider = slider
+        #     self.apply_slider_by_name(sim_info, slider.slider_name, slider.slider_value)
 
     def _get_facial_attributes(self, sim_info: SimInfo) -> BlobSimFacialCustomizationData:
         facial_attributes = BlobSimFacialCustomizationData()
@@ -74,6 +72,16 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             # noinspection PyUnresolvedReferences
             existing_modifiers.face_modifiers.append(face_modifier)
 
+        self.log.debug('Adding aged face modifiers.')
+        # noinspection PyUnresolvedReferences
+        for aged_face_modifier in facial_attributes.aged_face_modifiers:
+            # Exclude the opposite modifier so it no longer applies.
+            if aged_face_modifier.key in exclude_modifier_ids:
+                self.log.debug(f'Excluding aged face modifier with key {aged_face_modifier.key}')
+                continue
+            # noinspection PyUnresolvedReferences
+            existing_modifiers.aged_face_modifiers.append(aged_face_modifier)
+
         self.log.debug('Adding body modifiers.')
         # noinspection PyUnresolvedReferences
         for body_modifier in facial_attributes.body_modifiers:
@@ -82,6 +90,15 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
                 continue
             # noinspection PyUnresolvedReferences
             existing_modifiers.body_modifiers.append(body_modifier)
+
+        self.log.debug('Adding aged body modifiers.')
+        # noinspection PyUnresolvedReferences
+        for aged_body_modifier in facial_attributes.aged_body_modifiers:
+            if aged_body_modifier.key in exclude_modifier_ids:
+                self.log.debug(f'Excluding aged body modifier with key {aged_body_modifier.key}')
+                continue
+            # noinspection PyUnresolvedReferences
+            existing_modifiers.aged_body_modifiers.append(aged_body_modifier)
 
         self.log.debug('Adding sculpt modifiers.')
         # noinspection PyUnresolvedReferences
@@ -148,12 +165,12 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
         if sim_info is None or custom_slider is None:
             return None
         return_value = None
-        sim_data = CSFSimSliderSystemData(sim_info)
-        current_sim_type = CommonSimTypeUtils.determine_sim_type(sim_info, use_current_occult_type=True)
-        applied_sliders = sim_data.applied_sliders
-        slider_value = applied_sliders.get_slider_value(current_sim_type, custom_slider.raw_display_name)
-        if slider_value is not None and slider_value != 0.0:
-            return slider_value
+        # sim_data = CSFSimSliderSystemData(sim_info)
+        # current_sim_type = CommonSimTypeUtils.determine_sim_type(sim_info, use_current_occult_type=True)
+        # applied_sliders = sim_data.applied_sliders
+        # slider_value = applied_sliders.get_slider_value(current_sim_type, custom_slider.raw_display_name)
+        # if slider_value is not None and slider_value != 0.0:
+        #     return slider_value
 
         try:
 
@@ -180,6 +197,26 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
                 return return_value
 
             # noinspection PyUnresolvedReferences
+            for aged_body_modifier in facial_attributes.aged_body_modifiers:
+                if aged_body_modifier.amount == 0.0:
+                    continue
+                if custom_slider.has_negative_modifier_id() and aged_body_modifier.key == custom_slider.negative_modifier_id:
+                    self.log.debug(f'Found existing negative aged body modifier value {aged_body_modifier.amount} with key {aged_body_modifier.key}')
+                    if not custom_slider.is_body_modifier:
+                        self.log.format_error_with_message(f'Not an AGED BODY MODIFIER {custom_slider.raw_display_name}', custom_slider=custom_slider.raw_display_name, throw=False)
+                    return_value = (aged_body_modifier.amount * -1.0)/0.01
+                    break
+                if custom_slider.has_positive_modifier_id() and aged_body_modifier.key == custom_slider.positive_modifier_id:
+                    self.log.debug(f'Found existing positive aged body modifier value {aged_body_modifier.amount} with key {aged_body_modifier.key}')
+                    if not custom_slider.is_body_modifier:
+                        self.log.format_error_with_message(f'Not an AGED BODY MODIFIER {custom_slider.raw_display_name}', custom_slider=custom_slider.raw_display_name, throw=False)
+                    return_value = aged_body_modifier.amount/0.01
+                    break
+
+            if return_value is not None:
+                return return_value
+
+            # noinspection PyUnresolvedReferences
             for face_modifier in facial_attributes.face_modifiers:
                 if face_modifier.amount == 0.0:
                     continue
@@ -199,13 +236,34 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             if return_value is not None:
                 return return_value
 
+            # noinspection PyUnresolvedReferences
+            for aged_face_modifier in facial_attributes.aged_face_modifiers:
+                if aged_face_modifier.amount == 0.0:
+                    continue
+                if custom_slider.has_negative_modifier_id() and aged_face_modifier.key == custom_slider.negative_modifier_id:
+                    self.log.debug(f'Found existing negative aged face modifier value {aged_face_modifier.amount} with key {aged_face_modifier.key}')
+                    if not custom_slider.is_face_modifier:
+                        self.log.format_error_with_message(f'Not an AGED FACE MODIFIER {custom_slider.raw_display_name}', custom_slider=custom_slider.raw_display_name, throw=False)
+                    return_value = (aged_face_modifier.amount * -1.0)/0.01
+                    break
+                if custom_slider.has_positive_modifier_id() and aged_face_modifier.key == custom_slider.positive_modifier_id:
+                    self.log.debug(f'Found existing positive aged face modifier value {aged_face_modifier.amount} with key {aged_face_modifier.key}')
+                    if not custom_slider.is_face_modifier:
+                        self.log.format_error_with_message(f'Not an AGED FACE MODIFIER {custom_slider.raw_display_name}', custom_slider=custom_slider.raw_display_name, throw=False)
+                    return_value = aged_face_modifier.amount/0.01
+                    break
+
+            if return_value is not None:
+                return return_value
+
             self.log.format_with_message(f'Modifier not found. {custom_slider.raw_display_name}')
             return_value = 0.0
             return return_value
         finally:
-            if return_value is not None:
-                applied_sliders.set_slider_value(current_sim_type, custom_slider.raw_display_name, return_value)
-                sim_data.applied_sliders = applied_sliders
+            pass
+            # if return_value is not None:
+            #     applied_sliders.set_slider_value(current_sim_type, custom_slider.raw_display_name, return_value)
+            #     sim_data.applied_sliders = applied_sliders
 
     def remove_slider(self, sim_info: SimInfo, custom_slider: CSFSlider, trigger_event: bool=True) -> bool:
         """ Remove a slider from a Sim. """
@@ -215,11 +273,11 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
                 return False
 
             current_slider_amount = self.get_current_slider_value(sim_info, custom_slider)
-            sim_data = CSFSimSliderSystemData(sim_info)
-            current_sim_type = CommonSimTypeUtils.determine_sim_type(sim_info, use_current_occult_type=True)
-            applied_sliders = sim_data.applied_sliders
-            applied_sliders.clear_slider_value(current_sim_type, custom_slider.raw_display_name)
-            sim_data.applied_sliders = applied_sliders
+            # sim_data = CSFSimSliderSystemData(sim_info)
+            # current_sim_type = CommonSimTypeUtils.determine_sim_type(sim_info, use_current_occult_type=True)
+            # applied_sliders = sim_data.applied_sliders
+            # applied_sliders.clear_slider_value(current_sim_type, custom_slider.raw_display_name)
+            # sim_data.applied_sliders = applied_sliders
 
             self.log.debug('Applying facial attribute.')
             modified_facial_attributes = self._get_existing_modifiers_for_edit(sim_info, exclude_modifier_ids=(*custom_slider.get_modifier_ids(), custom_slider.positive_modifier_id, custom_slider.negative_modifier_id))
@@ -287,12 +345,12 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
                 return False
 
             current_slider_amount = self.get_current_slider_value(sim_info, custom_slider)
-            sim_data = CSFSimSliderSystemData(sim_info)
-
-            current_sim_type = CommonSimTypeUtils.determine_sim_type(sim_info, use_current_occult_type=True)
-            applied_sliders = sim_data.applied_sliders
-            applied_sliders.set_slider_value(current_sim_type, custom_slider.raw_display_name, amount)
-            sim_data.applied_sliders = applied_sliders
+            # sim_data = CSFSimSliderSystemData(sim_info)
+            # 
+            # current_sim_type = CommonSimTypeUtils.determine_sim_type(sim_info, use_current_occult_type=True)
+            # applied_sliders = sim_data.applied_sliders
+            # applied_sliders.set_slider_value(current_sim_type, custom_slider.raw_display_name, amount)
+            # sim_data.applied_sliders = applied_sliders
 
             self.log.format_with_message(f'Applying facial attribute {current_slider_amount}.')
             modified_facial_attributes = self._get_existing_modifiers_for_edit(sim_info, exclude_modifier_ids=(*custom_slider.get_modifier_ids(), custom_slider.positive_modifier_id, custom_slider.negative_modifier_id))
@@ -304,9 +362,13 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             if custom_slider.is_face_modifier:
                 # noinspection PyUnresolvedReferences
                 modified_facial_attributes.face_modifiers.append(new_modifier)
+                # noinspection PyUnresolvedReferences
+                modified_facial_attributes.aged_face_modifiers.append(new_modifier)
             elif custom_slider.is_body_modifier:
                 # noinspection PyUnresolvedReferences
                 modified_facial_attributes.body_modifiers.append(new_modifier)
+                # noinspection PyUnresolvedReferences
+                modified_facial_attributes.aged_body_modifiers.append(new_modifier)
 
             self._set_facial_attributes(sim_info, modified_facial_attributes)
             if trigger_event:

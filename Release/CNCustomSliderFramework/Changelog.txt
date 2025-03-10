@@ -1,3 +1,6 @@
+Version 1.20:
+- Fixed the slider changes disappearing differently and better. You no longer have to worry about sliders not applying anymore. It also continues to work properly when switching between occult and non occult forms.
+
 Version 1.19:
 - Fixed slider changes disappearing upon exiting CAS. This change means you can no longer edit a Sims sliders in CAS and expect them to match when you exit CAS, only change their sliders via CSF! (This only applies to sliders CSF supports, custom sliders are unaffected.)
 - Sliders are now saved per Sims occult type, so a Vampire Sim could be taller when in vampire form and short in their normal form, for example.
