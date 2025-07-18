@@ -29,6 +29,87 @@
 	    <E>HUMAN</E>
 	  </L>
     </U>
+    <U>
+      <T n="slider_display_name">0x377ADEBB<!--Chest Size Small/Big 2 (CSF Default)--></T>
+      <T n="slider_raw_display_name">Chest_Size_Small_Big_CSF_Default_2</T>
+      <T n="slider_description">0x6EF87F76</T>
+      <T n="slider_author">CSF</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">10541062337430688060</T> <!--CSF_Custom_Slider_Breast_Big-->
+      <T n="slider_negative_modifier_id">3980762479909494166</T> <!--CSF_Custom_Slider_Breast_Small-->
+	  <L n="slider_categories">
+	    <E>CHEST</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xE928DB26<!--Chest Size Small/Big 3 (CSF Default)--></T>
+      <T n="slider_raw_display_name">Chest_Size_Small_Big_CSF_Default_3</T>
+      <T n="slider_description">0x6EF87F76</T>
+      <T n="slider_author">CSF</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">10192335210771675811</T> <!--CSF_Custom_Slider_Breast_Big_2-->
+      <T n="slider_negative_modifier_id">2297908995753920232</T> <!--CSF_Custom_Slider_Breast_Small_2-->
+	  <L n="slider_categories">
+	    <E>CHEST</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
+    <U>
+      <T n="slider_display_name">0xE42AD23D<!--Chest Size Small/Big 4 (CSF Default)--></T>
+      <T n="slider_raw_display_name">Chest_Size_Small_Big_CSF_Default_4</T>
+      <T n="slider_description">0x6EF87F76</T>
+      <T n="slider_author">CSF</T>
+      <E n="slider_modifier_type">BODY_MODIFIER</E>
+      <T n="slider_minimum_value">-100.0</T>
+      <T n="slider_maximum_value">100.0</T>
+      <T n="slider_positive_modifier_id">10192335210771675810</T> <!--CSF_Custom_Slider_Breast_Big_3-->
+      <T n="slider_negative_modifier_id">2297908995753920233</T> <!--CSF_Custom_Slider_Breast_Small_3-->
+	  <L n="slider_categories">
+	    <E>CHEST</E>
+	  </L>
+	  <L n="available_for_ages">
+	    <E>TEEN</E>
+	    <E>YOUNGADULT</E>
+	    <E>ADULT</E>
+	    <E>ELDER</E>
+	  </L>
+	  <L n="available_for_genders">
+	    <E>MALE</E>
+	    <E>FEMALE</E>
+	  </L>
+	  <L n="available_for_species">
+	    <E>HUMAN</E>
+	  </L>
+    </U>
     <!--Chest Depth Shallow/Deep-->
     <U>
       <T n="slider_display_name">0x398C1630<!--Chest Depth Shallow/Deep--></T>
