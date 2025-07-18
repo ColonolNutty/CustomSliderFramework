@@ -5,24 +5,18 @@ https://creativecommons.org/licenses/by/4.0/legalcode
 
 Copyright (c) COLONOLNUTTY
 """
-import sims4.commands
 from typing import Any, Callable, Union, Iterator, Dict
 
-from pprint import pformat
 from protocolbuffers.Localization_pb2 import LocalizedString
 from sims4communitylib.dialogs._common_ui_dialog_text_input_ok_cancel import _CommonUiDialogTextInputOkCancel
 from sims4communitylib.dialogs.common_choice_outcome import CommonChoiceOutcome
 from sims4communitylib.dialogs.common_dialog import CommonDialog
 from sims4communitylib.dialogs.utils.common_dialog_utils import CommonDialogUtils
 from sims4communitylib.enums.strings_enum import CommonStringId
-from sims4communitylib.exceptions.common_exceptions_handler import CommonExceptionHandler
 from sims4communitylib.mod_support.mod_identity import CommonModIdentity
 from sims4communitylib.utils.common_function_utils import CommonFunctionUtils
-from sims4communitylib.utils.localization.common_localized_string_colors import CommonLocalizedStringColor
-from sims4communitylib.utils.localization.common_localization_utils import CommonLocalizationUtils
 from sims4communitylib.utils.sims.common_sim_utils import CommonSimUtils
 from ui.ui_dialog_generic import UiDialogTextInput
-from sims4communitylib.modinfo import ModInfo
 
 
 class CommonInputTextDialog(CommonDialog):
@@ -175,31 +169,3 @@ class CommonInputTextDialog(CommonDialog):
         except Exception as ex:
             self.log.error('_create_dialog', exception=ex)
         return None
-
-
-@sims4.commands.Command('s4clib_testing.show_input_text_dialog', command_type=sims4.commands.CommandType.Live)
-def _common_testing_show_input_text_dialog(_connection: int=None):
-    output = sims4.commands.CheatOutput(_connection)
-    output('Showing test input text dialog.')
-
-    def _on_chosen(choice: str, outcome: CommonChoiceOutcome):
-        output('Chose {} with result: {}.'.format(pformat(choice), pformat(outcome)))
-
-    try:
-        # LocalizedStrings within other LocalizedStrings
-        title_tokens = (CommonLocalizationUtils.create_localized_string(CommonStringId.TESTING_SOME_TEXT_FOR_TESTING, text_color=CommonLocalizedStringColor.GREEN),)
-        description_tokens = (CommonLocalizationUtils.create_localized_string(CommonStringId.TESTING_TEST_TEXT_WITH_SIM_FIRST_AND_LAST_NAME, tokens=(CommonSimUtils.get_active_sim_info(),), text_color=CommonLocalizedStringColor.BLUE),)
-        from sims4communitylib.utils.common_icon_utils import CommonIconUtils
-        dialog = CommonInputTextDialog(
-            ModInfo.get_identity(),
-            CommonStringId.TESTING_TEST_TEXT_WITH_STRING_TOKEN,
-            CommonStringId.TESTING_TEST_TEXT_WITH_STRING_TOKEN,
-            'test text',
-            title_tokens=title_tokens,
-            description_tokens=description_tokens
-        )
-        dialog.show(on_submit=_on_chosen)
-    except Exception as ex:
-        CommonExceptionHandler.log_exception(ModInfo.get_identity(), 'Failed to show dialog', exception=ex)
-        output('Failed to show dialog, please locate your exception log file.')
-    output('Done showing.')

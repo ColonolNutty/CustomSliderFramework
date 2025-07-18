@@ -6,20 +6,24 @@ https://creativecommons.org/licenses/by-nd/4.0/legalcode
 
 Copyright (c) COLONOLNUTTY
 """
-from typing import Any, Dict, Set
+from typing import Any, Dict
 
-from cncustomsliderframework.dtos.sliders.slider import CSFSlider
 from cncustomsliderframework.modinfo import ModInfo
 from cncustomsliderframework.sliders.slider_query_registry import CSFSliderQueryRegistry
-from sims4.commands import Command, CommandType, CheatOutput
+from sims4communitylib.services.commands.common_console_command import CommonConsoleCommand, \
+    CommonConsoleCommandArgument
+from sims4communitylib.services.commands.common_console_command_output import CommonConsoleCommandOutput
 from sims4communitylib.utils.common_log_registry import CommonLogRegistry
 
 log = CommonLogRegistry().register_log(ModInfo.get_identity(), 'csf_slider_query')
 
 
-@Command('csf.log_slider_tags', command_type=CommandType.Live)
-def _csf_command_log_slider_tags(_connection: int=None):
-    output = CheatOutput(_connection)
+@CommonConsoleCommand(
+    ModInfo.get_identity(),
+    'csf.log_slider_tags',
+    'Show a list of all sliders by tags.',
+)
+def _csf_command_log_slider_tags(output: CommonConsoleCommandOutput):
     output('Logging Slider tags, this will take awhile and your game may freeze. Be Patient!')
     try:
         log.enable()
@@ -43,16 +47,21 @@ def _csf_command_log_slider_tags(_connection: int=None):
         output('Failed to log Slider tags.')
 
 
-@Command('csf.log_slider_counts', command_type=CommandType.Live)
-def _csf_command_log_slider_counts(sliders_count: int=5, _connection: int=None):
-    output = CheatOutput(_connection)
+@CommonConsoleCommand(
+    ModInfo.get_identity(),
+    'csf.log_slider_counts',
+    'Show a list of all sliders by count.',
+    command_arguments=(
+        CommonConsoleCommandArgument('sliders_count', 'Number', 'Only sliders that are at or above this amount will show.', is_optional=True, default_value='5'),
+    ),
+)
+def _csf_command_log_slider_counts(output: CommonConsoleCommandOutput, sliders_count: int = 5):
     output('Logging Sliders, this will take awhile and your game may freeze. Be Patient!')
     output('Will print pretty printed Sliders when the total count of them in a filter is less than {}'.format(sliders_count))
     try:
         log.enable()
         slider_results = []
-        for slider_tag_value in CSFSliderQueryRegistry()._slider_library.keys():
-            sliders: Set[CSFSlider] = CSFSliderQueryRegistry()._slider_library[slider_tag_value]
+        for (slider_tag_value, sliders) in CSFSliderQueryRegistry()._slider_library.items():
             count = len(sliders)
             slider_result = {
                 'filter_key': slider_tag_value,
@@ -72,9 +81,15 @@ def _csf_command_log_slider_counts(sliders_count: int=5, _connection: int=None):
         output('Failed to log.')
 
 
-@Command('csf.log_sliders_for_author', command_type=CommandType.Live)
-def _csf_command_log_sliders_for_author(author: str=None, _connection: int=None):
-    output = CheatOutput(_connection)
+@CommonConsoleCommand(
+    ModInfo.get_identity(),
+    'csf.log_sliders_for_author',
+    'Show a list of all sliders by an author.',
+    command_arguments=(
+        CommonConsoleCommandArgument('author', 'Author Name', 'The name of the author of the sliders.'),
+    ),
+)
+def _csf_command_log_sliders_for_author(output: CommonConsoleCommandOutput, author: str):
     output('Logging Sliders, this will take awhile and your game may freeze. Be Patient!')
     if author is None:
         output('Please specify an author to locate Sliders for.')
@@ -83,8 +98,7 @@ def _csf_command_log_sliders_for_author(author: str=None, _connection: int=None)
     try:
         log.enable()
         sliders_to_log: Dict[str, Any] = {}
-        for slider_tag_value in CSFSliderQueryRegistry()._slider_library.keys():
-            sliders: Set[CSFSlider] = CSFSliderQueryRegistry()._slider_library[slider_tag_value]
+        for (slider_tag_value, sliders) in CSFSliderQueryRegistry()._slider_library.items():
             for slider in sliders:
                 if str(author).lower() != str(slider.author).lower():
                     continue

@@ -127,7 +127,7 @@ class CSFSliderTemplate(HasClassLog):
         from cncustomsliderframework.custom_slider_application_service import CSFCustomSliderApplicationService
         slider_application_service = CSFCustomSliderApplicationService()
         for (slider_identifier, amount) in self._slider_to_value_library.items():
-            slider_application_service.apply_slider_by_identifier(sim_info, slider_identifier, amount)
+            slider_application_service.apply_slider_by_identifier(sim_info, slider_identifier, amount, trigger_event=True, persist_value=True)
         return True
 
     @classmethod
@@ -141,7 +141,7 @@ class CSFSliderTemplate(HasClassLog):
             slider_identifier = slider.unique_identifier
             if slider_identifier in slider_to_value_library:
                 continue
-            slider_value = slider_application_service.get_current_slider_value(sim_info, slider)
+            slider_value = slider_application_service.get_current_slider_value(sim_info, slider, use_persisted_value=True)
             slider_to_value_library[slider_identifier] = slider_value
         return cls(
             template_name,

@@ -95,7 +95,7 @@ class CSFAppliedSliderLibraryBySimType(CommonSerializable, HasClassLog):
         :param slider_name: The name of a Slider.
         :type slider_name: str
         :return: The slider value or None if no slider value was set.
-        :rtype: Union[float, None]
+        :rtype: Union[float]
         """
         library = self.applied_sliders_library_by_sim_type.get(sim_type, None)
         if library is None:
@@ -146,8 +146,8 @@ class CSFAppliedSliderLibraryBySimType(CommonSerializable, HasClassLog):
     # noinspection PyMissingOrEmptyDocstring
     @classmethod
     def deserialize(cls, data_library: Union[str, Dict[str, Any]]) -> Union['CSFAppliedSliderLibraryBySimType', None]:
+        applied_slider_library_by_sim_type: Dict[Union[int, CommonSimType], CSFAppliedSliderLibrary] = dict()
         try:
-            applied_slider_library_by_sim_type: Dict[Union[int, CommonSimType], CSFAppliedSliderLibrary] = dict()
             if not data_library:
                 cls.get_log().format_with_message('No Applied Slider Data found!', data_library=data_library)
                 return cls(applied_slider_library_by_sim_type)
@@ -168,13 +168,14 @@ class CSFAppliedSliderLibraryBySimType(CommonSerializable, HasClassLog):
                     applied_slider_library = CSFAppliedSliderLibrary.deserialize(applied_slider_library_data)
                     if applied_slider_library is None:
                         continue
+                    cls.get_log().format_with_message('Got applied sliders library', sim_type=sim_type, applied_slider_library=applied_slider_library)
                     applied_slider_library_by_sim_type[sim_type] = applied_slider_library
             else:
-                cls.get_log().format_with_message('Applied Slider Data was not a dictionary!', data_library=data_library)
+                cls.get_log().format_with_message('Data Library was not a dictionary!', data_library=data_library)
             return cls(applied_slider_library_by_sim_type)
         except Exception as ex:
             cls.get_log().format_error_with_message('Failed to deserialize Applied Slider data.', data_library=data_library, exception=ex)
-        return cls(dict())
+        return cls(applied_slider_library_by_sim_type)
 
     def __repr__(self) -> str:
         return self.__str__()

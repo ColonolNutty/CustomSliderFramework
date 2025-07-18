@@ -54,17 +54,14 @@ class CSFSimSliderSystemData(CommonPersistedSimDataStorage, metaclass=_CSFSimDat
     @property
     def applied_sliders(self) -> CSFAppliedSliderLibraryBySimType:
         """CAS Parts selected for this Sim."""
-        if self._applied_sliders is None:
-            self._applied_sliders = self.get_data(
-                default=CSFAppliedSliderLibraryBySimType(dict()),
-                encode=lambda o: o.serialize(),
-                decode=lambda o: CSFAppliedSliderLibraryBySimType.deserialize(o)
-            )
-        return self._applied_sliders
+        return self.get_data(
+            default=CSFAppliedSliderLibraryBySimType(dict()),
+            encode=lambda o: o.serialize(),
+            decode=lambda o: CSFAppliedSliderLibraryBySimType.deserialize(o)
+        )
 
     @applied_sliders.setter
     def applied_sliders(self, value: CSFAppliedSliderLibraryBySimType):
-        self._applied_sliders = value
         self.set_data(value, encode=lambda o: o.serialize())
 
     # noinspection PyMissingOrEmptyDocstring
@@ -79,7 +76,6 @@ class CSFSimSliderSystemData(CommonPersistedSimDataStorage, metaclass=_CSFSimDat
     def __init__(self, sim_info: SimInfo) -> None:
         self.__data_manager: Union[CommonDataManager, None] = None
         super().__init__(sim_info)
-        self._applied_sliders = None
 
     @property
     def _data_manager(self) -> CommonDataManager:

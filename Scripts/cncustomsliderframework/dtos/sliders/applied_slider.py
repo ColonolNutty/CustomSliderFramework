@@ -45,17 +45,17 @@ class CSFAppliedSlider(CommonSerializable):
     def serialize(self) -> Union[str, Dict[str, Any]]:
         data = dict()
         data['slider_name'] = self.slider_name
-        data['slider_value'] = self._slider_value
+        data['slider_value'] = self.slider_value
         return data
 
     # noinspection PyMissingOrEmptyDocstring
     @classmethod
-    def deserialize(cls, data: Union[str, Dict[str, Any]]) -> Union['DCAppliedOverlay', None]:
+    def deserialize(cls, data: Union[str, Dict[str, Any]]) -> Union['CSFAppliedSlider', None]:
         slider_name = data.get('slider_name', None)
         if slider_name is None:
             return None
         slider_value = data.get('slider_value', None)
-        if slider_value is None or slider_value == 0.0:
+        if slider_value is None:
             return None
 
         return cls(

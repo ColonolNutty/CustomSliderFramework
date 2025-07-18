@@ -9,15 +9,18 @@ Copyright (c) COLONOLNUTTY
 import random
 from typing import Iterator, Union
 
+from cncustomsliderframework.dtos.sliders.applied_slider import CSFAppliedSlider
 from cncustomsliderframework.dtos.sliders.slider import CSFSlider
 from cncustomsliderframework.events.slider_changed_event import CSFSliderValueChanged
 from cncustomsliderframework.modinfo import ModInfo
+from cncustomsliderframework.persistence.sim_data.csf_sim_slider_system_data_storage import CSFSimSliderSystemData
 from protocolbuffers.PersistenceBlobs_pb2 import BlobSimFacialCustomizationData
 from sims.sim_info import SimInfo
 from sims4communitylib.exceptions.common_exceptions_handler import CommonExceptionHandler
 from sims4communitylib.logging.has_log import HasLog
 from sims4communitylib.mod_support.mod_identity import CommonModIdentity
 from sims4communitylib.services.common_service import CommonService
+from sims4communitylib.utils.sims.common_sim_type_utils import CommonSimTypeUtils
 
 
 class CSFCustomSliderApplicationService(CommonService, HasLog):
@@ -34,15 +37,14 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
 
     def reapply_all_sliders(self, sim_info: SimInfo):
         """Reapply all sliders on a Sim."""
-        pass
-        # sim_data = CSFSimSliderSystemData(sim_info)
-        # current_sim_type = CommonSimTypeUtils.determine_sim_type(sim_info, use_current_occult_type=True)
-        # slider_library = sim_data.applied_sliders.get_library(current_sim_type)
-        # if slider_library is None:
-        #     return
-        # for slider in slider_library.sliders.values():
-        #     slider: CSFAppliedSlider = slider
-        #     self.apply_slider_by_name(sim_info, slider.slider_name, slider.slider_value)
+        sim_data = CSFSimSliderSystemData(sim_info)
+        current_sim_type = CommonSimTypeUtils.determine_sim_type(sim_info, use_current_occult_type=True)
+        slider_library = sim_data.applied_sliders.get_library(current_sim_type)
+        if slider_library is None:
+            return
+        for slider in slider_library.sliders.values():
+            slider: CSFAppliedSlider = slider
+            self.apply_slider_by_name(sim_info, slider.slider_name, slider.slider_value, trigger_event=True, persist_value=False)
 
     def _get_facial_attributes(self, sim_info: SimInfo) -> BlobSimFacialCustomizationData:
         facial_attributes = BlobSimFacialCustomizationData()
@@ -57,7 +59,7 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
     def _get_existing_modifiers_for_edit(
         self,
         sim_info: SimInfo,
-        exclude_modifier_ids: Iterator[int]=()
+        exclude_modifier_ids: Iterator[int] = ()
     ) -> BlobSimFacialCustomizationData:
         facial_attributes = self._get_facial_attributes(sim_info)
         existing_modifiers = BlobSimFacialCustomizationData()
@@ -108,8 +110,8 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             existing_modifiers.sculpts.append(sculpt)
         return existing_modifiers
 
-    def get_current_slider_value_by_identifier(self, sim_info: SimInfo, identifier: str) -> Union[float, None]:
-        """get_current_slider_value_by_identifier(sim_info, identifier)
+    def get_current_slider_value_by_identifier(self, sim_info: SimInfo, identifier: str, use_persisted_value: bool = False, **__) -> Union[float, None]:
+        """get_current_slider_value_by_identifier(sim_info, identifier, use_persisted_value=True)
 
         Retrieve the current value of a slider by its identifier.
 
@@ -117,6 +119,8 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
         :type sim_info: SimInfo
         :param identifier: The identifier of a slider.
         :type identifier: str
+        :param use_persisted_value: If True, the persisted value will be used rather than the current value on the Sim. If False, the current value on the Sim will be used. Default is True.
+        :type use_persisted_value: bool, optional
         :return: The current slider value for the slider or None if the slider does not exist.
         :rtype: Union[float, None]
         """
@@ -125,10 +129,10 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
         if custom_slider is None:
             self.log.debug(f'No slider found with identifier: {identifier}')
             return None
-        return self.get_current_slider_value(sim_info, custom_slider)
+        return self.get_current_slider_value(sim_info, custom_slider, use_persisted_value=use_persisted_value)
 
-    def get_current_slider_value_by_name(self, sim_info: SimInfo, slider_name: str) -> Union[float, None]:
-        """get_current_slider_value_by_identifier(sim_info, slider_name)
+    def get_current_slider_value_by_name(self, sim_info: SimInfo, slider_name: str, use_persisted_value: bool = False, **__) -> Union[float, None]:
+        """get_current_slider_value_by_identifier(sim_info, slider_name, use_persisted_value=True)
 
         Retrieve the current value of a slider by its name.
 
@@ -136,6 +140,8 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
         :type sim_info: SimInfo
         :param slider_name: The name of a slider.
         :type slider_name: str
+        :param use_persisted_value: If True, the persisted value will be used rather than the current value on the Sim. If False, the current value on the Sim will be used. Default is True.
+        :type use_persisted_value: bool, optional
         :return: The current slider value for the slider or None if the slider does not exist.
         :rtype: Union[float, None]
         """
@@ -148,10 +154,10 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
         if custom_slider is None:
             self.log.debug(f'No slider found with name: {slider_name}')
             return None
-        return self.get_current_slider_value(sim_info, custom_slider)
+        return self.get_current_slider_value(sim_info, custom_slider, use_persisted_value=use_persisted_value)
 
-    def get_current_slider_value(self, sim_info: SimInfo, custom_slider: CSFSlider) -> Union[float, None]:
-        """get_current_slider_value_by_identifier(sim_info, slider_name)
+    def get_current_slider_value(self, sim_info: SimInfo, custom_slider: CSFSlider, use_persisted_value: bool = False, **__) -> Union[float, None]:
+        """get_current_slider_value_by_identifier(sim_info, custom_slider, use_persisted_value=True)
 
         Retrieve the current value of a slider.
 
@@ -159,21 +165,26 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
         :type sim_info: SimInfo
         :param custom_slider: The slider to check.
         :type custom_slider: CSFSlider
+        :param use_persisted_value: If True, the persisted value will be used rather than the current value on the Sim. If False, the current value on the Sim will be used. Default is True.
+        :type use_persisted_value: bool, optional
         :return: The current slider value for the slider or None if the slider does not exist.
         :rtype: Union[float, None]
         """
         if sim_info is None or custom_slider is None:
             return None
+        sim_data = None
+        current_sim_type = None
+        applied_sliders = None
         return_value = None
-        # sim_data = CSFSimSliderSystemData(sim_info)
-        # current_sim_type = CommonSimTypeUtils.determine_sim_type(sim_info, use_current_occult_type=True)
-        # applied_sliders = sim_data.applied_sliders
-        # slider_value = applied_sliders.get_slider_value(current_sim_type, custom_slider.raw_display_name)
-        # if slider_value is not None and slider_value != 0.0:
-        #     return slider_value
+        if use_persisted_value:
+            sim_data = CSFSimSliderSystemData(sim_info)
+            current_sim_type = CommonSimTypeUtils.determine_sim_type(sim_info, use_current_occult_type=True)
+            applied_sliders = sim_data.applied_sliders
+            slider_value = applied_sliders.get_slider_value(current_sim_type, custom_slider.raw_display_name)
+            if slider_value is not None:
+                return slider_value
 
         try:
-
             facial_attributes = self._get_facial_attributes(sim_info)
 
             # noinspection PyUnresolvedReferences
@@ -260,24 +271,29 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             return_value = 0.0
             return return_value
         finally:
-            pass
-            # if return_value is not None:
-            #     applied_sliders.set_slider_value(current_sim_type, custom_slider.raw_display_name, return_value)
-            #     sim_data.applied_sliders = applied_sliders
+            if use_persisted_value and applied_sliders is not None and sim_data is not None and current_sim_type is not None:
+                if return_value is not None:
+                    applied_sliders.set_slider_value(current_sim_type, custom_slider.raw_display_name, return_value)
+                    sim_data.applied_sliders = applied_sliders
 
-    def remove_slider(self, sim_info: SimInfo, custom_slider: CSFSlider, trigger_event: bool=True) -> bool:
+    def remove_slider(self, sim_info: SimInfo, custom_slider: CSFSlider, trigger_event: bool = True, persist_value: bool = False, **__) -> bool:
         """ Remove a slider from a Sim. """
         try:
             if sim_info is None or custom_slider is None:
                 self.log.debug('Missing sim_info or custom_slider')
                 return False
 
-            current_slider_amount = self.get_current_slider_value(sim_info, custom_slider)
-            # sim_data = CSFSimSliderSystemData(sim_info)
-            # current_sim_type = CommonSimTypeUtils.determine_sim_type(sim_info, use_current_occult_type=True)
-            # applied_sliders = sim_data.applied_sliders
-            # applied_sliders.clear_slider_value(current_sim_type, custom_slider.raw_display_name)
-            # sim_data.applied_sliders = applied_sliders
+            current_slider_amount = self.get_current_slider_value(sim_info, custom_slider, use_persisted_value=True)
+
+            if persist_value:
+                sim_data = CSFSimSliderSystemData(sim_info)
+                current_sim_type = CommonSimTypeUtils.determine_sim_type(sim_info, use_current_occult_type=True)
+                applied_sliders = sim_data.applied_sliders
+                slider_amount = applied_sliders.get_slider_value(current_sim_type, custom_slider.raw_display_name)
+                if slider_amount is not None:
+                    current_slider_amount = slider_amount
+                applied_sliders.clear_slider_value(current_sim_type, custom_slider.raw_display_name)
+                sim_data.applied_sliders = applied_sliders
 
             self.log.debug('Applying facial attribute.')
             modified_facial_attributes = self._get_existing_modifiers_for_edit(sim_info, exclude_modifier_ids=(*custom_slider.get_modifier_ids(), custom_slider.positive_modifier_id, custom_slider.negative_modifier_id))
@@ -290,7 +306,7 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
         except Exception as ex:
             CommonExceptionHandler.log_exception(self.mod_identity, f'Error occurred while applying slider: \'{custom_slider.raw_display_name}\'', exception=ex)
 
-    def remove_slider_by_name(self, sim_info: SimInfo, name: str, trigger_event: bool = True) -> bool:
+    def remove_slider_by_name(self, sim_info: SimInfo, name: str, trigger_event: bool = True, persist_value: bool = False, **__) -> bool:
         """ Remove a slider with its name. """
         from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
         self.log.debug(f'Attempting to remove slider with name {name}')
@@ -303,9 +319,9 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             self.log.debug(f'No slider found with name: {name}')
             return False
         self.log.debug(f'Slider found with name {name}, attempting to remove.')
-        return self.remove_slider(sim_info, custom_slider, trigger_event=trigger_event)
+        return self.remove_slider(sim_info, custom_slider, trigger_event=trigger_event, persist_value=persist_value)
 
-    def apply_slider(self, sim_info: SimInfo, custom_slider: CSFSlider, amount: float, trigger_event: bool = True) -> bool:
+    def apply_slider(self, sim_info: SimInfo, custom_slider: CSFSlider, amount: float, trigger_event: bool = True, persist_value: bool = False, **__) -> bool:
         """ Apply a slider to a Sim. """
         try:
             if sim_info is None or custom_slider is None:
@@ -316,11 +332,11 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
                 self.log.format_with_message('The specified slider is not available for the Sim.', sim=sim_info, slider=custom_slider)
                 return False
 
+            amount = self._clamp_value(amount, custom_slider)
+
             if amount == 0.0:
                 self.log.format_with_message('Value is Zero, so we will remove the value instead.', slider_name=custom_slider.raw_display_name)
-                return self.remove_slider(sim_info, custom_slider, trigger_event=trigger_event)
-
-            amount = self._clamp_value(amount, custom_slider)
+                return self.remove_slider(sim_info, custom_slider, trigger_event=trigger_event, persist_value=persist_value)
 
             self.log.debug(f'Determining which slider to use for {custom_slider.raw_display_name} with amount {amount}.')
             if amount > 0:
@@ -344,15 +360,18 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
                 self.log.error('Slider key is zero!')
                 return False
 
-            current_slider_amount = self.get_current_slider_value(sim_info, custom_slider)
-            # sim_data = CSFSimSliderSystemData(sim_info)
-            # 
-            # current_sim_type = CommonSimTypeUtils.determine_sim_type(sim_info, use_current_occult_type=True)
-            # applied_sliders = sim_data.applied_sliders
-            # applied_sliders.set_slider_value(current_sim_type, custom_slider.raw_display_name, amount)
-            # sim_data.applied_sliders = applied_sliders
+            current_slider_amount = self.get_current_slider_value(sim_info, custom_slider, use_persisted_value=True)
 
-            self.log.format_with_message(f'Applying facial attribute {current_slider_amount}.')
+            if persist_value:
+                sim_data = CSFSimSliderSystemData(sim_info)
+
+                current_sim_type = CommonSimTypeUtils.determine_sim_type(sim_info, use_current_occult_type=True)
+                applied_sliders = sim_data.applied_sliders
+                current_slider_amount = applied_sliders.get_slider_value(current_sim_type, custom_slider.raw_display_name)
+                applied_sliders.set_slider_value(current_sim_type, custom_slider.raw_display_name, amount)
+                sim_data.applied_sliders = applied_sliders
+
+            self.log.format_with_message(f'Applying facial attribute, current: {current_slider_amount}.')
             modified_facial_attributes = self._get_existing_modifiers_for_edit(sim_info, exclude_modifier_ids=(*custom_slider.get_modifier_ids(), custom_slider.positive_modifier_id, custom_slider.negative_modifier_id))
 
             self.log.debug('Adding the custom slider because the amount is greater than zero.')
@@ -379,7 +398,7 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
         except Exception as ex:
             CommonExceptionHandler.log_exception(self.mod_identity, f'Error occurred while applying slider: \'{custom_slider.raw_display_name}\'', exception=ex)
 
-    def apply_slider_by_name(self, sim_info: SimInfo, name: str, amount: float, trigger_event: bool=True) -> bool:
+    def apply_slider_by_name(self, sim_info: SimInfo, name: str, amount: float, trigger_event: bool = True, persist_value: bool = False, **__) -> bool:
         """ Apply a slider with its name. """
         from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
         self.log.debug(f'Attempting to apply slider with name {name} and amount {amount}')
@@ -392,9 +411,9 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             self.log.debug(f'No slider found with name: {name}')
             return False
         self.log.debug('Slider found, attempting to apply.')
-        return self.apply_slider(sim_info, custom_slider, amount, trigger_event=trigger_event)
+        return self.apply_slider(sim_info, custom_slider, amount, trigger_event=trigger_event, persist_value=persist_value)
 
-    def apply_slider_by_identifier(self, sim_info: SimInfo, identifier: str, amount: float, trigger_event: bool = True) -> bool:
+    def apply_slider_by_identifier(self, sim_info: SimInfo, identifier: str, amount: float, trigger_event: bool = True, persist_value: bool = False, **__) -> bool:
         """ Apply a slider with its identifier. """
         from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
         self.log.debug(f'Attempting to apply slider with identifier {identifier} and amount {amount}')
@@ -403,24 +422,24 @@ class CSFCustomSliderApplicationService(CommonService, HasLog):
             self.log.debug(f'No slider found with identifier: {identifier}')
             return False
         self.log.debug('Slider found, attempting to apply.')
-        return self.apply_slider(sim_info, custom_slider, amount, trigger_event=trigger_event)
+        return self.apply_slider(sim_info, custom_slider, amount, trigger_event=trigger_event, persist_value=persist_value)
 
-    def apply_random(self, sim_info: SimInfo, custom_slider: CSFSlider, trigger_event: bool = True) -> bool:
+    def apply_random(self, sim_info: SimInfo, custom_slider: CSFSlider, trigger_event: bool = True, persist_value: bool = False, **__) -> bool:
         """ Apply a random value for a slider. """
         name = custom_slider.raw_display_name
         amount = random.randint(int(custom_slider.minimum_value), int(custom_slider.maximum_value))
         self.log.debug(f'Attempting to apply slider with name {name} and amount {amount}')
-        return self.apply_slider(sim_info, custom_slider, amount, trigger_event=trigger_event)
+        return self.apply_slider(sim_info, custom_slider, amount, trigger_event=trigger_event, persist_value=persist_value)
 
-    def reset_slider(self, sim_info: SimInfo, custom_slider: CSFSlider, trigger_event: bool = True) -> bool:
+    def reset_slider(self, sim_info: SimInfo, custom_slider: CSFSlider, trigger_event: bool = True, persist_value: bool = False, **__) -> bool:
         """ Reset a Slider to its default for a Sim. """
-        return self.apply_slider(sim_info, custom_slider, 0.0, trigger_event=trigger_event)
+        return self.apply_slider(sim_info, custom_slider, 0.0, trigger_event=trigger_event, persist_value=persist_value)
 
-    def reset_all_sliders(self, sim_info: SimInfo) -> bool:
+    def reset_all_sliders(self, sim_info: SimInfo, trigger_event: bool = True, persist_value: bool = False, **__) -> bool:
         """ Reset all Custom Sliders for a Sim. """
         from cncustomsliderframework.sliders.query.slider_query_utils import CSFSliderQueryUtils
         for custom_slider in CSFSliderQueryUtils().get_sliders_for_sim(sim_info):
-            self.reset_slider(sim_info, custom_slider)
+            self.reset_slider(sim_info, custom_slider, trigger_event=trigger_event, persist_value=persist_value)
         return True
 
     def _clamp_value(self, value: float, custom_slider: CSFSlider) -> float:

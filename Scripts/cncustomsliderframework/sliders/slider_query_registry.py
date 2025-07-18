@@ -17,7 +17,6 @@ from cncustomsliderframework.sliders.query.slider_query import CSFSliderQuery
 from cncustomsliderframework.sliders.query.tag_handlers.slider_tag_handler import CSFSliderTagHandler
 from cncustomsliderframework.sliders.slider_tag_type import CSFSliderTagType
 from cncustomsliderframework.sliders.tag_filters.slider_tag_filter import CSFSliderTagFilter
-from sims4.commands import Command, CheatOutput, CommandType
 from sims4communitylib.classes.time.common_stop_watch import CommonStopWatch
 from sims4communitylib.events.event_handling.common_event_registry import CommonEventRegistry
 from sims4communitylib.events.interval.common_interval_event_service import CommonIntervalEventRegistry
@@ -25,6 +24,8 @@ from sims4communitylib.events.zone_spin.events.zone_late_load import S4CLZoneLat
 from sims4communitylib.logging.has_log import HasLog
 from sims4communitylib.mod_support.mod_identity import CommonModIdentity
 from sims4communitylib.notifications.common_basic_notification import CommonBasicNotification
+from sims4communitylib.services.commands.common_console_command import CommonConsoleCommand
+from sims4communitylib.services.commands.common_console_command_output import CommonConsoleCommandOutput
 from sims4communitylib.services.common_service import CommonService
 from sims4communitylib.utils.common_log_registry import CommonLogRegistry
 
@@ -332,9 +333,12 @@ class CSFSliderQueryRegistry(CommonService, HasLog):
             ).show()
 
 
-@Command('csf.reload_sliders', command_type=CommandType.Live)
-def _csf_command_reload_sliders(_connection: int=None):
-    output = CheatOutput(_connection)
+@CommonConsoleCommand(
+    ModInfo.get_identity(),
+    'csf.reload_sliders',
+    'Reload all sliders.'
+)
+def _csf_command_reload_sliders(output: CommonConsoleCommandOutput):
     output('Reloading Sliders.')
     if CSFSliderQueryRegistry()._collecting:
         output('Failed, Sliders are already being reloaded.')

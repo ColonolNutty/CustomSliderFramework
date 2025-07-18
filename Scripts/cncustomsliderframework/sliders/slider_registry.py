@@ -11,9 +11,10 @@ from typing import Iterator, Dict, List, Union
 from cncustomsliderframework.dtos.sliders.slider import CSFSlider
 from cncustomsliderframework.modinfo import ModInfo
 from cncustomsliderframework.sliders.slider_loaders.base_slider_loader import CSFBaseSliderLoader
-from sims4.commands import CheatOutput, Command, CommandType
 from sims4communitylib.logging.has_log import HasLog
 from sims4communitylib.mod_support.mod_identity import CommonModIdentity
+from sims4communitylib.services.commands.common_console_command import CommonConsoleCommand
+from sims4communitylib.services.commands.common_console_command_output import CommonConsoleCommandOutput
 from sims4communitylib.services.common_service import CommonService
 
 
@@ -123,9 +124,12 @@ class CSFSliderRegistry(CommonService, HasLog):
         pass
 
 
-@Command('csf.show_sliders', command_type=CommandType.Live)
-def _csf_show_sliders(_connection: int=None):
-    output = CheatOutput(_connection)
+@CommonConsoleCommand(
+    ModInfo.get_identity(),
+    'csf.show_sliders',
+    'Show a list of all sliders.',
+)
+def _csf_show_sliders(output: CommonConsoleCommandOutput):
     output('Showing loaded Sliders')
     CSFSliderRegistry().log.enable()
     for (unique_id, slider) in CSFSliderRegistry().sliders.items():

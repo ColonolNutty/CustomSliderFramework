@@ -34,6 +34,8 @@ from sims4communitylib.utils.common_function_utils import CommonFunctionUtils
 from sims4communitylib.utils.common_icon_utils import CommonIconUtils
 from sims4communitylib.utils.common_resource_utils import CommonResourceUtils
 from sims4communitylib.utils.localization.common_localization_utils import CommonLocalizationUtils
+from sims4communitylib.utils.localization.common_localized_string_separators import CommonLocalizedStringSeparator
+from sims4communitylib.utils.misc.common_text_utils import CommonTextUtils
 
 
 class CSFCustomizeSlidersDialog(HasLog):
@@ -93,7 +95,7 @@ class CSFCustomizeSlidersDialog(HasLog):
 
             def _on_confirm(_) -> None:
                 self.log.debug('Resetting all sliders.')
-                self.slider_application_service.reset_all_sliders(sim_info)
+                self.slider_application_service.reset_all_sliders(sim_info, trigger_event=True, persist_value=True)
                 _reopen()
 
             def _on_cancel(_) -> None:
@@ -207,7 +209,7 @@ class CSFCustomizeSlidersDialog(HasLog):
                 for slider in sliders:
                     if category not in slider.categories:
                         continue
-                    self.slider_application_service.apply_random(sim_info, slider)
+                    self.slider_application_service.apply_random(sim_info, slider, trigger_event=True, persist_value=True)
                 _reopen()
 
             def _on_cancel(_) -> None:
@@ -255,14 +257,16 @@ class CSFCustomizeSlidersDialog(HasLog):
                 # noinspection PyTypeChecker
                 option_description = CommonLocalizationUtils.create_localized_string(CSFStringId.CHANGE_THE_SLIDER, tokens=(custom_slider.display_name, ))
 
+            slider_value = self.slider_application_service.get_current_slider_value(sim_info, custom_slider, use_persisted_value=True)
+
             option_dialog.add_option(
                 CommonDialogSelectOption(
                     custom_slider.unique_identifier,
                     custom_slider,
                     CommonDialogOptionContext(
                         custom_slider.display_name,
-                        option_description,
-                        title_tokens=(str(self.slider_application_service.get_current_slider_value(sim_info, custom_slider)),),
+                        CommonLocalizationUtils.combine_localized_strings((option_description, str(CommonTextUtils.to_truncated_decimal(slider_value))), separator=CommonLocalizedStringSeparator.SPACE_PARENTHESIS_SURROUNDED),
+                        title_tokens=(str(slider_value),),
                         icon=CommonResourceUtils.get_resource_key(Types.PNG, custom_slider.icon_id) if custom_slider.icon_id else None,
                         tag_list=tuple([category.name for category in custom_slider.categories])
                     ),
@@ -290,11 +294,11 @@ class CSFCustomizeSlidersDialog(HasLog):
                 _reopen()
                 return
             self.log.debug('Slider changed, attempting to apply.')
-            self.slider_application_service.apply_slider(sim_info, custom_slider, amount, trigger_event=True)
+            self.slider_application_service.apply_slider(sim_info, custom_slider, amount, trigger_event=True, persist_value=True)
             _reopen()
 
         def _on_remove_slider() -> None:
-            self.slider_application_service.remove_slider(sim_info, custom_slider, trigger_event=True)
+            self.slider_application_service.remove_slider(sim_info, custom_slider, trigger_event=True, persist_value=True)
             _reopen()
 
         if custom_slider.description is not None:
@@ -323,14 +327,16 @@ class CSFCustomizeSlidersDialog(HasLog):
             )
         )
 
+        slider_value = self.slider_application_service.get_current_slider_value(sim_info, custom_slider, use_persisted_value=True)
+
         option_dialog.add_option(
             CommonDialogInputFloatOption(
                 custom_slider.unique_identifier,
-                self.slider_application_service.get_current_slider_value(sim_info, custom_slider),
+                slider_value,
                 CommonDialogOptionContext(
                     CSFStringId.CHANGE_SLIDER_VALUE_NAME,
                     CSFStringId.CHANGE_SLIDER_VALUE_DESCRIPTION,
-                    title_tokens=(str(self.slider_application_service.get_current_slider_value(sim_info, custom_slider)),),
+                    title_tokens=(str(slider_value),),
                     icon=custom_slider.icon_id or None
                 ),
                 min_value=custom_slider.minimum_value,
